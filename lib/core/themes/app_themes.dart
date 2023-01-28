@@ -12,6 +12,7 @@ class _ThemeName {
 class AppTheme {
   static ThemeData themeDataLight = new ThemeData(
 
+
       //fontFamily: _ThemeName.poppins,
       brightness: Brightness.light,
       primaryColor: AppColors.primaryColor,

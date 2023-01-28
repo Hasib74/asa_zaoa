@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gdn_health/core/flavor/app_flavor.dart';
-import 'package:gdn_health/featchers/product/presentation/bloc/product_cubit.dart';
+import 'package:asa_zaoa/core/flavor/app_flavor.dart';
+import 'package:asa_zaoa/featchers/product/presentation/bloc/product_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:bloc/bloc.dart';
 import 'app.dart';

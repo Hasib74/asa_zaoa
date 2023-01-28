@@ -1,4 +1,4 @@
-name: gdn_health
+name: asa_zaoa
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -35,18 +35,19 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
   flutter_bloc:
   get_it:
   equatable:
   http:
   dartz:
   rounded_loading_button:
-  connectivity_plus:
+  connectivity_plus: ^3.0.2
   cached_network_image:
   tab_indicator_styler:
   mockito: ^5.3.2
   bloc_test: ^9.1.0
+  flutter_svg: ^1.1.6
 
 
 
@@ -59,7 +60,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
   build_runner:
 
 # For information on the generic Dart part of this file, see the
@@ -75,8 +76,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icons/
     - assets/fake_data/
+    - assets/images/
+    - assets/logo/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -84,6 +86,18 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+
+
+  fonts:
+       - family: Montserrat
+         fonts:
+           - asset: assets/fonts/Montserrat-Bold.ttf
+           - asset: assets/fonts/Montserrat-Light.ttf
+           - asset: assets/fonts/Montserrat-Medium.ttf
+           - asset: assets/fonts/Montserrat-Regular.ttf
+           - asset: assets/fonts/Montserrat-SemiBold.ttf
+           - asset: assets/fonts/Montserrat-Thin.ttf
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

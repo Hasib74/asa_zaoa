@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:gdn_health/core/error/failures.dart';
-import 'package:gdn_health/core/remoteHelper/responseHelper/app_api_response.dart';
-import 'package:gdn_health/featchers/product/domain/useCase/product_use_case.dart';
-import 'package:gdn_health/featchers/product/presentation/bloc/product_cubit.dart';
+import 'package:asa_zaoa/core/error/failures.dart';
+import 'package:asa_zaoa/core/remoteHelper/responseHelper/app_api_response.dart';
+import 'package:asa_zaoa/featchers/product/domain/useCase/product_use_case.dart';
+import 'package:asa_zaoa/featchers/product/presentation/bloc/product_cubit.dart';
 
 import '../../domain/model/product_model.dart';
 

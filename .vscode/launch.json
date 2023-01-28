@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gdn_health_app",
+            "name": "asa_zaoa_app",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "gdn_health_app (profile mode)",
+            "name": "asa_zaoa_app (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "gdn_health_app (release mode)",
+            "name": "asa_zaoa_app (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

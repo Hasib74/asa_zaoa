@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:gdn_health/core/error/failures.dart';
-import 'package:gdn_health/core/network/app_network.dart';
-import 'package:gdn_health/core/remoteHelper/app_urls.dart';
-import 'package:gdn_health/core/remoteHelper/responseHelper/app_api_response.dart';
-import 'package:gdn_health/core/remoteHelper/responseHelper/model/model.dart';
+import 'package:asa_zaoa/core/error/failures.dart';
+import 'package:asa_zaoa/core/network/app_network.dart';
+import 'package:asa_zaoa/core/remoteHelper/app_urls.dart';
+import 'package:asa_zaoa/core/remoteHelper/responseHelper/app_api_response.dart';
+import 'package:asa_zaoa/core/remoteHelper/responseHelper/model/model.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../../core/dependencyInjection/app_dependency_injections.dart';

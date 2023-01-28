@@ -7,18 +7,17 @@ class AppColors {
 
   AppColors._();
 
-  static Color primaryColor = Color(0xff4B76E5);
-  static Color secondaryColor = Color(0xffFF48BE);
-  static Color scaffoldBackgroundColor = Color(0xff010133);
+  static Color primaryColor = Color(0xff015377);
+  static Color secondaryColor = Color(0xff13BDE8);
+  static Color scaffoldBackgroundColor = Color(0xffffffff);
   static Color errorColor = Color(0xffB00020);
   static Color textFiledBorderColor = Color(0xff7579E7);
   static Color shadowColor = Color(0xff707070);
-
   static Color transparent = Colors.transparent;
   static var white = Colors.white;
   static var black = Colors.black;
   static var blue = Color(0xff0061FF);
-  static var textColorOne = white;
-
+  static var textColorOne = Color(0xff015377);
   static Color rightColor = Colors.green;
+  static Color textFiledHintColor = Color(0xff949494);
 }

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gdn_health/core/routes/app_routes.dart';
-import 'package:gdn_health/core/themes/app_themes.dart';
+import 'package:asa_zaoa/core/routes/app_routes.dart';
+import 'package:asa_zaoa/core/themes/app_themes.dart';
+
+double? appHeight;
+
+double? appWidth;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -8,6 +12,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeDataLight,
