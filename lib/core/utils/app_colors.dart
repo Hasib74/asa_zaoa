@@ -18,6 +18,7 @@ class AppColors {
   static var black = Colors.black;
   static var blue = Color(0xff0061FF);
   static var textColorOne = Color(0xff015377);
+  static var textColorTwo = Color(0xff13BDE8);
   static Color rightColor = Colors.green;
   static Color textFiledHintColor = Color(0xff949494);
 }

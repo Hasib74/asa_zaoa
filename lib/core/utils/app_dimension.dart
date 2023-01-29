@@ -7,6 +7,8 @@ class AppDimension {
 
   static double productCardAspectRatio = 0.7;
 
+  static double wordSpacing = 1;
+
   AppDimension._();
 
   static double textFiledHeight = 50;
