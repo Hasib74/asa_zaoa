@@ -1,3 +1,4 @@
+import 'package:asa_zaoa/featchers/auth/presentation/functions/sign_in_functions.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:asa_zaoa/core/flavor/app_flavor.dart';
 import 'package:asa_zaoa/featchers/product/domain/useCase/product_use_case.dart';
@@ -25,6 +26,7 @@ Future intiGetIt() async {
 
   //functions
   sl.registerLazySingleton(() => ProductFunctions());
+  sl.registerLazySingleton(() => SignInFunctions());
 
   //data source
   sl.registerLazySingleton<ProductRemoteDataSource>(

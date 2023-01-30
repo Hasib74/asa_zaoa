@@ -1,10 +1,69 @@
+import 'package:asa_zaoa/core/utils/app_colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../themes/app_text_style.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({Key? key}) : super(key: key);
+  String? title;
+
+  Function()? onPressed;
+  Color? color;
+  Color? textColor;
+  double? height;
+  double? width;
+  double? radius;
+  double? fontSize;
+  FontWeight? fontWeight;
+
+  AppButton({
+    Key? key,
+    this.title,
+    this.onPressed,
+    this.color,
+    this.textColor,
+    this.height,
+    this.width,
+    this.radius,
+    this.fontSize,
+    this.fontWeight,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor:
+            MaterialStateProperty.all<Color>(color ?? Colors.transparent),
+        elevation: MaterialStateProperty.all<double>(0),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius ?? 10),
+          ),
+        ),
+      ),
+      onPressed: () {},
+      child: Container(
+          width: width ?? 150,
+          height: height ?? 50,
+          decoration: BoxDecoration(
+            borderRadius:
+                BorderRadius.circular(height != null ? height! / 2 : 25),
+            border: Border.all(
+              color: color ?? AppColors.shadowColor,
+              width: 2,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              title ?? '',
+              style: AppTextStyle.largeTextStyle!.copyWith(
+                  // color: textColor ?? AppColors.black,
+                  // fontSize: fontSize ?? 16,
+                  // fontWeight: fontWeight ?? FontWeight.w600,
+                  ),
+            ),
+          )),
+    );
   }
 }

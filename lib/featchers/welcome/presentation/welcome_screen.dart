@@ -1,11 +1,13 @@
+import 'package:asa_zaoa/core/routes/app_routes.dart';
 import 'package:asa_zaoa/core/themes/app_text_style.dart';
 import 'package:asa_zaoa/core/utils/app_colors.dart';
 import 'package:asa_zaoa/featchers/welcome/presentation/section/welcome_text.dart';
-import 'package:asa_zaoa/featchers/welcome/presentation/widgets/round_icon_button.dart';
+import 'package:asa_zaoa/core/widgets/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:asa_zaoa/core/utils/app_assets.dart';
 import 'package:asa_zaoa/core/widgets/app_image_view.dart';
 
+import '../../../core/helper/app_role_enum.dart';
 import '../../../core/utils/app_spaces.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -27,10 +29,21 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              RoundIconButton(
-                  imageUrl: AppAssets.driver_icon, titile: "Driver"),
+              AppRoundIconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.LOGIN_SCREEN,
+                        arguments: AppRoleEnum.Driver);
+                  },
+                  imageUrl: AppAssets.driver_icon,
+                  titile: "Driver"),
               // AppSpaces.spacesWidth15,
-              RoundIconButton(imageUrl: AppAssets.bpa_icon, titile: "BPA")
+              AppRoundIconButton(
+                  imageUrl: AppAssets.bpa_icon,
+                  titile: "BPA",
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.LOGIN_SCREEN,
+                        arguments: AppRoleEnum.BPA);
+                  }),
             ],
           ),
           Spacer(),

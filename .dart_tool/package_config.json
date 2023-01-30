@@ -158,6 +158,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "country_phone_code_picker",
+      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/country_phone_code_picker-0.0.41",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "coverage",
       "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/coverage-1.6.2",
       "packageUri": "lib/",
@@ -282,6 +288,12 @@
       "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "get",
+      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/get-4.6.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "get_it",
@@ -740,7 +752,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-01-29T18:04:14.080139Z",
+  "generated": "2023-01-30T18:12:07.892216Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }

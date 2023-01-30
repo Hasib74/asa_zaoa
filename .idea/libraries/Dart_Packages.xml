@@ -184,6 +184,13 @@
             </list>
           </value>
         </entry>
+        <entry key="country_phone_code_picker">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/country_phone_code_picker-0.0.41/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="coverage">
           <value>
             <list>
@@ -328,6 +335,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="get">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/get-4.6.5/lib" />
             </list>
           </value>
         </entry>
@@ -885,6 +899,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/connectivity_plus-3.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/connectivity_plus_platform_interface-1.2.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/convert-3.1.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/country_phone_code_picker-0.0.41/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/coverage-1.6.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/crypto-3.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5/lib" />
@@ -903,6 +918,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_svg-1.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/get-4.6.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/get_it-7.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/glob-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/graphs-2.2.0/lib" />
