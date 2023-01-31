@@ -4,6 +4,7 @@ import 'package:asa_zaoa/core/flavor/app_flavor.dart';
 import 'package:asa_zaoa/featchers/product/domain/useCase/product_use_case.dart';
 import 'package:asa_zaoa/featchers/product/presentation/functions/product_functions.dart';
 import 'package:get_it/get_it.dart';
+import '../../featchers/auth/presentation/functions/sign_up_functions.dart';
 import '../../featchers/product/data/remoteDataSource/product_data_source.dart';
 import '../../featchers/product/data/respository/product_repository_impl.dart';
 import '../../featchers/product/domain/repository/product_repository.dart';
@@ -27,6 +28,7 @@ Future intiGetIt() async {
   //functions
   sl.registerLazySingleton(() => ProductFunctions());
   sl.registerLazySingleton(() => SignInFunctions());
+  sl.registerLazySingleton(() => SignUpFunctions());
 
   //data source
   sl.registerLazySingleton<ProductRemoteDataSource>(

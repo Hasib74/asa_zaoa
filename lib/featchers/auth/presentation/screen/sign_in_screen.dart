@@ -9,9 +9,10 @@ import 'package:asa_zaoa/core/widgets/round_icon_button.dart';
 import 'package:asa_zaoa/featchers/auth/presentation/functions/sign_in_functions.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/dependencyInjection/app_dependency_injections.dart';
-import '../../../core/helper/app_role_enum.dart';
-import '../../../core/utils/app_spaces.dart';
+import '../../../../core/dependencyInjection/app_dependency_injections.dart';
+import '../../../../core/helper/app_role_enum.dart';
+import '../../../../core/routes/app_routes.dart';
+import '../../../../core/utils/app_spaces.dart';
 
 class SignInScreen extends StatelessWidget {
   AppRoleEnum? role;
@@ -51,7 +52,6 @@ class SignInScreen extends StatelessWidget {
                 textEditingController:
                     sl<SignInFunctions>().passwordTextEditingController),
             AppSpaces.spacesHeight15,
-
             AppButton(
               title: "LogIn",
               onPressed: () {
@@ -75,10 +75,19 @@ class SignInScreen extends StatelessWidget {
                     style: AppTextStyle.normalTextStyle!.copyWith(),
                   ),
                   AppSpaces.spacesHeight10,
-                  Text(
-                    "SignUp now",
-                    style: AppTextStyle.normalTextStyle!
-                        .copyWith(color: AppColors.textColorTwo),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.SIGN_UP_SCREEN,
+                        arguments: role,
+                      );
+                    },
+                    child: Text(
+                      "SignUp now",
+                      style: AppTextStyle.normalTextStyle!
+                          .copyWith(color: AppColors.textColorTwo),
+                    ),
                   ),
                 ],
               ),
