@@ -1,3 +1,4 @@
+import 'package:asa_zaoa/featchers/auth/presentation/screen/otp_verification_screen.dart';
 import 'package:asa_zaoa/featchers/auth/presentation/screen/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class AppRoutes {
   static String WELCOME_SCREEN = "/welcome_screen";
   static String LOGIN_SCREEN = "/login_screen";
   static String SIGN_UP_SCREEN = "/sign_up_screen";
+  static String OTP_VERIFICATION_SCREEN = "/otp_verification_screen";
 
   static getAppRoutes() {
     return {
@@ -20,7 +22,10 @@ class AppRoutes {
             role: ModalRoute.of(context)!.settings.arguments as AppRoleEnum,
           ),
       SIGN_UP_SCREEN: (BuildContext context) => SignUpScreen(
-        role: ModalRoute.of(context)!.settings.arguments as AppRoleEnum,
+            role: ModalRoute.of(context)!.settings.arguments as AppRoleEnum,
+          ),
+      OTP_VERIFICATION_SCREEN: (BuildContext context) => OtpVerificationScreen(
+            role: ModalRoute.of(context)!.settings.arguments as AppRoleEnum,
           ),
     };
   }

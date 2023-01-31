@@ -49,6 +49,8 @@ class AppTextFiled extends StatelessWidget {
 
   bool? isPhoneNumberSelectAble;
 
+  bool? isBorderEnable;
+
   AppTextFiled({
     Key? key,
     this.prefixEnable = false,
@@ -75,6 +77,7 @@ class AppTextFiled extends StatelessWidget {
     this.onEditingComplete,
     this.contentPadding,
     this.isPhoneNumberSelectAble: false,
+    this.isBorderEnable: true,
   }) : super(key: key);
 
   @override

@@ -1,3 +1,4 @@
+import 'package:asa_zaoa/core/routes/app_routes.dart';
 import 'package:asa_zaoa/featchers/auth/presentation/functions/sign_up_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -36,12 +37,12 @@ class SignUpScreen extends StatelessWidget {
                   : AppAssets.driver_icon,
             ),
             Spacer(),
-            AppTextFiled(
-              hint: "   +880 XXX XXX XXX",
-              textEditingController:
-                  sl<SignUpFunctions>().phoneNumberTextEditingController,
-              isPhoneNumberSelectAble: true,
-            ),
+            // AppTextFiled(
+            //   hint: "   +880 XXX XXX XXX",
+            //   textEditingController:
+            //       sl<SignUpFunctions>().phoneNumberTextEditingController,
+            //   isPhoneNumberSelectAble: true,
+            // ),
             AppSpaces.spacesHeight15,
             AppTextFiled(
                 isCenter: true,
@@ -53,6 +54,8 @@ class SignUpScreen extends StatelessWidget {
               title: "Next",
               onPressed: () {
                 //sl<SignInFunctions>().signIn(context, role!);
+                Navigator.pushNamed(context, AppRoutes.OTP_VERIFICATION_SCREEN,
+                    arguments: role);
               },
             ),
             AppSpaces.spacesHeight10,

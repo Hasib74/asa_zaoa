@@ -5,6 +5,8 @@ class AppColors {
 
   static var tableBackgroundColor = Color(0xffEBE9F1);
 
+  static var whiteColor = Color(0xffffffff);
+
   AppColors._();
 
   static Color primaryColor = Color(0xff015377);

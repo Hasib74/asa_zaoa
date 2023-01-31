@@ -33,8 +33,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor:
-            MaterialStateProperty.all<Color>(color ?? Colors.transparent),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
         elevation: MaterialStateProperty.all<double>(0),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
@@ -42,11 +41,12 @@ class AppButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Container(
           width: width ?? 150,
           height: height ?? 50,
           decoration: BoxDecoration(
+            color: color ?? AppColors.white,
             borderRadius:
                 BorderRadius.circular(height != null ? height! / 2 : 25),
             border: Border.all(
@@ -58,10 +58,8 @@ class AppButton extends StatelessWidget {
             child: Text(
               title ?? '',
               style: AppTextStyle.largeTextStyle!.copyWith(
-                  // color: textColor ?? AppColors.black,
-                  // fontSize: fontSize ?? 16,
-                  // fontWeight: fontWeight ?? FontWeight.w600,
-                  ),
+                color: textColor ?? AppColors.black,
+              ),
             ),
           )),
     );
