@@ -5,7 +5,7 @@ import 'app.dart';
 import 'core/dependencyInjection/app_dependency_injections.dart';
 import 'core/flavor/app_flavor.dart';
 import 'core/utils/app_colors.dart';
-import 'featchers/splash/bloc/splash_screen_cubit.dart';
+import 'featchers/splash/presentation/bloc/splash_screen_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

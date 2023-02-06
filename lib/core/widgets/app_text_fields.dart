@@ -1,5 +1,4 @@
-import 'package:country_phone_code_picker/core/country_phone_code_picker_widget.dart';
-import 'package:country_phone_code_picker/models/country.dart';
+import 'package:asa_zaoa/core/widgets/app_country_picker_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../utils/app_assets.dart';
@@ -172,17 +171,13 @@ class AppTextFiled extends StatelessWidget {
           ),
         ),
       ),
-      child: CountryPhoneCodePicker.withDefaultSelectedCountry(
-        defaultCountryCode:
-            Country(name: 'BD', countryCode: 'BD', phoneCode: '+880'),
-        borderRadius: 0,
-        borderWidth: 0,
-        borderColor: Colors.transparent,
-        style: const TextStyle(fontSize: 16, color: Colors.green),
-        searchBarHintText: 'Search by name',
-        flagWidth: 25,
-        flagHeight: 20,
-        width: 60,
+      child: AppCountryPickerWidgets(
+        onSelectedCountryCode: (code) {
+          print(code);
+        },
+        onSelectedCountryName: (country) {
+          print(country);
+        },
       ),
     );
   }

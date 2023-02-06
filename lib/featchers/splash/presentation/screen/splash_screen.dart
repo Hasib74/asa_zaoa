@@ -4,9 +4,9 @@ import 'package:asa_zaoa/core/utils/app_assets.dart';
 import 'package:asa_zaoa/core/utils/app_colors.dart';
 import 'package:asa_zaoa/core/widgets/app_image_view.dart';
 
-import '../../core/dependencyInjection/app_dependency_injections.dart';
-import '../../core/flavor/app_flavor.dart';
-import 'functions/splash_screen_functions.dart';
+import '../../../../core/dependencyInjection/app_dependency_injections.dart';
+import '../../../../core/flavor/app_flavor.dart';
+import '../functions/splash_screen_functions.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);

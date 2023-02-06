@@ -40,7 +40,7 @@ class SignInScreen extends StatelessWidget {
             ),
             Spacer(),
             AppTextFiled(
-              hint: "+966 5XX XXX XXX",
+              hint: "XXX XXX XXX",
               textEditingController:
                   sl<SignInFunctions>().phoneNumberTextEditingController,
               isPhoneNumberSelectAble: true,

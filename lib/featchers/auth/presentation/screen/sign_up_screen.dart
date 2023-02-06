@@ -37,12 +37,12 @@ class SignUpScreen extends StatelessWidget {
                   : AppAssets.driver_icon,
             ),
             Spacer(),
-            // AppTextFiled(
-            //   hint: "   +880 XXX XXX XXX",
-            //   textEditingController:
-            //       sl<SignUpFunctions>().phoneNumberTextEditingController,
-            //   isPhoneNumberSelectAble: true,
-            // ),
+            AppTextFiled(
+              hint: "XXX XXX XXX",
+              textEditingController:
+                  sl<SignUpFunctions>().phoneNumberTextEditingController,
+              isPhoneNumberSelectAble: true,
+            ),
             AppSpaces.spacesHeight15,
             AppTextFiled(
                 isCenter: true,

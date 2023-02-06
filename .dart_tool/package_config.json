@@ -158,10 +158,10 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "country_phone_code_picker",
-      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/country_phone_code_picker-0.0.41",
+      "name": "country_picker",
+      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/country_picker-2.0.19",
       "packageUri": "lib/",
-      "languageVersion": "2.16"
+      "languageVersion": "2.12"
     },
     {
       "name": "coverage",
@@ -206,6 +206,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "enum_to_string",
+      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/enum_to_string-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/equatable-2.0.5",
       "packageUri": "lib/",
@@ -232,6 +238,12 @@
     {
       "name": "fixnum",
       "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/fixnum-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flag",
+      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/flag-6.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -288,12 +300,6 @@
       "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "get",
-      "rootUri": "file:///Users/hasibakon/.pub-cache/hosted/pub.dev/get-4.6.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.15"
     },
     {
       "name": "get_it",
@@ -752,7 +758,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-01-30T18:12:07.892216Z",
+  "generated": "2023-02-06T18:18:09.805663Z",
   "generator": "pub",
-  "generatorVersion": "2.19.0"
+  "generatorVersion": "2.19.1"
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/helper/app_role_enum.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/themes/app_text_style.dart';
@@ -34,6 +33,7 @@ class OtpVerificationScreen extends StatelessWidget {
                   ? AppAssets.bpa_icon
                   : AppAssets.driver_icon,
             ),
+            Spacer(),
             Column(
               children: [
                 Text("We have sent a verification code to ",
@@ -43,11 +43,11 @@ class OtpVerificationScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "+966 5XX XXX XXX",
+                      "+966 5XX XXX XXX.",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text("Put otp to verify", textAlign: TextAlign.center)
+                    Text(" Put otp to verify", textAlign: TextAlign.center)
                   ],
                 ),
                 AppSpaces.spacesHeight10,

@@ -3,7 +3,7 @@ import 'package:asa_zaoa/featchers/auth/presentation/screen/sign_in_screen.dart'
 import 'package:flutter/material.dart';
 
 import '../../featchers/auth/presentation/screen/sign_up_screen.dart';
-import '../../featchers/splash/splash_screen.dart';
+import '../../featchers/splash/presentation/screen/splash_screen.dart';
 import '../../featchers/welcome/presentation/welcome_screen.dart';
 import '../helper/app_role_enum.dart';
 
