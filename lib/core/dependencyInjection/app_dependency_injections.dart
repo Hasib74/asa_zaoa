@@ -27,15 +27,15 @@ Future intiGetIt() async {
   sl.registerLazySingleton(() => SignInFunctions());
   sl.registerLazySingleton(() => SignUpFunctions());
 
-  //data source
-  sl.registerLazySingleton<ProductRemoteDataSource>(
-      () => ProductRemoteDataSourceImpl());
-
-  //repository
-  sl.registerLazySingleton<ProductRepository>(
-      () => ProductRepositoryImpl(productRemoteDataSource: sl()));
-
-  //usecase
-  sl.registerLazySingleton<ProductUseCase>(
-      () => ProductUseCase(producteRepository: sl()));
+  // //data source
+  // sl.registerLazySingleton<ProductRemoteDataSource>(
+  //     () => ProductRemoteDataSourceImpl());
+  //
+  // //repository
+  // sl.registerLazySingleton<ProductRepository>(
+  //     () => ProductRepositoryImpl(productRemoteDataSource: sl()));
+  //
+  // //usecase
+  // sl.registerLazySingleton<ProductUseCase>(
+  //     () => ProductUseCase(producteRepository: sl()));
 }

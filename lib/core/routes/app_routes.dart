@@ -13,6 +13,7 @@ class AppRoutes {
   static String LOGIN_SCREEN = "/login_screen";
   static String SIGN_UP_SCREEN = "/sign_up_screen";
   static String OTP_VERIFICATION_SCREEN = "/otp_verification_screen";
+  static String DASH_BOARD = "/dash_board";
 
   static getAppRoutes() {
     return {

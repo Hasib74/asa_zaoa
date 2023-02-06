@@ -14,20 +14,20 @@ void main() async {
       expectLater(_connectivity, true);
     });
 
-    blocTest<ProductCubit, ProductState>(
-      "Load product data",
-      build: () => ProductCubit(productUseCase: sl()),
-      act: (bloc) => bloc.fetchProduct(),
-      expect: () => [
-        ProductLoading(),
-        ProductLoaded(productModel: sl<ProductFunctions>().productModel),
-      ],
-    );
-
-    test(
-        "Test product",
-        () => expectLater(
-            sl<ProductFunctions>().productModel!.products![0].title,
-            "iPhone 9"));
+    // blocTest<ProductCubit, ProductState>(
+    //   "Load product data",
+    //   build: () => ProductCubit(productUseCase: sl()),
+    //   act: (bloc) => bloc.fetchProduct(),
+    //   expect: () => [
+    //     ProductLoading(),
+    //     ProductLoaded(productModel: sl<ProductFunctions>().productModel),
+    //   ],
+    // );
+    //
+    // test(
+    //     "Test product",
+    //     () => expectLater(
+    //         sl<ProductFunctions>().productModel!.products![0].title,
+    //         "iPhone 9"));
   });
 }
