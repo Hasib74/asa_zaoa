@@ -1,0 +1,4 @@
+enum AppRoleEnum {
+  Driver,
+  BPA,
+}
