@@ -18,4 +18,7 @@ class AppAssets {
   static String message = _icons + "message.svg";
   static String message_png = _icons + "message.png";
   static String trip = _icons + "trip.svg";
+  static String trip_png = _icons + "trip.png";
+  static String car_banner = _images + "car_banner.svg";
+  static String car_banner_png = _images + "car_banner.png";
 }

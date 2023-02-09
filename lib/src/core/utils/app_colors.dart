@@ -7,10 +7,12 @@ class AppColors {
 
   static var whiteColor = Color(0xffffffff);
 
+
   AppColors._();
 
   static Color primaryColor = Color(0xff015377);
   static Color secondaryColor = Color(0xff13BDE8);
+  static Color accentColor = Color(0xff13BDE8);
   static Color scaffoldBackgroundColor = Color(0xffffffff);
   static Color errorColor = Color(0xffB00020);
   static Color textFiledBorderColor = Color(0xff7579E7);

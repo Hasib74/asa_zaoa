@@ -1,6 +1,8 @@
 import 'package:asa_zaoa/src/featchers/module/bpa/_display/presentation/screen/sections/bottom_naigation_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../../../dashBoard/presentation/screen/dash_board.dart';
+
 class BpaDisplayScreen extends StatelessWidget {
   const BpaDisplayScreen({Key? key}) : super(key: key);
 
@@ -11,12 +13,7 @@ class BpaDisplayScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
+            Expanded(child: DashBoardScreen()),
             BpaBottomNavigationBar(),
           ],
         ),
