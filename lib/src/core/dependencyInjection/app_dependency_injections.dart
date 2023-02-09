@@ -1,9 +1,9 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-
 import 'package:get_it/get_it.dart';
+
 import '../../featchers/auth/presentation/functions/sign_in_functions.dart';
 import '../../featchers/auth/presentation/functions/sign_up_functions.dart';
-
+import '../../featchers/rent_a_car/presentation/functions/rent_a_car_functions.dart';
 import '../../featchers/splash/presentation/functions/splash_screen_functions.dart';
 import '../flavor/app_flavor.dart';
 import '../network/app_network.dart';
@@ -24,4 +24,5 @@ Future intiGetIt() async {
 
   sl.registerLazySingleton(() => SignInFunctions());
   sl.registerLazySingleton(() => SignUpFunctions());
+  sl.registerLazySingleton(() => RentACarFunctions());
 }

@@ -1,5 +1,6 @@
-import 'package:mockito/mockito.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:mockito/mockito.dart';
+
 abstract class AppNetworkInfo {
   Future<bool> get isConnected;
 }

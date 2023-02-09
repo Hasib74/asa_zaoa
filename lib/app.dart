@@ -2,7 +2,6 @@ import 'package:asa_zaoa/src/core/routes/app_routes.dart';
 import 'package:asa_zaoa/src/core/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 
-
 double? appHeight;
 
 double? appWidth;

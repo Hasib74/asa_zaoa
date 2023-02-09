@@ -7,7 +7,6 @@ class AppColors {
 
   static var whiteColor = Color(0xffffffff);
 
-
   AppColors._();
 
   static Color primaryColor = Color(0xff015377);
@@ -19,6 +18,8 @@ class AppColors {
   static Color shadowColor = Color(0xffF8F8F8);
   static Color transparent = Colors.transparent;
   static var white = Colors.white;
+  static Color lightGrey = Color(0xFFF5F5F5);
+  static Color grey = Color(0xFFA1A1A1);
   static var black = Colors.black;
   static var blue = Color(0xff0061FF);
   static var textColorOne = Color(0xff015377);
