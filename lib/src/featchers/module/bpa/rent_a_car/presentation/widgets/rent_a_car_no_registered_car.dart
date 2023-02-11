@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/themes/app_text_style.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_dimension.dart';
+import '../../../../../../core/themes/app_text_style.dart';
+import '../../../../../../core/utils/app_colors.dart';
+import '../../../../../../core/utils/app_dimension.dart';
+
 
 class RentACarNoRegisteredCar extends StatelessWidget {
   RentACarNoRegisteredCar({Key? key}) : super(key: key);

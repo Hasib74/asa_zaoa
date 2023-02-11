@@ -4,10 +4,11 @@ import '../../featchers/auth/presentation/screen/otp_verification_screen.dart';
 import '../../featchers/auth/presentation/screen/sign_in_screen.dart';
 import '../../featchers/auth/presentation/screen/sign_up_screen.dart';
 import '../../featchers/module/bpa/_display/presentation/screen/bpa_display_screen.dart';
-import '../../featchers/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
-import '../../featchers/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
-import '../../featchers/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
-import '../../featchers/rent_a_car/presentation/screens/rent_a_car_year_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_year_screen.dart';
+
 import '../../featchers/splash/presentation/screen/splash_screen.dart';
 import '../../featchers/welcome/presentation/welcome_screen.dart';
 import '../helper/app_role_enum.dart';

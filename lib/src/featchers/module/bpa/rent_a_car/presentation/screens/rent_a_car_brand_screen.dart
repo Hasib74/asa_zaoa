@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/utils/app_colors.dart';
+import '../../../../../../core/utils/app_colors.dart';
 import '../widgets/rent_a_car_add_title.dart';
-import '../widgets/rent_a_car_model_list.dart';
+import '../widgets/rent_a_car_brand_list.dart';
 
-class RentACarModelScreen extends StatelessWidget {
-  RentACarModelScreen({Key? key}) : super(key: key);
+class RentACarBrandScreen extends StatelessWidget {
+  RentACarBrandScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class RentACarModelScreen extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
-                child: RentACarModelList(),
+                child: RentACarBrandList(),
               ),
             ),
           ],
