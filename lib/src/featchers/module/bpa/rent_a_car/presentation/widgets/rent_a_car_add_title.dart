@@ -6,10 +6,9 @@ import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/widgets/app_image_view.dart';
 
-
-
 class RentACarAddTitle extends StatelessWidget {
-  RentACarAddTitle({Key? key}) : super(key: key);
+  final String title;
+  RentACarAddTitle({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class RentACarAddTitle extends StatelessWidget {
               width: 10,
             ),
             Text(
-              "ADD A NEW CAR",
+              title,
               style: AppTextStyle.normalTextStyle!.copyWith(
                 fontSize: AppDimension.h2,
                 color: AppColors.primaryColor,

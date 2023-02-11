@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/widgets/app_button.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
-
-
 
 class RentACarYearList extends StatefulWidget {
   const RentACarYearList({Key? key}) : super(key: key);
@@ -124,7 +123,9 @@ class _RentACarYearListState extends State<RentACarYearList> {
                 style: AppTextStyle.normalTextStyle!.copyWith(
                   color: AppColors.primaryColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
               SizedBox(
                 width: 10,
@@ -136,7 +137,9 @@ class _RentACarYearListState extends State<RentACarYearList> {
                 style: AppTextStyle.normalTextStyle!.copyWith(
                   color: AppColors.primaryColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.RENT_A_CAR_REG_SCREEN);
+                },
               ),
             ],
           ),

@@ -7,8 +7,8 @@ import '../../featchers/module/bpa/_display/presentation/screen/bpa_display_scre
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_registration.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_year_screen.dart';
-
 import '../../featchers/splash/presentation/screen/splash_screen.dart';
 import '../../featchers/welcome/presentation/welcome_screen.dart';
 import '../helper/app_role_enum.dart';
@@ -25,6 +25,7 @@ class AppRoutes {
   static String RENT_A_CAR_BRAND_SCREEN = "/rent_a_car_brand_screen";
   static String RENT_A_CAR_MODEL_SCREEN = "/rent_a_car_model_screen";
   static String RENT_A_CAR_YEAR_SCREEN = "/rent_a_car_year_screen";
+  static String RENT_A_CAR_REG_SCREEN = "/rent_a_car_reg_screen";
 
   static getAppRoutes() {
     return {
@@ -44,6 +45,8 @@ class AppRoutes {
       RENT_A_CAR_BRAND_SCREEN: (BuildContext context) => RentACarBrandScreen(),
       RENT_A_CAR_MODEL_SCREEN: (BuildContext context) => RentACarModelScreen(),
       RENT_A_CAR_YEAR_SCREEN: (BuildContext context) => RentACarYearScreen(),
+      RENT_A_CAR_REG_SCREEN: (BuildContext context) =>
+          RentACarRegistrationScreen(),
     };
   }
 }

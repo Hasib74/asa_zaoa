@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/widgets/app_button.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
-
 
 class RentACarBrandList extends StatefulWidget {
   const RentACarBrandList({Key? key}) : super(key: key);
@@ -145,7 +145,9 @@ class _RentACarBrandListState extends State<RentACarBrandList> {
             style: AppTextStyle.normalTextStyle!.copyWith(
               color: AppColors.primaryColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.RENT_A_CAR_MODEL_SCREEN);
+            },
           ),
           SizedBox(
             height: 20,

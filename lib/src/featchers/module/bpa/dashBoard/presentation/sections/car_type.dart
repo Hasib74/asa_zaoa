@@ -1,6 +1,7 @@
 import 'package:asa_zaoa/src/core/widgets/round_icon_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/utils/app_assets.dart';
 
 class CarType extends StatelessWidget {
@@ -9,7 +10,7 @@ class CarType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-         physics: NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
         shrinkWrap: true,
         children: [
@@ -18,6 +19,12 @@ class CarType extends StatelessWidget {
             imageUrl: AppAssets.home,
             titile: 'Rent A Car',
             iconColor: Colors.black,
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.RENT_A_CAR_MAIN_SCREEN,
+              );
+            },
           ),
           AppIconWithTextButton(
             size: 50,

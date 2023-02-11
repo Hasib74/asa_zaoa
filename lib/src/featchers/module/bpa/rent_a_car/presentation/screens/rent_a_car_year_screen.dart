@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/utils/app_colors.dart';
 import '../widgets/rent_a_car_add_title.dart';
 import '../widgets/rent_a_car_year_list.dart';
@@ -17,7 +18,7 @@ class RentACarYearScreen extends StatelessWidget {
               clipper: CurveClipper(),
               child: Container(
                 color: AppColors.lightGrey,
-                child: RentACarAddTitle(),
+                child: RentACarAddTitle(title: "ADD A NEW CAR"),
               ),
             ),
             SizedBox(

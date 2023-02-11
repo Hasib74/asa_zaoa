@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/app_colors.dart';
 import '../widgets/rent_a_car_add_title.dart';
-import '../widgets/rent_a_car_brand_list.dart';
+import '../widgets/rent_a_car_reg_form.dart';
 
-class RentACarBrandScreen extends StatelessWidget {
-  RentACarBrandScreen({Key? key}) : super(key: key);
+class RentACarRegistrationScreen extends StatelessWidget {
+  RentACarRegistrationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class RentACarBrandScreen extends StatelessWidget {
               clipper: CurveClipper(),
               child: Container(
                 color: AppColors.lightGrey,
-                child: RentACarAddTitle(title: "ADD A NEW CAR"),
+                child: RentACarAddTitle(title: "CAR REGISTRATION"),
               ),
             ),
             SizedBox(
@@ -27,7 +27,7 @@ class RentACarBrandScreen extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
-                child: RentACarBrandList(),
+                child: RentACarRegForm(),
               ),
             ),
           ],

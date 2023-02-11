@@ -7,6 +7,6 @@ class SplashScreenFunctions {
     await Future.delayed(const Duration(seconds: 3));
 
     Navigator.pushNamedAndRemoveUntil(
-        context, AppRoutes.RENT_A_CAR_YEAR_SCREEN, (route) => false);
+        context, AppRoutes.WELCOME_SCREEN, (route) => false);
   }
 }
