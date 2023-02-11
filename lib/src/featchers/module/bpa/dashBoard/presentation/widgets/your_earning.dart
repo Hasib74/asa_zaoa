@@ -8,27 +8,29 @@ class YourEarning extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      width: MediaQuery.of(context).size.width * 0.5,
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(42),
-        border: Border.all(color: AppColors.shadowColor, width: 2),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "Your Earning",
-            style: AppTextStyle.normalTextStyle,
-          ),
-          Text(
-            "TK 0.00",
-            style: AppTextStyle.boldTextStyle,
-          ),
-        ],
+    return Center(
+      child: Container(
+        height: 70,
+        width: MediaQuery.of(context).size.width * 0.5,
+        decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(42),
+          border: Border.all(color: AppColors.shadowColor, width: 2),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Your Earning",
+              style: AppTextStyle.normalTextStyle,
+            ),
+            Text(
+              "TK 0.00",
+              style: AppTextStyle.boldTextStyle,
+            ),
+          ],
+        ),
       ),
     );
   }

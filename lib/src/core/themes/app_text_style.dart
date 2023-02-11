@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../utils/app_colors.dart';
@@ -10,6 +9,11 @@ class AppTextStyle {
       fontSize: AppDimension.h1,
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.bold);
+  static TextStyle? semiBoldTextStyle = TextStyle(
+      color: AppColors.primaryColor,
+      fontSize: AppDimension.h1 - 5,
+      wordSpacing: AppDimension.wordSpacing,
+      fontWeight: FontWeight.w600);
 
   static TextStyle? normalTextStyle = TextStyle(
       color: AppColors.primaryColor,

@@ -15,8 +15,9 @@ class AppIconWithTextButton extends StatelessWidget {
   double? width;
   Color? iconColor;
   Color? textColor;
-
   bool isCircle;
+  double? fontSize;
+  TextStyle? textStyle;
 
   AppIconWithTextButton({
     Key? key,
@@ -29,6 +30,8 @@ class AppIconWithTextButton extends StatelessWidget {
     this.iconColor,
     this.textColor,
     this.isCircle = false,
+    this.fontSize,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -60,10 +63,10 @@ class AppIconWithTextButton extends StatelessWidget {
             AppSpaces.spacesHeight10,
             if (titile != null)
               Text(titile!,
-                  style: isCircle
-                      ? AppTextStyle.boldTextStyle
-                      : AppTextStyle.normalTextStyle!
-                          .copyWith(color: textColor)),
+                  style: textStyle !=null? textStyle: isCircle
+                      ?  AppTextStyle.boldTextStyle
+                      :   AppTextStyle.normalTextStyle!
+                          .copyWith(color: textColor ,fontSize: fontSize)),
           ],
         ));
   }

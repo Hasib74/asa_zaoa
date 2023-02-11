@@ -12,21 +12,18 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ProfileImage(),
-          AppSpaces.spacesHeight35,
-          Text("WELCOME HASIB AKON"),
-          AppSpaces.spacesHeight15,
-          YourEarning(),
-          AppSpaces.spacesHeight15,
-          CarBanner(),
-          AppSpaces.spacesHeight15,
-          Expanded(child:   CarType(),)
-
-
-        ],
-      )
-    );
+        body: ListView(
+      children: [
+        ProfileImage(),
+        AppSpaces.spacesHeight35,
+        Center(child: Text("WELCOME HASIB AKON")),
+        AppSpaces.spacesHeight15,
+        YourEarning(),
+        AppSpaces.spacesHeight15,
+        CarBanner(),
+        AppSpaces.spacesHeight15,
+        CarType()
+      ],
+    ));
   }
 }

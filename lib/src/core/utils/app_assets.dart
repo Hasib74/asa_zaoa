@@ -25,4 +25,13 @@ class AppAssets {
   static String trip_png = _icons + "trip.png";
   static String car_banner = _images + "car_banner.svg";
   static String car_banner_png = _images + "car_banner.png";
+  static String car = _images + "car.svg";
+  static String car_png = _images + "car.png";
+  static String office_car = _images + "office_car.svg";
+  static String office_car_png = _images + "office_car.png";
+  static String return_car = _images + "return_car.svg";
+  static String return_car_png = _images + "return_car.png";
+  static String ambulance = _images + "ambulance.svg";
+  static String ambulance_png = _images + "ambulance.png";
+
 }
