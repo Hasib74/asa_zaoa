@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../utils/app_assets.dart';
+
 import '../utils/app_colors.dart';
 import 'app_country_picker_widgets.dart';
 
@@ -12,7 +12,7 @@ class AppTextFiled extends StatelessWidget {
   String? prefixIcon;
   bool prefixEnable;
 
-  String? suffixIcon;
+  Widget? suffixIcon;
 
   Color? focusedBorderColor = AppColors.primaryColor;
   Color? errorBorderColor;
@@ -29,7 +29,7 @@ class AppTextFiled extends StatelessWidget {
   int? maxLine;
 
   int? maxLength;
-  bool? isCenter;
+  bool isCenter;
 
   double? height;
 
@@ -37,7 +37,7 @@ class AppTextFiled extends StatelessWidget {
 
   TextInputType? textInputType;
 
-  bool? obscureText;
+  bool obscureText;
 
   TextInputAction? textInputAction;
   Function(String)? onValue;
@@ -46,9 +46,11 @@ class AppTextFiled extends StatelessWidget {
 
   EdgeInsets? contentPadding;
 
-  bool? isPhoneNumberSelectAble;
+  bool isPhoneNumberSelectAble;
 
-  bool? isBorderEnable;
+  bool isBorderEnable;
+  bool Function()? onTap;
+  InputBorder? border;
 
   AppTextFiled({
     Key? key,
@@ -75,8 +77,10 @@ class AppTextFiled extends StatelessWidget {
     this.textInputAction,
     this.onEditingComplete,
     this.contentPadding,
-    this.isPhoneNumberSelectAble: false,
-    this.isBorderEnable: true,
+    this.isPhoneNumberSelectAble = false,
+    this.isBorderEnable = true,
+    this.onTap,
+    this.border,
   }) : super(key: key);
 
   @override
@@ -85,17 +89,18 @@ class AppTextFiled extends StatelessWidget {
       width: width ?? MediaQuery.of(context).size.width * 0.9,
       height: height ?? 50,
       child: TextField(
+        onTap: onTap,
         onEditingComplete: onEditingComplete,
         textInputAction: textInputAction,
         onChanged: (v) => onValue!(v),
-        obscureText: obscureText!,
+        obscureText: obscureText,
         keyboardType: textInputType ?? TextInputType.text,
         enabled: isEnable,
         focusNode: focusNode,
         //enabled: this.isEnable,
         controller: textEditingController,
         maxLength: this.maxLength,
-        maxLines: obscureText! ? 1 : this.maxLine,
+        maxLines: obscureText ? 1 : this.maxLine,
 
         style: maxLength == 1
             ? Theme.of(context)
@@ -112,49 +117,50 @@ class AppTextFiled extends StatelessWidget {
 
           labelText: label,
           labelStyle: TextStyle(color: AppColors.shadowColor),
-          errorBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: errorBorderColor ?? AppColors.errorColor,
-              ),
-              borderRadius: BorderRadius.circular(40)),
-          focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                  width: 2, color: focusedBorderColor ?? AppColors.shadowColor),
-              borderRadius: BorderRadius.circular(40)),
-          disabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                  width: 2,
-                  color: disabledBorderColor ?? AppColors.shadowColor),
-              borderRadius: BorderRadius.circular(40)),
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                  width: 2, color: enabledBorderColor ?? AppColors.shadowColor),
-              borderRadius: BorderRadius.circular(40)),
+          errorBorder: border ??
+              OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: errorBorderColor ?? AppColors.errorColor,
+                  ),
+                  borderRadius: BorderRadius.circular(40)),
+          focusedBorder: border ??
+              OutlineInputBorder(
+                  borderSide: BorderSide(
+                      width: 2,
+                      color: focusedBorderColor ?? AppColors.shadowColor),
+                  borderRadius: BorderRadius.circular(40)),
+          disabledBorder: border ??
+              OutlineInputBorder(
+                  borderSide: BorderSide(
+                      width: 2,
+                      color: disabledBorderColor ?? AppColors.shadowColor),
+                  borderRadius: BorderRadius.circular(40)),
+          enabledBorder: border ??
+              OutlineInputBorder(
+                  borderSide: BorderSide(
+                      width: 2,
+                      color: enabledBorderColor ?? AppColors.shadowColor),
+                  borderRadius: BorderRadius.circular(40)),
           // border: UnderlineInputBorder(),
-          prefixIcon:
-              isPhoneNumberSelectAble != null && isPhoneNumberSelectAble == true
-                  ? _selectPhoneNumber()
-                  : prefixIcon != null
-                      ? Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: SvgPicture.asset(prefixIcon!),
+          prefixIcon: isPhoneNumberSelectAble == true
+              ? _selectPhoneNumber()
+              : prefixIcon != null
+                  ? Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: SvgPicture.asset(prefixIcon!),
+                    )
+                  : prefixEnable
+                      ? SizedBox(
+                          width: 90,
+                          child: Row(
+                            children: [
+                              // Image(image: AssetImage(AppAssets.bd)),
+                              const Text(" +880 "),
+                            ],
+                          ),
                         )
-                      : prefixEnable
-                          ? SizedBox(
-                              width: 90,
-                              child: Row(
-                                children: [
-                                  // Image(image: AssetImage(AppAssets.bd)),
-                                  const Text(" +880 "),
-                                ],
-                              ),
-                            )
-                          : null,
-          suffixIcon: suffixIcon != null
-              ? Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: SvgPicture.asset(suffixIcon!))
-              : null,
+                      : null,
+          suffixIcon: suffixIcon,
         ),
       ),
     );
