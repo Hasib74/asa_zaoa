@@ -1,3 +1,4 @@
+import 'package:asa_zaoa/src/core/routes/app_routes.dart';
 import 'package:asa_zaoa/src/core/utils/app_spaces.dart';
 import 'package:asa_zaoa/src/featchers/module/bpa/dashBoard/presentation/sections/car_type.dart';
 import 'package:asa_zaoa/src/featchers/module/bpa/dashBoard/presentation/sections/profile_image.dart';
@@ -14,7 +15,11 @@ class DashBoardScreen extends StatelessWidget {
     return Scaffold(
         body: ListView(
       children: [
-        ProfileImage(),
+        InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.CREATE_BPA_PROFILE_SCREEN);
+            },
+            child: ProfileImage()),
         AppSpaces.spacesHeight35,
         Center(child: Text("WELCOME HASIB AKON")),
         AppSpaces.spacesHeight15,

@@ -18,6 +18,7 @@ class Assets {
   static const String fontsMontserratRegular = 'assets/fonts/Montserrat-Regular.ttf';
   static const String fontsMontserratSemiBold = 'assets/fonts/Montserrat-SemiBold.ttf';
   static const String fontsMontserratThin = 'assets/fonts/Montserrat-Thin.ttf';
+  static const String iconsCamera = 'assets/icons/camera.png';
   static const String iconsDashBoard = 'assets/icons/dash_board.svg';
   static const String iconsHistory = 'assets/icons/history.svg';
   static const String iconsHome = 'assets/icons/home.svg';

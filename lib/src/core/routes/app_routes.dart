@@ -4,6 +4,7 @@ import '../../featchers/auth/presentation/screen/otp_verification_screen.dart';
 import '../../featchers/auth/presentation/screen/sign_in_screen.dart';
 import '../../featchers/auth/presentation/screen/sign_up_screen.dart';
 import '../../featchers/module/bpa/_display/presentation/screen/bpa_display_screen.dart';
+import '../../featchers/module/bpa/profile/presenation/screen/create_profile_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
@@ -26,6 +27,7 @@ class AppRoutes {
   static String RENT_A_CAR_MODEL_SCREEN = "/rent_a_car_model_screen";
   static String RENT_A_CAR_YEAR_SCREEN = "/rent_a_car_year_screen";
   static String RENT_A_CAR_REG_SCREEN = "/rent_a_car_reg_screen";
+  static String CREATE_BPA_PROFILE_SCREEN = "/create_bpa_profile_screen";
 
   static getAppRoutes() {
     return {
@@ -47,6 +49,8 @@ class AppRoutes {
       RENT_A_CAR_YEAR_SCREEN: (BuildContext context) => RentACarYearScreen(),
       RENT_A_CAR_REG_SCREEN: (BuildContext context) =>
           RentACarRegistrationScreen(),
+      CREATE_BPA_PROFILE_SCREEN: (BuildContext context) =>
+          CreateBpaProfileScreen(),
     };
   }
 }

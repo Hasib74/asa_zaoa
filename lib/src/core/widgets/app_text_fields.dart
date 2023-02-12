@@ -52,6 +52,8 @@ class AppTextFiled extends StatelessWidget {
   bool Function()? onTap;
   InputBorder? border;
 
+  Alignment? align ;
+
   AppTextFiled({
     Key? key,
     this.prefixEnable = false,
@@ -81,6 +83,7 @@ class AppTextFiled extends StatelessWidget {
     this.isBorderEnable = true,
     this.onTap,
     this.border,
+    this.align,
   }) : super(key: key);
 
   @override
@@ -89,6 +92,7 @@ class AppTextFiled extends StatelessWidget {
       width: width ?? MediaQuery.of(context).size.width * 0.9,
       height: height ?? 50,
       child: TextField(
+
         onTap: onTap,
         onEditingComplete: onEditingComplete,
         textInputAction: textInputAction,
