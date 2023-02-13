@@ -19,11 +19,13 @@ class Assets {
   static const String fontsMontserratSemiBold = 'assets/fonts/Montserrat-SemiBold.ttf';
   static const String fontsMontserratThin = 'assets/fonts/Montserrat-Thin.ttf';
   static const String iconsCamera = 'assets/icons/camera.png';
+  static const String iconsCameraIcon = 'assets/icons/camera_icon.png';
   static const String iconsDashBoard = 'assets/icons/dash_board.svg';
   static const String iconsHistory = 'assets/icons/history.svg';
   static const String iconsHome = 'assets/icons/home.svg';
   static const String iconsMessage = 'assets/icons/message.svg';
   static const String iconsTrip = 'assets/icons/trip.svg';
+  static const String iconsUser = 'assets/icons/user.png';
   static const String imagesAmbulance = 'assets/images/ambulance.png';
   static const String imagesBpa = 'assets/images/bpa.png';
   static const String imagesCar = 'assets/images/car.png';

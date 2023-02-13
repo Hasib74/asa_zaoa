@@ -34,5 +34,8 @@ class AppAssets {
   static String ambulance = _images + "ambulance.svg";
   static String ambulance_png = _images + "ambulance.png";
   static String camera_png = _icons + "camera.png";
+  static String camera_svg = _icons + "camera.svg";
+  static String camera_icon_png = _icons + "camera_icon.png";
+  static String user_png = _icons + "user.png";
 
 }

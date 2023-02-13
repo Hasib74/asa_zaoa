@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 class BpaProfileTextFiled extends StatelessWidget {
   String? name;
-
   String? hint;
 
   TextEditingController? controller;
@@ -22,7 +21,7 @@ class BpaProfileTextFiled extends StatelessWidget {
           flex: 1,
           child: Text(
             name!,
-            style: AppTextStyle.normalTextStyle,
+            style: AppTextStyle.smallTextStyle,
           ),
         ),
         AppSpaces.spacesWidth15,
@@ -32,7 +31,6 @@ class BpaProfileTextFiled extends StatelessWidget {
             textEditingController: controller!,
             hint: hint,
             isCenter: true,
-
           ),
         ),
         AppSpaces.spacesWidth15,

@@ -1,3 +1,4 @@
+import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -52,7 +53,7 @@ class AppTextFiled extends StatelessWidget {
   bool Function()? onTap;
   InputBorder? border;
 
-  Alignment? align ;
+  Alignment? align;
 
   AppTextFiled({
     Key? key,
@@ -92,7 +93,6 @@ class AppTextFiled extends StatelessWidget {
       width: width ?? MediaQuery.of(context).size.width * 0.9,
       height: height ?? 50,
       child: TextField(
-
         onTap: onTap,
         onEditingComplete: onEditingComplete,
         textInputAction: textInputAction,
@@ -115,6 +115,7 @@ class AppTextFiled extends StatelessWidget {
         textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
         decoration: InputDecoration(
           hintText: hint,
+          hintStyle: AppTextStyle.hintStyle,
           contentPadding:
               contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
           counter: null,

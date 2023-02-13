@@ -59,6 +59,12 @@ class TopSection extends StatelessWidget {
                     color: AppColors.white,
                     shape: BoxShape.circle,
                   ),
+
+                  child: AppImageView(
+                    imageUrl: AppAssets.user_png,
+                    height: MediaQuery.of(context).size.width * 0.35,
+                    width: MediaQuery.of(context).size.width * 0.35,
+                  )
                 ),
               ),
               Positioned(

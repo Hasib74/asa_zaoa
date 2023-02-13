@@ -15,6 +15,12 @@ class AppTextStyle {
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.w600);
 
+  static TextStyle? smallTextStyle = TextStyle(
+      color: AppColors.textFiledHintColor,
+      fontSize: AppDimension.b1,
+      wordSpacing: AppDimension.wordSpacing,
+      fontWeight: FontWeight.normal);
+
   static TextStyle? normalTextStyle = TextStyle(
       color: AppColors.primaryColor,
       fontSize: AppDimension.b2,
@@ -25,4 +31,10 @@ class AppTextStyle {
       fontSize: AppDimension.h1,
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.w500);
+
+  static TextStyle?  hintStyle = TextStyle(
+      color: AppColors.textFiledHintColor,
+      fontSize: AppDimension.b2,
+      wordSpacing: AppDimension.wordSpacing,
+      fontWeight: FontWeight.normal);
 }
