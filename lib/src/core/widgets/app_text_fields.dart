@@ -21,6 +21,8 @@ class AppTextFiled extends StatelessWidget {
   Color? enabledBorderColor = AppColors.shadowColor;
   Color? disabledBorderColor;
 
+  Color? backgroundColor;
+
   bool isEnable;
 
   String? label;
@@ -65,6 +67,7 @@ class AppTextFiled extends StatelessWidget {
     this.enabledBorderColor,
     this.errorBorderColor,
     this.disabledBorderColor,
+    this.backgroundColor,
     this.isEnable = true,
     required this.textEditingController,
     this.label,
@@ -119,6 +122,8 @@ class AppTextFiled extends StatelessWidget {
           contentPadding:
               contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
           counter: null,
+          filled: backgroundColor != null,
+          fillColor: backgroundColor,
 
           labelText: label,
           labelStyle: TextStyle(color: AppColors.shadowColor),

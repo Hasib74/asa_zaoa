@@ -6,14 +6,12 @@ import '../utils/app_dimension.dart';
 class _ThemeName {
   _ThemeName._();
 
-//static String poppins = "Poppins";
+  static String montserrat = "Montserrat";
 }
 
 class AppTheme {
   static ThemeData themeDataLight = new ThemeData(
-
-
-      //fontFamily: _ThemeName.poppins,
+      fontFamily: _ThemeName.montserrat,
       brightness: Brightness.light,
       primaryColor: AppColors.primaryColor,
       scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
