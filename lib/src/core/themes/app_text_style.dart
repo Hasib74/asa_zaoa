@@ -31,8 +31,13 @@ class AppTextStyle {
       fontSize: AppDimension.h1,
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.w500);
+  static TextStyle? extraLargeTextStyle = TextStyle(
+      color: AppColors.primaryColor,
+      fontSize: AppDimension.h1,
+      wordSpacing: AppDimension.wordSpacing,
+      fontWeight: FontWeight.w800);
 
-  static TextStyle?  hintStyle = TextStyle(
+  static TextStyle? hintStyle = TextStyle(
       color: AppColors.textFiledHintColor,
       fontSize: AppDimension.b2,
       wordSpacing: AppDimension.wordSpacing,
