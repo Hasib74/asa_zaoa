@@ -1,14 +1,12 @@
 import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
 import 'package:asa_zaoa/src/core/utils/app_colors.dart';
 import 'package:asa_zaoa/src/core/utils/app_spaces.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppToggleSwitcher extends StatefulWidget {
   String? activeTitle;
   String? deActiveTitle;
   Function(bool)? onChanged;
-
   double? width;
 
   AppToggleSwitcher(

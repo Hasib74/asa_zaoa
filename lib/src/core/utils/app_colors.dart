@@ -20,6 +20,7 @@ class AppColors {
   static var white = Colors.white;
   static Color lightGrey = Color(0xFFF5F5F5);
   static Color grey = Color(0xFFA1A1A1);
+  static Color darkGrey = Color(0xFF5F5F5F);
   static var black = Colors.black;
   static var blue = Color(0xff0061FF);
   static var textColorOne = Color(0xff015377);

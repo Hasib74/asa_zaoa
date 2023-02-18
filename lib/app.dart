@@ -2,7 +2,6 @@ import 'package:asa_zaoa/src/core/routes/app_routes.dart';
 import 'package:asa_zaoa/src/core/themes/app_themes.dart';
 import 'package:asa_zaoa/src/featchers/splash/presentation/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:overlayment/overlayment.dart';
 
 double? appHeight;
 
@@ -14,8 +13,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final key = GlobalKey<NavigatorState>();
-    Overlayment.navigationKey = key;
+    // final key = GlobalKey<NavigatorState>();
+    // Overlayment.navigationKey = key;
     return MaterialApp(
       // navigatorKey: key,
       debugShowCheckedModeBanner: false,

@@ -4,12 +4,44 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
+import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_button.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
 import '../../../../../../core/widgets/app_text_fields.dart';
 
 class RentACarRegForm extends StatelessWidget {
-  const RentACarRegForm({Key? key}) : super(key: key);
+  RentACarRegForm({Key? key}) : super(key: key);
+
+  List<String> areaList = [
+    'Dhaka Metro',
+    'Chittagong Metro',
+    'Khulna',
+    'Mymensingh',
+    'Barishal',
+    'Rangpur',
+    'Rajshahi',
+    'Narayanganj',
+    'Chandpur',
+    'Comilla',
+    'Feni',
+  ];
+  List<String> serialList = [
+    'ক',
+    'খ',
+    'গ',
+    'ঘ',
+    'ঙ',
+    'চ',
+    'ছ',
+    'জ',
+    'ঝ',
+    'ঞ',
+    'ট',
+    'ঠ'
+  ];
+
+  TextEditingController areaController = TextEditingController();
+  TextEditingController serialController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -76,8 +108,21 @@ class RentACarRegForm extends StatelessWidget {
               Expanded(
                 child: AppTextFiled(
                   hint: "Choose",
-                  textEditingController: TextEditingController(),
+                  textEditingController: areaController,
                   isCenter: true,
+                  isEnable: false,
+                  onTap: () {
+                    Overlayment.show(
+                      context: context,
+                      child: dropdownList(
+                        context,
+                        data: areaList,
+                        onTap: (index) {
+                          areaController.text = areaList[index];
+                        },
+                      ),
+                    );
+                  },
                   suffixIcon: Icon(
                     Icons.arrow_drop_down_rounded,
                     size: 40,
@@ -87,7 +132,7 @@ class RentACarRegForm extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Row(
             children: [
               SizedBox(
@@ -104,8 +149,21 @@ class RentACarRegForm extends StatelessWidget {
               Expanded(
                 child: AppTextFiled(
                   hint: "Choose",
-                  textEditingController: TextEditingController(),
+                  textEditingController: serialController,
                   isCenter: true,
+                  isEnable: false,
+                  onTap: () {
+                    Overlayment.show(
+                      context: context,
+                      child: dropdownList(
+                        context,
+                        data: serialList,
+                        onTap: (index) {
+                          serialController.text = serialList[index];
+                        },
+                      ),
+                    );
+                  },
                   suffixIcon: Icon(
                     Icons.arrow_drop_down_rounded,
                     size: 40,
@@ -115,7 +173,7 @@ class RentACarRegForm extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Row(
             children: [
               SizedBox(
@@ -182,7 +240,7 @@ class RentACarRegForm extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Row(
             children: [
               Expanded(
@@ -363,6 +421,43 @@ class RentACarRegForm extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ],
+      ),
+    );
+  }
+
+  Widget dropdownList(BuildContext context,
+      {required List<String> data, required Function(int index) onTap}) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: ListView.separated(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        separatorBuilder: (_, i) {
+          return SizedBox(height: 2);
+        },
+        itemCount: data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+            onTap: () {
+              onTap(index);
+              Navigator.of(context).pop();
+            },
+            child: Container(
+              color: AppColors.white,
+              padding: EdgeInsets.all(10),
+              child: Text(
+                data[index],
+                style: AppTextStyle.normalTextStyle!.copyWith(
+                  fontSize: AppDimension.b2 + 2,
+                  color: AppColors.darkGrey,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          );
+        },
       ),
     );
   }

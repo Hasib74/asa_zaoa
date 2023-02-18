@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 
 import '../../../../core/dependencyInjection/app_dependency_injections.dart';
-import '../../../../core/flavor/app_flavor.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/app_image_view.dart';
 import '../functions/splash_screen_functions.dart';

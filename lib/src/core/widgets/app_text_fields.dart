@@ -52,7 +52,7 @@ class AppTextFiled extends StatelessWidget {
   bool isPhoneNumberSelectAble;
 
   bool isBorderEnable;
-  bool Function()? onTap;
+  Function()? onTap;
   InputBorder? border;
 
   Alignment? align;
@@ -98,90 +98,90 @@ class AppTextFiled extends StatelessWidget {
     return SizedBox(
       width: width ?? MediaQuery.of(context).size.width * 0.9,
       height: height ?? 50,
-      child: TextField(
+      child: GestureDetector(
         onTap: onTap,
-        onEditingComplete: onEditingComplete,
-        textInputAction: textInputAction,
-        onChanged: (v) => onValue!(v),
-        obscureText: obscureText,
-        keyboardType: textInputType ?? TextInputType.text,
-        enabled: isEnable,
-        focusNode: focusNode,
-        //enabled: this.isEnable,
-        controller: textEditingController,
-        maxLength: this.maxLength,
-        maxLines: obscureText ? 1 : this.maxLine,
+        child: TextField(
+          onEditingComplete: onEditingComplete,
+          textInputAction: textInputAction,
+          onChanged: (v) => onValue!(v),
+          obscureText: obscureText,
+          keyboardType: textInputType ?? TextInputType.text,
+          enabled: isEnable,
+          focusNode: focusNode,
+          //enabled: this.isEnable,
+          controller: textEditingController,
+          maxLength: this.maxLength,
+          maxLines: obscureText ? 1 : this.maxLine,
 
-        style: maxLength == 1
-            ? Theme.of(context)
-                .textTheme
-                .headline6
-                ?.copyWith(color: AppColors.shadowColor)
-            : null,
-        textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: AppTextStyle.hintStyle,
-          contentPadding:
-              contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
-          counter: null,
-          filled: backgroundColor != null,
-          fillColor: backgroundColor,
+          style: maxLength == 1
+              ? Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: AppColors.shadowColor)
+              : null,
+          textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
+          decoration: InputDecoration(
+            hintText: hint,
+            hintStyle: AppTextStyle.hintStyle,
+            contentPadding:
+                contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
+            counter: null,
+            filled: backgroundColor != null,
+            fillColor: backgroundColor,
 
-          labelText: label,
-          labelStyle: TextStyle(color: AppColors.shadowColor),
-          errorBorder: border ??
-              OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: errorBorderColor ?? AppColors.errorColor,
-                  ),
-                  borderRadius: BorderRadius.circular(40)),
-          focusedBorder: border ??
-              OutlineInputBorder(
-                  borderSide: BorderSide(
-                      width: 2,
-                      color: focusedBorderColor ?? AppColors.shadowColor),
-                  borderRadius: BorderRadius.circular(40)),
-          disabledBorder: border ??
-              OutlineInputBorder(
-                  borderSide: BorderSide(
-                      width: 2,
-                      color: disabledBorderColor ?? AppColors.shadowColor),
-                  borderRadius: BorderRadius.circular(40)),
-          enabledBorder: border ??
-              OutlineInputBorder(
-                  borderSide: BorderSide(
-                      width: 2,
-                      color: enabledBorderColor ?? AppColors.shadowColor),
-                  borderRadius: BorderRadius.circular(40)),
-          // border: UnderlineInputBorder(),
-          prefixIcon: isPhoneNumberSelectAble == true
-              ? _selectPhoneNumber()
-              : prefixIcon != null
-                  ? Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: SvgPicture.asset(prefixIcon!),
-                    )
-                  : prefixEnable
-                      ? SizedBox(
-                          width: 90,
-                          child: Row(
-                            children: [
-                              // Image(image: AssetImage(AppAssets.bd)),
-                              const Text(" +880 "),
-                            ],
-                          ),
-                        )
-                      : null,
-          suffixIcon: suffixIcon,
+            labelText: label,
+            labelStyle: TextStyle(color: AppColors.shadowColor),
+            errorBorder: border ??
+                OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: errorBorderColor ?? AppColors.errorColor,
+                    ),
+                    borderRadius: BorderRadius.circular(40)),
+            focusedBorder: border ??
+                OutlineInputBorder(
+                    borderSide: BorderSide(
+                        width: 2,
+                        color: focusedBorderColor ?? AppColors.shadowColor),
+                    borderRadius: BorderRadius.circular(40)),
+            disabledBorder: border ??
+                OutlineInputBorder(
+                    borderSide: BorderSide(
+                        width: 2,
+                        color: disabledBorderColor ?? AppColors.shadowColor),
+                    borderRadius: BorderRadius.circular(40)),
+            enabledBorder: border ??
+                OutlineInputBorder(
+                    borderSide: BorderSide(
+                        width: 2,
+                        color: enabledBorderColor ?? AppColors.shadowColor),
+                    borderRadius: BorderRadius.circular(40)),
+            // border: UnderlineInputBorder(),
+            prefixIcon: isPhoneNumberSelectAble == true
+                ? _selectPhoneNumber()
+                : prefixIcon != null
+                    ? Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: SvgPicture.asset(prefixIcon!),
+                      )
+                    : prefixEnable
+                        ? SizedBox(
+                            width: 90,
+                            child: Row(
+                              children: [
+                                // Image(image: AssetImage(AppAssets.bd)),
+                                const Text(" +880 "),
+                              ],
+                            ),
+                          )
+                        : null,
+            suffixIcon: suffixIcon,
+          ),
         ),
       ),
     );
   }
 
   _maskIcon() {
-
-
     bool isMusk;
     return Icon(Icons.visibility_off);
   }

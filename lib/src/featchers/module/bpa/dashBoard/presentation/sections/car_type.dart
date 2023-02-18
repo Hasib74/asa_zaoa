@@ -32,7 +32,7 @@ class CarType extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                AppRoutes.RENT_A_CAR_MAIN_SCREEN,
+                AppRoutes.RENT_A_CAR_INFO_SCREEN,
               );
             },
             textStyle: AppTextStyle.semiBoldTextStyle,

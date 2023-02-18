@@ -26,11 +26,13 @@ class AppTextStyle {
       fontSize: AppDimension.b2,
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.normal);
+
   static TextStyle? largeTextStyle = TextStyle(
       color: AppColors.primaryColor,
       fontSize: AppDimension.h1,
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.w500);
+
   static TextStyle? extraLargeTextStyle = TextStyle(
       color: AppColors.primaryColor,
       fontSize: AppDimension.h1 + 8,

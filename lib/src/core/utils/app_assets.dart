@@ -18,6 +18,7 @@ class AppAssets {
   static String message = _icons + "message.svg";
   static String message_png = _icons + "message.png";
   static String trip = _icons + "trip.svg";
+  static String rent_a_car_banner = _images + "rent_a_car_banner.png";
   static String rent_a_car_icon = _images + "rent_a_car_icon.png";
   static String car_icon = _images + "car_icon.png";
   static String car_add_icon = _images + "car_add_icon.png";
@@ -37,6 +38,7 @@ class AppAssets {
   static String camera_svg = _icons + "camera.svg";
   static String camera_icon_png = _icons + "camera_icon.png";
   static String user_png = _icons + "user.png";
+
   static String drawer_menu = _icons + "drawer_menu.svg";
   static String add_car_icon = _icons + "add_car_icon.svg";
   static String add_car_icon_png = _icons + "add_car_icon.png";
