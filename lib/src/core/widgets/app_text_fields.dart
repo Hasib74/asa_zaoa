@@ -92,6 +92,9 @@ class AppTextFiled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (obscureText == true) {
+      suffixIcon = _maskIcon();
+    }
     return SizedBox(
       width: width ?? MediaQuery.of(context).size.width * 0.9,
       height: height ?? 50,
@@ -174,6 +177,13 @@ class AppTextFiled extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _maskIcon() {
+
+
+    bool isMusk;
+    return Icon(Icons.visibility_off);
   }
 
   _selectPhoneNumber() {

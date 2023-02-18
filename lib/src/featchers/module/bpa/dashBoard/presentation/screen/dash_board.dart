@@ -1,5 +1,6 @@
 import 'package:asa_zaoa/src/core/routes/app_routes.dart';
 import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
+import 'package:asa_zaoa/src/core/utils/app_colors.dart';
 import 'package:asa_zaoa/src/core/utils/app_spaces.dart';
 import 'package:asa_zaoa/src/core/widgets/app_button.dart';
 import 'package:asa_zaoa/src/featchers/module/bpa/dashBoard/presentation/sections/car_type.dart';
@@ -7,6 +8,7 @@ import 'package:asa_zaoa/src/featchers/module/bpa/dashBoard/presentation/section
 import 'package:flutter/material.dart';
 import 'package:overlayment/overlayment.dart';
 
+import '../../../../../../core/widgets/bpa_app_bar.dart';
 import '../sections/car_banner.dart';
 import '../widgets/your_earning.dart';
 

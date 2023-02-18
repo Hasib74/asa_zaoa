@@ -33,7 +33,7 @@ class AppTextStyle {
       fontWeight: FontWeight.w500);
   static TextStyle? extraLargeTextStyle = TextStyle(
       color: AppColors.primaryColor,
-      fontSize: AppDimension.h1,
+      fontSize: AppDimension.h1 + 8,
       wordSpacing: AppDimension.wordSpacing,
       fontWeight: FontWeight.w800);
 

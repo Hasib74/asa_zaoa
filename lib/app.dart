@@ -1,5 +1,6 @@
 import 'package:asa_zaoa/src/core/routes/app_routes.dart';
 import 'package:asa_zaoa/src/core/themes/app_themes.dart';
+import 'package:asa_zaoa/src/featchers/splash/presentation/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:overlayment/overlayment.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     final key = GlobalKey<NavigatorState>();
     Overlayment.navigationKey = key;
     return MaterialApp(
-      navigatorKey: key,
+      // navigatorKey: key,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeDataLight,
       routes: AppRoutes.getAppRoutes(),

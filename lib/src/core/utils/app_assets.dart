@@ -37,5 +37,17 @@ class AppAssets {
   static String camera_svg = _icons + "camera.svg";
   static String camera_icon_png = _icons + "camera_icon.png";
   static String user_png = _icons + "user.png";
-
+  static String drawer_menu = _icons + "drawer_menu.svg";
+  static String add_car_icon = _icons + "add_car_icon.svg";
+  static String add_car_icon_png = _icons + "add_car_icon.png";
+  static String add_driver_icon = _icons + "add_driver_icon.svg";
+  static String add_driver_icon_png = _icons + "add_driver_icon.png";
+  static String change_password_icon = _icons + "change_password_icon.svg";
+  static String change_password_icon_png = _icons + "change_password_icon.png";
+  static String logout_icon = _icons + "log_out_icon.svg";
+  static String logout_icon_png = _icons + "log_out.png";
+  static String profile_icon = _icons + "profile_icon.svg";
+  static String profile_icon_png = _icons + "profile_icon.png";
+  static String settings_icon = _icons + "settings_icon.svg";
+  static String settings_icon_png = _icons + "settings_icon.png";
 }

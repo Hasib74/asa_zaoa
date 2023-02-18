@@ -20,6 +20,7 @@ class AppImageView extends StatelessWidget {
         width: width,
         height: height,
         color: color,
+        fit: BoxFit.cover,
       );
     }
     return SvgPicture.asset(
