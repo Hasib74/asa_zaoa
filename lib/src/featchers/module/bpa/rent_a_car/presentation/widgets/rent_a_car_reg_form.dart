@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
@@ -326,7 +327,12 @@ class RentACarRegForm extends StatelessWidget {
                 style: AppTextStyle.normalTextStyle!.copyWith(
                   color: AppColors.primaryColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.RENT_A_CAR_REG_SUCCESS_SCREEN,
+                  );
+                },
               ),
             ],
           ),

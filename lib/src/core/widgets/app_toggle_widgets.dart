@@ -4,10 +4,10 @@ import 'package:asa_zaoa/src/core/utils/app_spaces.dart';
 import 'package:flutter/material.dart';
 
 class AppToggleSwitcher extends StatefulWidget {
-  String? activeTitle;
-  String? deActiveTitle;
-  Function(bool)? onChanged;
-  double? width;
+  final String? activeTitle;
+  final String? deActiveTitle;
+  final Function(bool)? onChanged;
+  final double? width;
 
   AppToggleSwitcher(
       {Key? key,

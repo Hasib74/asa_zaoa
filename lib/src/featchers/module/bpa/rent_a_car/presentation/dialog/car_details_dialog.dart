@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
+import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
+import '../widgets/toggle_button.dart';
+import 'car_status_change_dialog.dart';
 
 class CarDetailsDialog extends StatelessWidget {
-  const CarDetailsDialog({Key? key}) : super(key: key);
+  CarDetailsDialog({Key? key}) : super(key: key);
+
+  bool isActive = true;
 
   @override
   Widget build(BuildContext context) {
@@ -111,15 +116,27 @@ class CarDetailsDialog extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          // AppToggleSwitcher(
-          //   activeTitle: "ACTIVE",
-          //   deActiveTitle: "INACTIVE",
-          //   width: 150,
-          //   onChanged: (value) {},
-          // ),
-          // SizedBox(
-          //   height: 20,
-          // ),
+          StatefulBuilder(
+              builder: (BuildContext context, StateSetter setState) {
+            return ToggleButton(
+              text: isActive ? "ACTIVE" : "INACTIVE",
+              onChanged: () {
+                Overlayment.show(
+                  context: context,
+                  child: CarStatusChangeDialog(
+                    currentActiveStatus: isActive,
+                    onChange: (val) {
+                      setState(() => isActive = val);
+                    },
+                  ),
+                );
+              },
+              isActive: isActive,
+            );
+          }),
+          SizedBox(
+            height: 20,
+          ),
         ],
       ),
     );

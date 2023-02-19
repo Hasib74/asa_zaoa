@@ -10,6 +10,7 @@ import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_br
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_info_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_reg_success_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_registration.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_year_screen.dart';
 import '../../featchers/splash/presentation/screen/splash_screen.dart';
@@ -30,6 +31,8 @@ class AppRoutes {
   static String RENT_A_CAR_MODEL_SCREEN = "/rent_a_car_model_screen";
   static String RENT_A_CAR_YEAR_SCREEN = "/rent_a_car_year_screen";
   static String RENT_A_CAR_REG_SCREEN = "/rent_a_car_reg_screen";
+  static String RENT_A_CAR_REG_SUCCESS_SCREEN =
+      "/rent_a_car_reg_success_screen";
   static String CREATE_BPA_PROFILE_SCREEN = "/create_bpa_profile_screen";
   static String RESET_PASSWORD_SCREEN = "/reset_password_screen";
 
@@ -54,6 +57,8 @@ class AppRoutes {
       RENT_A_CAR_YEAR_SCREEN: (BuildContext context) => RentACarYearScreen(),
       RENT_A_CAR_REG_SCREEN: (BuildContext context) =>
           RentACarRegistrationScreen(),
+      RENT_A_CAR_REG_SUCCESS_SCREEN: (BuildContext context) =>
+          RentACarRegSuccessScreen(),
       CREATE_BPA_PROFILE_SCREEN: (BuildContext context) =>
           CreateBpaProfileScreen(),
       RESET_PASSWORD_SCREEN: (BuildContext context) => ResetPasswordScreen(),

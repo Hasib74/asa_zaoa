@@ -30,5 +30,5 @@ class AppColors {
 
   static Color shadowColorOne = Color(0xffF8F8F8);
   static Color switcherActiveColor = Color(0xff00D54F);
-  static Color switcherDeActiveColor = Color(0xffF8F8F8);
+  static Color switcherDeActiveColor = Color(0xffC4C4C4);
 }
