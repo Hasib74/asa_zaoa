@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
-import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
 import '../widgets/toggle_button.dart';
-import 'car_status_change_dialog.dart';
 
 class CarDetailsDialog extends StatelessWidget {
   CarDetailsDialog({Key? key}) : super(key: key);
@@ -16,10 +14,10 @@ class CarDetailsDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(25),
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(25),
       ),
       child: Column(
         children: [
@@ -28,7 +26,11 @@ class CarDetailsDialog extends StatelessWidget {
             child: CustomImageWidget(
               imageUrl:
                   "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_675,q_auto:best,w_1200/cms/uploads/giz3atasiffnrc1fbbhx",
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
             ),
           ),
           SizedBox(height: 10),
@@ -48,6 +50,17 @@ class CarDetailsDialog extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: Text(
               "Dhaka Metro kha 23-5678",
+              style: AppTextStyle.normalTextStyle!.copyWith(
+                fontSize: AppDimension.b3,
+                color: AppColors.black,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Text(
+              "Driver: Not Assigned",
               style: AppTextStyle.normalTextStyle!.copyWith(
                 fontSize: AppDimension.b3,
                 color: AppColors.black,
@@ -121,15 +134,7 @@ class CarDetailsDialog extends StatelessWidget {
             return ToggleButton(
               text: isActive ? "ACTIVE" : "INACTIVE",
               onChanged: () {
-                Overlayment.show(
-                  context: context,
-                  child: CarStatusChangeDialog(
-                    currentActiveStatus: isActive,
-                    onChange: (val) {
-                      setState(() => isActive = val);
-                    },
-                  ),
-                );
+                setState(() => isActive = !isActive);
               },
               isActive: isActive,
             );

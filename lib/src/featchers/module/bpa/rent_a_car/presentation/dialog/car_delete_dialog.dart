@@ -6,13 +6,8 @@ import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/widgets/app_button.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
 
-class CarStatusChangeDialog extends StatelessWidget {
-  final bool currentActiveStatus;
-  final Function(bool) onChange;
-
-  CarStatusChangeDialog(
-      {Key? key, required this.currentActiveStatus, required this.onChange})
-      : super(key: key);
+class CarDeleteDialog extends StatelessWidget {
+  CarDeleteDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +37,8 @@ class CarStatusChangeDialog extends StatelessWidget {
             child: Text(
               "Toyota Hiace 2023",
               style: AppTextStyle.boldTextStyle!.copyWith(
-                fontSize: AppDimension.b3,
-                color: AppColors.primaryColor,
+                fontSize: AppDimension.b2,
+                color: AppColors.errorColor,
               ),
               textAlign: TextAlign.center,
             ),
@@ -54,7 +49,7 @@ class CarStatusChangeDialog extends StatelessWidget {
             child: Text(
               "Dhaka Metro kha 23-5678",
               style: AppTextStyle.normalTextStyle!.copyWith(
-                fontSize: AppDimension.b2,
+                fontSize: AppDimension.b1,
                 color: AppColors.black,
               ),
               textAlign: TextAlign.center,
@@ -66,14 +61,13 @@ class CarStatusChangeDialog extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AppButton(
-                title: currentActiveStatus ? "Inactive" : "Active",
-                borderColor: AppColors.primaryColor,
+                title: "Delete",
+                borderColor: AppColors.errorColor,
                 borderWidth: 1,
                 style: AppTextStyle.normalTextStyle!.copyWith(
-                  color: AppColors.primaryColor,
+                  color: AppColors.errorColor,
                 ),
                 onPressed: () {
-                  onChange(!currentActiveStatus);
                   Navigator.of(context).pop();
                 },
               ),

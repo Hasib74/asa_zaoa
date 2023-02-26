@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
+import '../../../../../main/route/route_manager.dart';
 
 class RentACarNoRegisteredCar extends StatelessWidget {
   RentACarNoRegisteredCar({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class RentACarNoRegisteredCar extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.RENT_A_CAR_BRAND_SCREEN);
+              RouteController(context).goToRentACarBrandSelectScreen();
             },
             child: Column(
               children: [

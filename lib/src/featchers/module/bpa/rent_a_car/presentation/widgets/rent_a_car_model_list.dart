@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/routes/app_routes.dart';
-import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
-import '../../../../../../core/utils/app_dimension.dart';
-import '../../../../../../core/widgets/app_button.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
 
 class RentACarModelList extends StatefulWidget {
@@ -27,114 +23,31 @@ class _RentACarModelListState extends State<RentACarModelList> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomImageWidget(
-                  imageUrl:
-                      "https://image.similarpng.com/very-thumbnail/2020/09/Toyota-logo-icon-on-transparent--PNG.png",
-                  fit: BoxFit.fitHeight,
-                  height: 30),
-              SizedBox(
-                width: 10,
-              ),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Toyota',
-                      style: AppTextStyle.normalTextStyle!.copyWith(
-                        fontSize: AppDimension.b3,
-                        color: AppColors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' > Select Model',
-                      style: AppTextStyle.normalTextStyle!.copyWith(
-                        fontSize: AppDimension.b3,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          ListView.separated(
-            padding: EdgeInsets.only(bottom: 20),
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: modelIcons.length,
-            separatorBuilder: (_, i) {
-              return SizedBox(
-                height: 10,
-              );
-            },
-            itemBuilder: (BuildContext context, int index) {
-              return modelItemView(
-                itemUrl: modelIcons[index],
-                onTap: () {
-                  if (selectedIndex == index) {
-                    selectedIndex = -1;
-                  } else {
-                    selectedIndex = index;
-                  }
+    return ListView.separated(
+      padding: EdgeInsets.only(bottom: 20),
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: modelIcons.length,
+      separatorBuilder: (_, i) {
+        return SizedBox(
+          height: 10,
+        );
+      },
+      itemBuilder: (BuildContext context, int index) {
+        return modelItemView(
+          itemUrl: modelIcons[index],
+          onTap: () {
+            if (selectedIndex == index) {
+              selectedIndex = -1;
+            } else {
+              selectedIndex = index;
+            }
 
-                  setState(() {});
-                },
-                selected: selectedIndex == index,
-              );
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              AppButton(
-                title: "Back",
-                borderColor: AppColors.primaryColor,
-                borderWidth: 1,
-                style: AppTextStyle.normalTextStyle!.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              AppButton(
-                title: "Next",
-                borderColor: AppColors.primaryColor,
-                borderWidth: 1,
-                style: AppTextStyle.normalTextStyle!.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(
-                      context, AppRoutes.RENT_A_CAR_YEAR_SCREEN);
-                },
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
-      ),
+            setState(() {});
+          },
+          selected: selectedIndex == index,
+        );
+      },
     );
   }
 

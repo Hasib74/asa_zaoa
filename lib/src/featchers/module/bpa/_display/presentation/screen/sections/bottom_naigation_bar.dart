@@ -2,7 +2,6 @@ import 'package:asa_zaoa/src/core/utils/app_assets.dart';
 import 'package:asa_zaoa/src/core/utils/app_colors.dart';
 import 'package:asa_zaoa/src/core/widgets/round_icon_button.dart';
 import 'package:asa_zaoa/src/featchers/module/bpa/_display/presentation/bloc/bpa_display_cubit.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,7 +23,7 @@ class BpaBottomNavigationBar extends StatelessWidget {
 
       return Container(
         padding: EdgeInsets.symmetric(vertical: 10),
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           color: AppColors.white,
           border: Border(
             top: BorderSide(
@@ -40,11 +39,13 @@ class BpaBottomNavigationBar extends StatelessWidget {
             AppIconWithTextButton(
               size: AppDimension.bottomBarIconSize,
               imageUrl: AppAssets.trip,
-              textColor: menu == BpaBottomBarMainMenu.trip? AppColors.textColorTwo : AppColors.textColorTwo.withOpacity(0.4),
+              textColor: menu == BpaBottomBarMainMenu.trip
+                  ? AppColors.textColorTwo
+                  : AppColors.textColorTwo.withOpacity(0.4),
               iconColor: menu == BpaBottomBarMainMenu.trip
                   ? AppColors.primaryColor
                   : AppColors.primaryColor.withOpacity(0.4),
-              titile: "Trip",
+              title: "Trip",
               onPressed: () {
                 context
                     .read<BpaDisplayCubit>()
@@ -54,9 +55,13 @@ class BpaBottomNavigationBar extends StatelessWidget {
             AppIconWithTextButton(
               size: AppDimension.bottomBarIconSize,
               imageUrl: AppAssets.home,
-              textColor: menu == BpaBottomBarMainMenu.home? AppColors.textColorTwo : AppColors.textColorTwo.withOpacity(0.4),
-              iconColor: menu == BpaBottomBarMainMenu.home?AppColors.primaryColor : AppColors.primaryColor.withOpacity(0.4),
-              titile: "Home",
+              textColor: menu == BpaBottomBarMainMenu.home
+                  ? AppColors.textColorTwo
+                  : AppColors.textColorTwo.withOpacity(0.4),
+              iconColor: menu == BpaBottomBarMainMenu.home
+                  ? AppColors.primaryColor
+                  : AppColors.primaryColor.withOpacity(0.4),
+              title: "Home",
               onPressed: () {
                 context
                     .read<BpaDisplayCubit>()
@@ -66,9 +71,13 @@ class BpaBottomNavigationBar extends StatelessWidget {
             AppIconWithTextButton(
               size: AppDimension.bottomBarIconSize,
               imageUrl: AppAssets.history,
-              textColor: menu == BpaBottomBarMainMenu.history ? AppColors.textColorTwo : AppColors.textColorTwo.withOpacity(0.4),
-              iconColor:  menu == BpaBottomBarMainMenu.history? AppColors.primaryColor : AppColors.primaryColor.withOpacity(0.4),
-              titile: "History",
+              textColor: menu == BpaBottomBarMainMenu.history
+                  ? AppColors.textColorTwo
+                  : AppColors.textColorTwo.withOpacity(0.4),
+              iconColor: menu == BpaBottomBarMainMenu.history
+                  ? AppColors.primaryColor
+                  : AppColors.primaryColor.withOpacity(0.4),
+              title: "History",
               onPressed: () {
                 context
                     .read<BpaDisplayCubit>()
@@ -78,10 +87,13 @@ class BpaBottomNavigationBar extends StatelessWidget {
             AppIconWithTextButton(
               size: AppDimension.bottomBarIconSize,
               imageUrl: AppAssets.dash_board,
-              textColor: menu == BpaBottomBarMainMenu.dashBoard ? AppColors.textColorTwo : AppColors.textColorTwo.withOpacity(0.4),
-
-              iconColor: menu == BpaBottomBarMainMenu.dashBoard? AppColors.primaryColor : AppColors.primaryColor.withOpacity(0.4),
-              titile: "DashBoard",
+              textColor: menu == BpaBottomBarMainMenu.dashBoard
+                  ? AppColors.textColorTwo
+                  : AppColors.textColorTwo.withOpacity(0.4),
+              iconColor: menu == BpaBottomBarMainMenu.dashBoard
+                  ? AppColors.primaryColor
+                  : AppColors.primaryColor.withOpacity(0.4),
+              title: "DashBoard",
               onPressed: () {
                 context
                     .read<BpaDisplayCubit>()

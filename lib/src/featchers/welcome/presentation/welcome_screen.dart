@@ -1,5 +1,4 @@
 import 'package:asa_zaoa/src/featchers/welcome/presentation/section/welcome_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/helper/app_role_enum.dart';
@@ -37,12 +36,12 @@ class WelcomeScreen extends StatelessWidget {
                         arguments: AppRoleEnum.Driver);
                   },
                   imageUrl: AppAssets.driver_icon,
-                  titile: "Driver"),
+                  title: "Driver"),
               // AppSpaces.spacesWidth15,
               AppIconWithTextButton(
                   isCircle: true,
                   imageUrl: AppAssets.bpa_icon,
-                  titile: "BPA",
+                  title: "BPA",
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.LOGIN_SCREEN,
                         arguments: AppRoleEnum.BPA);

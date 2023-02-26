@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
-import '../../../../../../core/widgets/app_button.dart';
-import '../../../../../../core/widgets/app_network_image.dart';
 
 class RentACarYearList extends StatefulWidget {
   const RentACarYearList({Key? key}) : super(key: key);
@@ -49,105 +46,23 @@ class _RentACarYearListState extends State<RentACarYearList> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomImageWidget(
-                  imageUrl:
-                      "https://image.similarpng.com/very-thumbnail/2020/09/Toyota-logo-icon-on-transparent--PNG.png",
-                  fit: BoxFit.fitHeight,
-                  height: 30),
-              SizedBox(
-                width: 10,
-              ),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Toyota Hiace',
-                      style: AppTextStyle.normalTextStyle!.copyWith(
-                        fontSize: AppDimension.b3,
-                        color: AppColors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' > Select Year',
-                      style: AppTextStyle.normalTextStyle!.copyWith(
-                        fontSize: AppDimension.b3,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Wrap(
-            children: List.generate(yearList.length, (index) {
-              return yearItemView(
-                year: yearList[index],
-                onTap: () {
-                  if (selectedIndex == index) {
-                    selectedIndex = -1;
-                  } else {
-                    selectedIndex = index;
-                  }
+    return Wrap(
+      children: List.generate(yearList.length, (index) {
+        return yearItemView(
+          year: yearList[index],
+          onTap: () {
+            if (selectedIndex == index) {
+              selectedIndex = -1;
+            } else {
+              selectedIndex = index;
+            }
 
-                  setState(() {});
-                },
-                width: (MediaQuery.of(context).size.width - 80) / 3,
-                selected: selectedIndex == index,
-              );
-            }),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              AppButton(
-                title: "Back",
-                borderColor: AppColors.primaryColor,
-                borderWidth: 1,
-                style: AppTextStyle.normalTextStyle!.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              AppButton(
-                title: "Next",
-                borderColor: AppColors.primaryColor,
-                borderWidth: 1,
-                style: AppTextStyle.normalTextStyle!.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, AppRoutes.RENT_A_CAR_REG_SCREEN);
-                },
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
-      ),
+            setState(() {});
+          },
+          width: (MediaQuery.of(context).size.width - 80) / 3,
+          selected: selectedIndex == index,
+        );
+      }),
     );
   }
 

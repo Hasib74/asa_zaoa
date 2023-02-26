@@ -1,7 +1,7 @@
+import 'package:asa_zaoa/src/featchers/main/route/route_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/widgets/app_text_fields.dart';
 import '../widgets/car_item_view.dart';
@@ -9,7 +9,6 @@ import '../widgets/driver_item_view.dart';
 import '../widgets/rent_a_car_no_registered_car.dart';
 import '../widgets/rent_a_car_no_registered_driver.dart';
 import '../widgets/rent_a_car_tab.dart';
-import '../widgets/rent_a_car_title.dart';
 
 class RentACarMainScreen extends StatefulWidget {
   const RentACarMainScreen({Key? key}) : super(key: key);
@@ -22,6 +21,12 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
   bool carTabSelected = true;
 
   List<CarItem> carList = [
+    CarItem(
+      image:
+          "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_675,q_auto:best,w_1200/cms/uploads/giz3atasiffnrc1fbbhx",
+      title: "Toyota Hiace 2023",
+      subtitle: "Dhaka Metro kha 23-56789",
+    ),
     CarItem(
       image:
           "https://imgd.aeplcdn.com/370x208/n/cw/ec/40087/thar-exterior-right-front-three-quarter-11.jpeg?q=75",
@@ -37,12 +42,6 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
     CarItem(
       image:
           "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAY0nil.img",
-      title: "Toyota Hiace 2023",
-      subtitle: "Dhaka Metro kha 23-56789",
-    ),
-    CarItem(
-      image:
-          "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_675,q_auto:best,w_1200/cms/uploads/giz3atasiffnrc1fbbhx",
       title: "Toyota Hiace 2023",
       subtitle: "Dhaka Metro kha 23-56789",
     ),
@@ -79,14 +78,10 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
+          padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              RentACarTitle(),
-              SizedBox(
-                height: 30,
-              ),
               RentACarTab(
                 isCarSelected: carTabSelected,
                 onCarTap: () {
@@ -157,8 +152,8 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                     SizedBox(width: 8),
                                     InkWell(
                                       onTap: () {
-                                        Navigator.pushNamed(context,
-                                            AppRoutes.RENT_A_CAR_BRAND_SCREEN);
+                                        RouteController(context)
+                                            .goToRentACarBrandSelectScreen();
                                       },
                                       child: Icon(
                                         CupertinoIcons.add_circled_solid,
@@ -191,7 +186,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                             ],
                           ),
                         )
-                  : true
+                  : driverList.isEmpty
                       ? Column(
                           children: [
                             SizedBox(

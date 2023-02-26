@@ -13,7 +13,7 @@ class AppColors {
   static Color secondaryColor = Color(0xff13BDE8);
   static Color accentColor = Color(0xff13BDE8);
   static Color scaffoldBackgroundColor = Color(0xffffffff);
-  static Color errorColor = Color(0xffB00020);
+  static Color errorColor = Color(0xffFF0000);
   static Color textFiledBorderColor = Color(0xff7579E7);
   static Color shadowColor = Color(0xffF8F8F8);
   static Color transparent = Colors.transparent;

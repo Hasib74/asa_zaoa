@@ -5,6 +5,7 @@ import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
+import '../dialog/car_delete_dialog.dart';
 import '../dialog/car_details_dialog.dart';
 import '../screens/rent_a_car_main_screen.dart';
 
@@ -30,72 +31,88 @@ class CarItemView extends StatelessWidget {
             width: 2,
           ),
         ),
-        padding: EdgeInsets.only(top: 10, bottom: 5),
+        padding: EdgeInsets.all(5),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: 30, right: 30),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: AspectRatio(
-                      aspectRatio: 1.5,
-                      // child: Placeholder(),
-                      child: CustomImageWidget(
-                        imageUrl: item.image,
-                        fit: BoxFit.fill,
+            Row(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: AspectRatio(
+                    aspectRatio: 1.2,
+                    // child: Placeholder(),
+                    child: CustomImageWidget(
+                      imageUrl: item.image,
+                      fit: BoxFit.cover,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      children: [
-                        Text(
-                          item.title,
-                          style: AppTextStyle.boldTextStyle!.copyWith(
-                            fontSize: AppDimension.b3,
-                            color: AppColors.primaryColor,
-                          ),
-                          textAlign: TextAlign.center,
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Icon(
+                          Icons.check_circle,
+                          color: AppColors.rightColor,
                         ),
-                        SizedBox(height: 5),
-                        Text(
-                          item.subtitle,
-                          style: AppTextStyle.normalTextStyle!.copyWith(
-                            fontSize: AppDimension.b2,
-                            color: AppColors.black,
-                          ),
-                          textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        item.title,
+                        maxLines: 1,
+                        style: AppTextStyle.boldTextStyle!.copyWith(
+                          fontSize: AppDimension.b3,
+                          color: AppColors.primaryColor,
                         ),
-                      ],
-                    ),
+                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        item.subtitle,
+                        maxLines: 1,
+                        style: AppTextStyle.normalTextStyle!.copyWith(
+                          fontSize: AppDimension.b2,
+                          color: AppColors.black,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CarListActionButton(
+                            icon: Icons.edit_outlined,
+                            title: "EDIT",
+                            onTap: () {},
+                          ),
+                          CarListActionButton(
+                            icon: Icons.person_add_alt_1_outlined,
+                            title: "ADD DRIVER",
+                            onTap: () {},
+                          ),
+                          CarListActionButton(
+                            icon: Icons.delete_outline,
+                            title: "DELETE",
+                            onTap: () {
+                              Overlayment.show(
+                                context: context,
+                                child: CarDeleteDialog(),
+                              );
+                            },
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                ],
-              ),
-            ),
-            SizedBox(height: 5),
-            Row(
-              children: [
-                CarListActionButton(
-                  icon: Icons.edit_outlined,
-                  title: "EDIT",
-                  onTap: () {},
-                ),
-                CarListActionButton(
-                  icon: Icons.person_add_alt_1_outlined,
-                  title: "ADD DRIVER",
-                  onTap: () {},
-                ),
-                CarListActionButton(
-                  icon: Icons.delete_outline,
-                  title: "DELETE",
-                  onTap: () {},
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
@@ -117,31 +134,29 @@ class CarListActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              color: AppColors.primaryColor,
+              size: 20,
+            ),
+            SizedBox(width: 5),
+            Text(
+              title,
+              style: AppTextStyle.normalTextStyle!.copyWith(
+                fontSize: AppDimension.b1 - 2,
                 color: AppColors.primaryColor,
-                size: 20,
               ),
-              SizedBox(width: 5),
-              Text(
-                title,
-                style: AppTextStyle.normalTextStyle!.copyWith(
-                  fontSize: AppDimension.b1,
-                  color: AppColors.primaryColor,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

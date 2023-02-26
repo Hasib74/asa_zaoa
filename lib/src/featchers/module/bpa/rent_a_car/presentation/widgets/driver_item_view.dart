@@ -21,59 +21,89 @@ class DriverItemView extends StatelessWidget {
           width: 2,
         ),
       ),
-      padding: EdgeInsets.only(top: 10, bottom: 10, left: 40, right: 30),
-      child: Row(
+      padding: EdgeInsets.all(5),
+      child: Column(
         children: [
-          Expanded(
-            flex: 1,
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: CustomImageWidget(
-                imageUrl: item.image,
-                fit: BoxFit.fill,
-                borderRadius: BorderRadius.circular(100),
+          Row(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 3,
+                child: AspectRatio(
+                  aspectRatio: 1.2,
+                  // child: Placeholder(),
+                  child: CustomImageWidget(
+                    imageUrl: item.image,
+                    fit: BoxFit.cover,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-          SizedBox(width: 10),
-          Expanded(
-            flex: 4,
-            child: Column(
-              children: [
-                Text(
-                  item.name,
-                  style: AppTextStyle.boldTextStyle!.copyWith(
-                    fontSize: AppDimension.b3,
-                    color: AppColors.primaryColor,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 5),
-                Text(
-                  item.phone,
-                  style: AppTextStyle.normalTextStyle!.copyWith(
-                    fontSize: AppDimension.b2,
-                    color: AppColors.black,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 5),
-                Row(
+              SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CarListActionButton(
-                      icon: Icons.edit_outlined,
-                      title: "EDIT",
-                      onTap: () {},
+                    Text(
+                      item.name,
+                      maxLines: 1,
+                      style: AppTextStyle.boldTextStyle!.copyWith(
+                        fontSize: AppDimension.b3,
+                        color: AppColors.primaryColor,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    CarListActionButton(
-                      icon: Icons.delete_outline,
-                      title: "DELETE",
-                      onTap: () {},
+                    SizedBox(height: 5),
+                    Text(
+                      "DL: ${item.phone}",
+                      maxLines: 1,
+                      style: AppTextStyle.normalTextStyle!.copyWith(
+                        fontSize: AppDimension.b2,
+                        color: AppColors.black,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
+                    Text(
+                      "Car: Not Assigned",
+                      maxLines: 1,
+                      style: AppTextStyle.normalTextStyle!.copyWith(
+                        fontSize: AppDimension.b2,
+                        color: AppColors.darkGrey,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CarListActionButton(
+                          icon: Icons.edit_outlined,
+                          title: "EDIT",
+                          onTap: () {},
+                        ),
+                        CarListActionButton(
+                          icon: Icons.car_crash,
+                          title: "ADD Car",
+                          onTap: () {},
+                        ),
+                        CarListActionButton(
+                          icon: Icons.delete_outline,
+                          title: "DELETE",
+                          onTap: () {
+                            // Overlayment.show(
+                            //   context: context,
+                            //   child: CarDeleteDialog(),
+                            // );
+                          },
+                        ),
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -95,31 +125,29 @@ class CarListActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              color: AppColors.primaryColor,
+              size: 20,
+            ),
+            SizedBox(width: 5),
+            Text(
+              title,
+              style: AppTextStyle.normalTextStyle!.copyWith(
+                fontSize: AppDimension.b1 - 2,
                 color: AppColors.primaryColor,
-                size: 20,
               ),
-              SizedBox(width: 5),
-              Text(
-                title,
-                style: AppTextStyle.normalTextStyle!.copyWith(
-                  fontSize: AppDimension.b1,
-                  color: AppColors.primaryColor,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

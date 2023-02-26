@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/routes/app_routes.dart';
 import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
-import '../../../../../../core/widgets/app_button.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
 
 class RentACarBrandList extends StatefulWidget {
@@ -79,81 +77,37 @@ class _RentACarBrandListState extends State<RentACarBrandList> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "Select Brand",
-            style: AppTextStyle.normalTextStyle!.copyWith(
-              fontSize: AppDimension.b3,
-              color: AppColors.grey.withOpacity(.5),
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              childAspectRatio: 1,
-            ),
-            padding: EdgeInsets.only(bottom: 20),
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: brandList.length,
-            itemBuilder: (BuildContext context, int index) {
-              return brandItemView(
-                item: brandList[index],
-                onTap: () {
-                  if (selectedIndex == index) {
-                    selectedIndex = -1;
-                  } else {
-                    selectedIndex = index;
-                  }
-
-                  setState(() {});
-                },
-                selected: selectedIndex == index,
-              );
-            },
-          ),
-          AppButton(
-            width: MediaQuery.of(context).size.width,
-            title: "Other",
-            textColor: AppColors.grey,
-            borderColor: AppColors.shadowColorOne,
-            onPressed: () {},
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          AppButton(
-            title: "Next",
-            borderColor: AppColors.primaryColor,
-            borderWidth: 1,
-            style: AppTextStyle.normalTextStyle!.copyWith(
-              color: AppColors.primaryColor,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.RENT_A_CAR_MODEL_SCREEN);
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        childAspectRatio: 1,
       ),
+      padding: EdgeInsets.only(bottom: 20),
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: brandList.length,
+      itemBuilder: (BuildContext context, int index) {
+        return brandItemView(
+          item: brandList[index],
+          onTap: () {
+            if (selectedIndex == index) {
+              selectedIndex = -1;
+            } else {
+              selectedIndex = index;
+            }
+
+            setState(() {});
+          },
+          selected: selectedIndex == index,
+        );
+      },
     );
   }
 
@@ -187,8 +141,8 @@ class _RentACarBrandListState extends State<RentACarBrandList> {
             Text(
               item.title,
               style: AppTextStyle.normalTextStyle!.copyWith(
-                fontSize: AppDimension.b2,
-                color: selected ? AppColors.white : AppColors.grey,
+                fontSize: AppDimension.b1,
+                color: selected ? AppColors.white : AppColors.darkGrey,
               ),
             )
           ],

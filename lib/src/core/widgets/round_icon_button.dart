@@ -8,7 +8,7 @@ import 'app_image_view.dart';
 
 class AppIconWithTextButton extends StatelessWidget {
   String? imageUrl;
-  String? titile;
+  String? title;
   Function()? onPressed;
   double? size;
   double? height;
@@ -22,7 +22,7 @@ class AppIconWithTextButton extends StatelessWidget {
   AppIconWithTextButton({
     Key? key,
     required this.imageUrl,
-    this.titile,
+    this.title,
     this.onPressed,
     this.size,
     this.height,
@@ -61,12 +61,14 @@ class AppIconWithTextButton extends StatelessWidget {
               ),
             ),
             AppSpaces.spacesHeight10,
-            if (titile != null)
-              Text(titile!,
-                  style: textStyle !=null? textStyle: isCircle
-                      ?  AppTextStyle.boldTextStyle
-                      :   AppTextStyle.normalTextStyle!
-                          .copyWith(color: textColor ,fontSize: fontSize)),
+            if (title != null)
+              Text(title!,
+                  style: textStyle != null
+                      ? textStyle
+                      : isCircle
+                          ? AppTextStyle.boldTextStyle
+                          : AppTextStyle.normalTextStyle!
+                              .copyWith(color: textColor, fontSize: fontSize)),
           ],
         ));
   }

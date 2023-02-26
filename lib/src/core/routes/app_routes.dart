@@ -4,10 +4,11 @@ import '../../featchers/auth/presentation/screen/otp_verification_screen.dart';
 import '../../featchers/auth/presentation/screen/reset_password.dart';
 import '../../featchers/auth/presentation/screen/sign_in_screen.dart';
 import '../../featchers/auth/presentation/screen/sign_up_screen.dart';
+import '../../featchers/main/screens/main_screen.dart';
 import '../../featchers/module/bpa/_display/presentation/screen/bpa_display_screen.dart';
 import '../../featchers/module/bpa/profile/presenation/screen/create_profile_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_info_screen.dart';
+import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_intro_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_reg_success_screen.dart';
@@ -24,6 +25,8 @@ class AppRoutes {
   static String SIGN_UP_SCREEN = "/sign_up_screen";
   static String OTP_VERIFICATION_SCREEN = "/otp_verification_screen";
   static String BPA_DISPLAY = "/BPA_DISPLAY";
+
+  static String MAIN = "/main";
 
   static String RENT_A_CAR_INFO_SCREEN = "/rent_a_car_info_screen";
   static String RENT_A_CAR_MAIN_SCREEN = "/rent_a_car_main_screen";
@@ -50,7 +53,8 @@ class AppRoutes {
             role: ModalRoute.of(context)!.settings.arguments as AppRoleEnum,
           ),
       BPA_DISPLAY: (BuildContext context) => BpaDisplayScreen(),
-      RENT_A_CAR_INFO_SCREEN: (BuildContext context) => RentACarInfoScreen(),
+      MAIN: (BuildContext context) => MainScreen(),
+      RENT_A_CAR_INFO_SCREEN: (BuildContext context) => RentACarIntroScreen(),
       RENT_A_CAR_MAIN_SCREEN: (BuildContext context) => RentACarMainScreen(),
       RENT_A_CAR_BRAND_SCREEN: (BuildContext context) => RentACarBrandScreen(),
       RENT_A_CAR_MODEL_SCREEN: (BuildContext context) => RentACarModelScreen(),
