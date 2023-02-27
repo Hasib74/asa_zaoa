@@ -7,13 +7,7 @@ import '../../featchers/auth/presentation/screen/sign_up_screen.dart';
 import '../../featchers/main/screens/main_screen.dart';
 import '../../featchers/module/bpa/_display/presentation/screen/bpa_display_screen.dart';
 import '../../featchers/module/bpa/profile/presenation/screen/create_profile_screen.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_intro_screen.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_main_screen.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_reg_success_screen.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_registration.dart';
-import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_year_screen.dart';
 import '../../featchers/splash/presentation/screen/splash_screen.dart';
 import '../../featchers/welcome/presentation/welcome_screen.dart';
 import '../helper/app_role_enum.dart';
@@ -28,14 +22,9 @@ class AppRoutes {
 
   static String MAIN = "/main";
 
-  static String RENT_A_CAR_INFO_SCREEN = "/rent_a_car_info_screen";
-  static String RENT_A_CAR_MAIN_SCREEN = "/rent_a_car_main_screen";
-  static String RENT_A_CAR_BRAND_SCREEN = "/rent_a_car_brand_screen";
-  static String RENT_A_CAR_MODEL_SCREEN = "/rent_a_car_model_screen";
-  static String RENT_A_CAR_YEAR_SCREEN = "/rent_a_car_year_screen";
-  static String RENT_A_CAR_REG_SCREEN = "/rent_a_car_reg_screen";
   static String RENT_A_CAR_REG_SUCCESS_SCREEN =
       "/rent_a_car_reg_success_screen";
+
   static String CREATE_BPA_PROFILE_SCREEN = "/create_bpa_profile_screen";
   static String RESET_PASSWORD_SCREEN = "/reset_password_screen";
 
@@ -54,13 +43,6 @@ class AppRoutes {
           ),
       BPA_DISPLAY: (BuildContext context) => BpaDisplayScreen(),
       MAIN: (BuildContext context) => MainScreen(),
-      RENT_A_CAR_INFO_SCREEN: (BuildContext context) => RentACarIntroScreen(),
-      RENT_A_CAR_MAIN_SCREEN: (BuildContext context) => RentACarMainScreen(),
-      RENT_A_CAR_BRAND_SCREEN: (BuildContext context) => RentACarBrandScreen(),
-      RENT_A_CAR_MODEL_SCREEN: (BuildContext context) => RentACarModelScreen(),
-      RENT_A_CAR_YEAR_SCREEN: (BuildContext context) => RentACarYearScreen(),
-      RENT_A_CAR_REG_SCREEN: (BuildContext context) =>
-          RentACarRegistrationScreen(),
       RENT_A_CAR_REG_SUCCESS_SCREEN: (BuildContext context) =>
           RentACarRegSuccessScreen(),
       CREATE_BPA_PROFILE_SCREEN: (BuildContext context) =>

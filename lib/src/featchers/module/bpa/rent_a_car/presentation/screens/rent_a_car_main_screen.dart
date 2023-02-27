@@ -238,7 +238,10 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                     ),
                                     SizedBox(width: 8),
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        RouteController(context)
+                                            .goToRentACarDriverRegScreen();
+                                      },
                                       child: Icon(
                                         CupertinoIcons.add_circled_solid,
                                         size: 40,

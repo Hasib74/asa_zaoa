@@ -55,4 +55,6 @@ class AppAssets {
   static String settings_icon_png = _icons + "settings_icon.png";
   static String profile = _icons + "profile.svg";
   static String notification = _icons + "notification.svg";
+  static String driverIcon = _icons + "driver_icon.png";
+  static String rentACarDriverIcon = _icons + "rent_a_car_driver_add_icon.png";
 }

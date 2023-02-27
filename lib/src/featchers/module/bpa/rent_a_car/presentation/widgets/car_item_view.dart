@@ -37,7 +37,7 @@ class CarItemView extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 3,
+                  width: MediaQuery.of(context).size.width / 3.2,
                   child: AspectRatio(
                     aspectRatio: 1.2,
                     // child: Placeholder(),
@@ -145,7 +145,7 @@ class CarListActionButton extends StatelessWidget {
             Icon(
               icon,
               color: AppColors.primaryColor,
-              size: 20,
+              size: 15,
             ),
             SizedBox(width: 5),
             Text(

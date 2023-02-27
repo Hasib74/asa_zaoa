@@ -11,6 +11,7 @@ import '../../../core/utils/app_assets.dart';
 import '../../../core/utils/app_dimension.dart';
 import '../../../core/widgets/app_snack_bar.dart';
 import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
+import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_driver_registration.dart';
 import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
 import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_year_screen.dart';
 import '../model/main_screen_widget_model.dart';
@@ -221,6 +222,25 @@ class RouteController {
         canShowAppBar: true,
         leadingIconUrl: AppAssets.car_add_icon,
         appBarTitleText: "ADD A NEW CAR",
+      ),
+    );
+  }
+
+  goToRentACarDriverRegScreen() {
+    if (currentRoute != AppRoutes.MAIN) {
+      _Router(context).push(AppRoutes.MAIN);
+    }
+
+    sl<MainFunctions>().changeBody(
+      context,
+      MainScreenWidgetModel(
+        body: RentACarDriverRegistrationScreen(
+          key: Key("rent_a_car_driver_registration_screen"),
+        ),
+        canShowBottomBar: true,
+        canShowAppBar: true,
+        leadingIconUrl: AppAssets.rentACarDriverIcon,
+        appBarTitleText: "ADD NEW DRIVER",
       ),
     );
   }
