@@ -10,6 +10,7 @@ import '../../../core/themes/app_text_style.dart';
 import '../../../core/utils/app_assets.dart';
 import '../../../core/utils/app_dimension.dart';
 import '../../../core/widgets/app_snack_bar.dart';
+import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_assign_driver_screen.dart';
 import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_brand_screen.dart';
 import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_driver_registration.dart';
 import '../../module/bpa/rent_a_car/presentation/screens/rent_a_car_model_screen.dart';
@@ -241,6 +242,40 @@ class RouteController {
         canShowAppBar: true,
         leadingIconUrl: AppAssets.rentACarDriverIcon,
         appBarTitleText: "ADD NEW DRIVER",
+      ),
+    );
+  }
+
+  goToAssignCarScreen() {
+    if (currentRoute != AppRoutes.MAIN) {
+      _Router(context).push(AppRoutes.MAIN);
+    }
+
+    sl<MainFunctions>().changeBody(
+      context,
+      MainScreenWidgetModel(
+        body: RentACarAssignDriverScreen(
+          key: Key("rent_a_car_assign_driver_screen"),
+        ),
+        canShowBottomBar: true,
+        canShowAppBar: true,
+        leadingIconUrl: AppAssets.assignDriverIcon,
+        appBarTitleWidget: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'ASSIGN',
+                style: AppTextStyle.boldTextStyle!
+                    .copyWith(fontSize: AppDimension.h1),
+              ),
+              TextSpan(
+                text: ' DRIVER',
+                style: AppTextStyle.normalTextStyle!
+                    .copyWith(fontSize: AppDimension.h1),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

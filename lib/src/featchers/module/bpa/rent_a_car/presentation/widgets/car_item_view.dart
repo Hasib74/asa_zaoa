@@ -5,22 +5,25 @@ import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
+import '../dialog/car_assign_confirmation_dialog.dart';
 import '../dialog/car_delete_dialog.dart';
 import '../dialog/car_details_dialog.dart';
 import '../screens/rent_a_car_main_screen.dart';
 
 class CarItemView extends StatelessWidget {
+  final bool forAssign;
   final CarItem item;
 
-  const CarItemView({Key? key, required this.item}) : super(key: key);
+  const CarItemView({Key? key, required this.item, this.forAssign = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         Overlayment.show(
           context: context,
-          child: CarDetailsDialog(),
+          child: forAssign ? CarAssignConfirmationDialog() : CarDetailsDialog(),
         );
       },
       child: Container(
@@ -37,9 +40,10 @@ class CarItemView extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 3.2,
+                  width:
+                      MediaQuery.of(context).size.width / (forAssign ? 4 : 3.2),
                   child: AspectRatio(
-                    aspectRatio: 1.2,
+                    aspectRatio: forAssign ? 1.5 : 1.2,
                     // child: Placeholder(),
                     child: CustomImageWidget(
                       imageUrl: item.image,
@@ -56,18 +60,20 @@ class CarItemView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: Icon(
-                          Icons.check_circle,
-                          color: AppColors.rightColor,
+                      if (!forAssign)
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Icon(
+                            Icons.check_circle,
+                            color: AppColors.rightColor,
+                          ),
                         ),
-                      ),
                       Text(
                         item.title,
                         maxLines: 1,
                         style: AppTextStyle.boldTextStyle!.copyWith(
-                          fontSize: AppDimension.b3,
+                          fontSize:
+                              forAssign ? AppDimension.b2 : AppDimension.b3,
                           color: AppColors.primaryColor,
                         ),
                         textAlign: TextAlign.left,
@@ -77,37 +83,39 @@ class CarItemView extends StatelessWidget {
                         item.subtitle,
                         maxLines: 1,
                         style: AppTextStyle.normalTextStyle!.copyWith(
-                          fontSize: AppDimension.b2,
+                          fontSize:
+                              forAssign ? AppDimension.b1 : AppDimension.b2,
                           color: AppColors.black,
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CarListActionButton(
-                            icon: Icons.edit_outlined,
-                            title: "EDIT",
-                            onTap: () {},
-                          ),
-                          CarListActionButton(
-                            icon: Icons.person_add_alt_1_outlined,
-                            title: "ADD DRIVER",
-                            onTap: () {},
-                          ),
-                          CarListActionButton(
-                            icon: Icons.delete_outline,
-                            title: "DELETE",
-                            onTap: () {
-                              Overlayment.show(
-                                context: context,
-                                child: CarDeleteDialog(),
-                              );
-                            },
-                          ),
-                        ],
-                      )
+                      if (!forAssign) SizedBox(height: 10),
+                      if (!forAssign)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CarListActionButton(
+                              icon: Icons.edit_outlined,
+                              title: "EDIT",
+                              onTap: () {},
+                            ),
+                            CarListActionButton(
+                              icon: Icons.person_add_alt_1_outlined,
+                              title: "ADD DRIVER",
+                              onTap: () {},
+                            ),
+                            CarListActionButton(
+                              icon: Icons.delete_outline,
+                              title: "DELETE",
+                              onTap: () {
+                                Overlayment.show(
+                                  context: context,
+                                  child: CarDeleteDialog(),
+                                );
+                              },
+                            ),
+                          ],
+                        )
                     ],
                   ),
                 ),

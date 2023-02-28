@@ -1,4 +1,5 @@
 import 'package:asa_zaoa/src/core/utils/app_colors.dart';
+import 'package:asa_zaoa/src/featchers/main/route/route_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/themes/app_text_style.dart';
@@ -95,7 +96,9 @@ class DriverItemView extends StatelessWidget {
                           CarListActionButton(
                             icon: Icons.car_crash,
                             title: "ADD Car",
-                            onTap: () {},
+                            onTap: () {
+                              RouteController(context).goToAssignCarScreen();
+                            },
                           ),
                           CarListActionButton(
                             icon: Icons.delete_outline,
