@@ -6,13 +6,17 @@ import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
+import '../dialog/car_assign_confirmation_dialog.dart';
+import '../dialog/driver_delete_dialog.dart';
 import '../dialog/driver_details_dialog.dart';
 import '../screens/rent_a_car_main_screen.dart';
 
 class DriverItemView extends StatelessWidget {
+  final bool forAssign;
   final DriverItem item;
 
-  const DriverItemView({Key? key, required this.item}) : super(key: key);
+  const DriverItemView({Key? key, required this.item, this.forAssign = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,8 @@ class DriverItemView extends StatelessWidget {
       onTap: () {
         Overlayment.show(
           context: context,
-          child: DriverDetailsDialog(),
+          child:
+              forAssign ? CarAssignConfirmationDialog() : DriverDetailsDialog(),
         );
       },
       child: Container(
@@ -37,9 +42,10 @@ class DriverItemView extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 3.2,
+                  width:
+                      MediaQuery.of(context).size.width / (forAssign ? 4 : 3.2),
                   child: AspectRatio(
-                    aspectRatio: 1.2,
+                    aspectRatio: forAssign ? 1.5 : 1.2,
                     // child: Placeholder(),
                     child: CustomImageWidget(
                       imageUrl: item.image,
@@ -60,7 +66,8 @@ class DriverItemView extends StatelessWidget {
                         item.name,
                         maxLines: 1,
                         style: AppTextStyle.boldTextStyle!.copyWith(
-                          fontSize: AppDimension.b3,
+                          fontSize:
+                              forAssign ? AppDimension.b2 : AppDimension.b3,
                           color: AppColors.primaryColor,
                         ),
                         textAlign: TextAlign.left,
@@ -70,48 +77,51 @@ class DriverItemView extends StatelessWidget {
                         "DL: ${item.phone}",
                         maxLines: 1,
                         style: AppTextStyle.normalTextStyle!.copyWith(
-                          fontSize: AppDimension.b2,
+                          fontSize:
+                              forAssign ? AppDimension.b1 : AppDimension.b2,
                           color: AppColors.black,
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      Text(
-                        "Car: Not Assigned",
-                        maxLines: 1,
-                        style: AppTextStyle.normalTextStyle!.copyWith(
-                          fontSize: AppDimension.b2,
-                          color: AppColors.darkGrey,
+                      if (!forAssign)
+                        Text(
+                          "Car: Not Assigned",
+                          maxLines: 1,
+                          style: AppTextStyle.normalTextStyle!.copyWith(
+                            fontSize: AppDimension.b2,
+                            color: AppColors.darkGrey,
+                          ),
+                          textAlign: TextAlign.left,
                         ),
-                        textAlign: TextAlign.left,
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CarListActionButton(
-                            icon: Icons.edit_outlined,
-                            title: "EDIT",
-                            onTap: () {},
-                          ),
-                          CarListActionButton(
-                            icon: Icons.car_crash,
-                            title: "ADD Car",
-                            onTap: () {
-                              RouteController(context).goToAssignCarScreen();
-                            },
-                          ),
-                          CarListActionButton(
-                            icon: Icons.delete_outline,
-                            title: "DELETE",
-                            onTap: () {
-                              // Overlayment.show(
-                              //   context: context,
-                              //   child: CarDeleteDialog(),
-                              // );
-                            },
-                          ),
-                        ],
-                      )
+                      if (!forAssign) SizedBox(height: 10),
+                      if (!forAssign)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CarListActionButton(
+                              icon: Icons.edit_outlined,
+                              title: "EDIT",
+                              onTap: () {},
+                            ),
+                            CarListActionButton(
+                              icon: Icons.car_crash,
+                              title: "ADD Car",
+                              onTap: () {
+                                RouteController(context).goToAssignCarScreen();
+                              },
+                            ),
+                            CarListActionButton(
+                              icon: Icons.delete_outline,
+                              title: "DELETE",
+                              onTap: () {
+                                Overlayment.show(
+                                  context: context,
+                                  child: DriverDeleteDialog(),
+                                );
+                              },
+                            ),
+                          ],
+                        )
                     ],
                   ),
                 ),

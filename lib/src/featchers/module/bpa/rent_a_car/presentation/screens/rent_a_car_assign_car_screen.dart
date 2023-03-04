@@ -6,18 +6,24 @@ import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
 import '../../../../../../core/widgets/app_text_fields.dart';
-import '../widgets/driver_item_view.dart';
+import '../widgets/car_item_view.dart';
 import 'rent_a_car_main_screen.dart';
 
-class RentACarAssignDriverScreen extends StatelessWidget {
-  RentACarAssignDriverScreen({Key? key}) : super(key: key);
+class RentACarAssignCarScreen extends StatelessWidget {
+  RentACarAssignCarScreen({Key? key}) : super(key: key);
 
-  List<DriverItem> driverList = [
-    DriverItem(
+  List<CarItem> carList = [
+    CarItem(
       image:
-          "https://img.freepik.com/premium-photo/cute-baby-panda-bear-with-big-eyes-3d-rendering-cartoon-illustration_691560-4917.jpg?w=2000",
-      name: "Sazzadur Rahman",
-      phone: "+8801678752472",
+          "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_675,q_auto:best,w_1200/cms/uploads/giz3atasiffnrc1fbbhx",
+      title: "Toyota Hiace 2023",
+      subtitle: "Dhaka Metro kha 23-56789",
+    ),
+    CarItem(
+      image:
+          "https://imgd.aeplcdn.com/370x208/n/cw/ec/40087/thar-exterior-right-front-three-quarter-11.jpeg?q=75",
+      title: "Toyota Hiace 2023",
+      subtitle: "Dhaka Metro kha 23-56789",
     ),
   ];
 
@@ -30,7 +36,7 @@ class RentACarAssignDriverScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              carInfo(),
+              driverInfo(),
               SizedBox(height: 20),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
@@ -44,7 +50,7 @@ class RentACarAssignDriverScreen extends StatelessWidget {
                       bottom: 0,
                       child: AppTextFiled(
                         height: 45,
-                        hint: "Search Driver",
+                        hint: "Search Car",
                         textEditingController: TextEditingController(),
                         backgroundColor: AppColors.lightGrey,
                         contentPadding: EdgeInsets.only(left: 20, right: 40),
@@ -72,15 +78,15 @@ class RentACarAssignDriverScreen extends StatelessWidget {
               ListView.separated(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: driverList.length,
+                itemCount: carList.length,
                 separatorBuilder: (_, i) {
                   return SizedBox(
                     height: 10,
                   );
                 },
                 itemBuilder: (BuildContext context, int index) {
-                  return DriverItemView(
-                    item: driverList[index],
+                  return CarItemView(
+                    item: carList[index],
                     forAssign: true,
                   );
                 },
@@ -92,11 +98,11 @@ class RentACarAssignDriverScreen extends StatelessWidget {
     );
   }
 
-  Widget carInfo() {
+  Widget driverInfo() {
     return Column(
       children: [
         Text(
-          "Please Choose a Driver for",
+          "Please Choose a Car for",
           maxLines: 1,
           style: AppTextStyle.normalTextStyle!.copyWith(
             fontSize: AppDimension.b2,
@@ -111,7 +117,7 @@ class RentACarAssignDriverScreen extends StatelessWidget {
             aspectRatio: 1,
             child: CustomImageWidget(
               imageUrl:
-                  "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_675,q_auto:best,w_1200/cms/uploads/giz3atasiffnrc1fbbhx",
+                  "https://img.freepik.com/premium-photo/cute-baby-panda-bear-with-big-eyes-3d-rendering-cartoon-illustration_691560-4917.jpg?w=2000",
               fit: BoxFit.cover,
               borderRadius: BorderRadius.circular(100),
             ),
@@ -119,7 +125,7 @@ class RentACarAssignDriverScreen extends StatelessWidget {
         ),
         SizedBox(height: 10),
         Text(
-          "Toyota Hiace 2023",
+          "Muhtasim Shakil",
           maxLines: 1,
           style: AppTextStyle.boldTextStyle!.copyWith(
             fontSize: AppDimension.b3,
@@ -128,7 +134,7 @@ class RentACarAssignDriverScreen extends StatelessWidget {
           textAlign: TextAlign.left,
         ),
         Text(
-          "Dhaka Metro kha 23-56789",
+          "DL: 57153615241563",
           maxLines: 1,
           style: AppTextStyle.normalTextStyle!.copyWith(
             fontSize: AppDimension.b1,

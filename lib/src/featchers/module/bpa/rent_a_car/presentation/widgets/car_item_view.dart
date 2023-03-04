@@ -5,6 +5,7 @@ import '../../../../../../core/themes/app_text_style.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/utils/app_overlay_dialog.dart';
 import '../../../../../../core/widgets/app_network_image.dart';
+import '../../../../../main/route/route_manager.dart';
 import '../dialog/car_assign_confirmation_dialog.dart';
 import '../dialog/car_delete_dialog.dart';
 import '../dialog/car_details_dialog.dart';
@@ -102,7 +103,10 @@ class CarItemView extends StatelessWidget {
                             CarListActionButton(
                               icon: Icons.person_add_alt_1_outlined,
                               title: "ADD DRIVER",
-                              onTap: () {},
+                              onTap: () {
+                                RouteController(context)
+                                    .goToAssignDriverScreen();
+                              },
                             ),
                             CarListActionButton(
                               icon: Icons.delete_outline,
