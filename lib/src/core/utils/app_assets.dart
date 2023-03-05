@@ -58,4 +58,5 @@ class AppAssets {
   static String driverIcon = _icons + "driver_icon.png";
   static String rentACarDriverIcon = _icons + "rent_a_car_driver_add_icon.png";
   static String assignDriverIcon = _icons + "assign_driver_icon.png";
+  static String gallery_png = _icons + "gallery.png";
 }

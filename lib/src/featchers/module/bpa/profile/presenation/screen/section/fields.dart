@@ -6,7 +6,7 @@ import 'package:asa_zaoa/src/core/widgets/date_and_time.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/utils/app_colors.dart';
-import '../../../../../../../core/widgets/app_photo_picker.dart';
+import '../../../../../../../core/widgets/app_reactanle_border_with_icon_for_select.dart';
 import '../../widegts/bpa_profile_text_fileds.dart';
 
 class BpaProfileFields extends StatelessWidget {
@@ -147,12 +147,12 @@ class BpaProfileFields extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                    child: AppPhotoPicker(
+                    child: AppRectAngleIconForSelect(
                   title: "Front Side",
                 )),
                 AppSpaces.spacesWidth15,
                 Expanded(
-                    child: new AppPhotoPicker(
+                    child: new AppRectAngleIconForSelect(
                   title: "Back Side",
                 )),
               ],

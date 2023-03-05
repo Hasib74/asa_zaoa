@@ -31,6 +31,7 @@ class Assets {
   static const String iconsChangePasswordIcon = 'assets/icons/change_password_icon.png';
   static const String iconsDashBoard = 'assets/icons/dash_board.svg';
   static const String iconsDrawerMenu = 'assets/icons/drawer_menu.svg';
+  static const String iconsGallery = 'assets/icons/gallery.png';
   static const String iconsHistory = 'assets/icons/history.svg';
   static const String iconsHome = 'assets/icons/home.svg';
   static const String iconsLogOut = 'assets/icons/log_out.png';

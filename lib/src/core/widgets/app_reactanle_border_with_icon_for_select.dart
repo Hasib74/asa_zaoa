@@ -4,10 +4,13 @@ import 'package:asa_zaoa/src/core/utils/app_colors.dart';
 import 'package:asa_zaoa/src/core/widgets/app_image_view.dart';
 import 'package:flutter/material.dart';
 
-class AppPhotoPicker extends StatelessWidget {
+class AppRectAngleIconForSelect extends StatelessWidget {
   final String? title;
 
-  const AppPhotoPicker({Key? key, this.title}) : super(key: key);
+  final String? imageUrl;
+
+  const AppRectAngleIconForSelect({Key? key, this.title, this.imageUrl})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class AppPhotoPicker extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AppImageView(
-            imageUrl: AppAssets.camera_icon_png,
+            imageUrl: imageUrl ?? AppAssets.camera_icon_png,
             width: 35,
             height: 35,
           ),
