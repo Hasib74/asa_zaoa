@@ -129,8 +129,7 @@ class CarDetailsDialog extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          StatefulBuilder(
-              builder: (BuildContext context, StateSetter setState) {
+          StatefulBuilder(builder: (BuildContext context, StateSetter setState) {
             return ToggleButton(
               text: isActive ? "ACTIVE" : "INACTIVE",
               onChanged: () {

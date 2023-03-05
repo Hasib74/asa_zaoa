@@ -8,6 +8,7 @@ import '../../../../../../core/widgets/app_image_view.dart';
 
 class RentACarAddTitle extends StatelessWidget {
   final String title;
+
   RentACarAddTitle({Key? key, required this.title}) : super(key: key);
 
   @override

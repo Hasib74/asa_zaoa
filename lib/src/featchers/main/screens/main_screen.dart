@@ -50,8 +50,7 @@ class MainScreen extends StatelessWidget {
                                 titleWidget: state.screen.appBarTitleWidget,
                                 onDrawerTap: state.screen.canShowMenuDrawer
                                     ? () {
-                                        _scaffoldKey.currentState!
-                                            .openEndDrawer();
+                                        _scaffoldKey.currentState!.openEndDrawer();
                                       }
                                     : null,
                               ),
@@ -64,9 +63,7 @@ class MainScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    state.screen.canShowBottomBar
-                        ? BpaBottomNavigationBar()
-                        : SizedBox(),
+                    state.screen.canShowBottomBar ? BpaBottomNavigationBar() : SizedBox(),
                   ],
                 );
               } else {

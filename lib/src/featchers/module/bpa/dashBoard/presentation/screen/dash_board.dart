@@ -44,8 +44,7 @@ class DashBoardScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Profile Not Updated",
-                            style: AppTextStyle.extraLargeTextStyle),
+                        Text("Profile Not Updated", style: AppTextStyle.extraLargeTextStyle),
                         Text(
                           "Your Personal Profile is incomplete. You must have to upload your personal Profile before using the app. This is important for your safe Travel, thank you.",
                           style: AppTextStyle.normalTextStyle,

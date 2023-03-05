@@ -20,13 +20,9 @@ class AppTheme {
       shadowColor: AppColors.shadowColor,
       textTheme: TextTheme(
         headline1: TextStyle(
-            fontSize: AppDimension.h1,
-            fontWeight: FontWeight.bold,
-            color: AppColors.textColorOne),
+            fontSize: AppDimension.h1, fontWeight: FontWeight.bold, color: AppColors.textColorOne),
         headline2: TextStyle(
-            fontSize: AppDimension.h2,
-            fontWeight: FontWeight.bold,
-            color: AppColors.textColorOne),
+            fontSize: AppDimension.h2, fontWeight: FontWeight.bold, color: AppColors.textColorOne),
         bodyText1: TextStyle(
             fontSize: AppDimension.b2,
             fontWeight: FontWeight.normal,
@@ -38,8 +34,7 @@ class AppTheme {
             fontWeight: FontWeight.normal,
             color: AppColors.textColorOne),
       ),
-      textSelectionTheme:
-          TextSelectionThemeData(cursorColor: AppColors.primaryColor));
+      textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.primaryColor));
 
   static ThemeData themeDataDark = ThemeData(
     brightness: Brightness.dark,

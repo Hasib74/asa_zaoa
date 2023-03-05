@@ -5,8 +5,8 @@ import 'package:asa_zaoa/src/featchers/splash/presentation/bloc/splash_screen_cu
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'app.dart';
 
+import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +25,5 @@ void main() async {
     BlocProvider(
       create: (context) => SplashScreenCubit(),
     ),
-
   ], child: const MyApp()));
 }

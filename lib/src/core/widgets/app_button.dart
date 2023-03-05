@@ -49,12 +49,10 @@ class AppButton extends StatelessWidget {
           width: width,
           height: height,
           padding: EdgeInsets.symmetric(
-              vertical: height == null ? 10 : 0,
-              horizontal: width == null ? 30 : 0),
+              vertical: height == null ? 10 : 0, horizontal: width == null ? 30 : 0),
           decoration: BoxDecoration(
             color: color ?? AppColors.white,
-            borderRadius:
-                BorderRadius.circular(height != null ? height! / 2 : 25),
+            borderRadius: BorderRadius.circular(height != null ? height! / 2 : 25),
             border: Border.all(
               color: borderColor ?? AppColors.shadowColor,
               width: borderWidth ?? 2,

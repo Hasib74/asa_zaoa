@@ -38,8 +38,7 @@ class AppIconWithTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all<Color>(Colors.transparent),
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
             elevation: MaterialStateProperty.all<double>(0)),
         onPressed: onPressed,
         child: Column(
@@ -48,9 +47,7 @@ class AppIconWithTextButton extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
                 border: isCircle
-                    ? Border.all(
-                        color: AppColors.shadowColorOne,
-                        width: AppDimension.roundBorder)
+                    ? Border.all(color: AppColors.shadowColorOne, width: AppDimension.roundBorder)
                     : null,
               ),
               child: AppImageView(

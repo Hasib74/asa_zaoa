@@ -15,8 +15,7 @@ class RentACarBrandList extends StatefulWidget {
 class _RentACarBrandListState extends State<RentACarBrandList> {
   List<BrandItem> brandList = [
     BrandItem(
-      iconUrl:
-          "https://cdn.iconscout.com/icon/free/png-256/mitsubishi-4-282588.png",
+      iconUrl: "https://cdn.iconscout.com/icon/free/png-256/mitsubishi-4-282588.png",
       title: "Mitsubishi",
     ),
     BrandItem(
@@ -30,18 +29,15 @@ class _RentACarBrandListState extends State<RentACarBrandList> {
       title: "Ford",
     ),
     BrandItem(
-      iconUrl:
-          "https://freepngimg.com/download/car%20logo/19-hyundai-car-logo-png-brand-image.png",
+      iconUrl: "https://freepngimg.com/download/car%20logo/19-hyundai-car-logo-png-brand-image.png",
       title: "Hyundai",
     ),
     BrandItem(
-      iconUrl:
-          "https://cdn.iconscout.com/icon/free/png-256/mercedes-8-202855.png",
+      iconUrl: "https://cdn.iconscout.com/icon/free/png-256/mercedes-8-202855.png",
       title: "Mercedes",
     ),
     BrandItem(
-      iconUrl:
-          "https://freepngimg.com/download/car%20logo/10-honda-car-logo-png-brand-image.png",
+      iconUrl: "https://freepngimg.com/download/car%20logo/10-honda-car-logo-png-brand-image.png",
       title: "Honda",
     ),
     BrandItem(
@@ -49,13 +45,11 @@ class _RentACarBrandListState extends State<RentACarBrandList> {
       title: "BMW",
     ),
     BrandItem(
-      iconUrl:
-          "https://toppng.com/uploads/preview/audi-logo-1154874010955h7lwhggt.png",
+      iconUrl: "https://toppng.com/uploads/preview/audi-logo-1154874010955h7lwhggt.png",
       title: "Audi",
     ),
     BrandItem(
-      iconUrl:
-          "https://cdn.iconscout.com/icon/free/png-256/mitsubishi-4-282588.png",
+      iconUrl: "https://cdn.iconscout.com/icon/free/png-256/mitsubishi-4-282588.png",
       title: "Photon",
     ),
     BrandItem(
@@ -67,8 +61,7 @@ class _RentACarBrandListState extends State<RentACarBrandList> {
       title: "Tata",
     ),
     BrandItem(
-      iconUrl:
-          "https://cdn.iconscout.com/icon/free/png-256/nissan-5-202859.png",
+      iconUrl: "https://cdn.iconscout.com/icon/free/png-256/nissan-5-202859.png",
       title: "Nissan",
     ),
   ];

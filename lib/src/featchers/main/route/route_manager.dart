@@ -103,13 +103,11 @@ class RouteController {
             children: [
               TextSpan(
                 text: 'RENT',
-                style: AppTextStyle.boldTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.boldTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
               TextSpan(
                 text: ' A CAR',
-                style: AppTextStyle.normalTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.normalTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
             ],
           ),
@@ -137,13 +135,11 @@ class RouteController {
             children: [
               TextSpan(
                 text: 'RENT',
-                style: AppTextStyle.boldTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.boldTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
               TextSpan(
                 text: ' A CAR',
-                style: AppTextStyle.normalTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.normalTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
             ],
           ),
@@ -266,13 +262,11 @@ class RouteController {
             children: [
               TextSpan(
                 text: 'ASSIGN',
-                style: AppTextStyle.boldTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.boldTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
               TextSpan(
                 text: ' CAR',
-                style: AppTextStyle.normalTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.normalTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
             ],
           ),
@@ -300,13 +294,11 @@ class RouteController {
             children: [
               TextSpan(
                 text: 'ASSIGN',
-                style: AppTextStyle.boldTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.boldTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
               TextSpan(
                 text: ' DRIVER',
-                style: AppTextStyle.normalTextStyle!
-                    .copyWith(fontSize: AppDimension.h1),
+                style: AppTextStyle.normalTextStyle!.copyWith(fontSize: AppDimension.h1),
               ),
             ],
           ),

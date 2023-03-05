@@ -15,8 +15,7 @@ class CarItemView extends StatelessWidget {
   final bool forAssign;
   final CarItem item;
 
-  const CarItemView({Key? key, required this.item, this.forAssign = false})
-      : super(key: key);
+  const CarItemView({Key? key, required this.item, this.forAssign = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +40,7 @@ class CarItemView extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  width:
-                      MediaQuery.of(context).size.width / (forAssign ? 4 : 3.2),
+                  width: MediaQuery.of(context).size.width / (forAssign ? 4 : 3.2),
                   child: AspectRatio(
                     aspectRatio: forAssign ? 1.5 : 1.2,
                     // child: Placeholder(),
@@ -73,8 +71,7 @@ class CarItemView extends StatelessWidget {
                         item.title,
                         maxLines: 1,
                         style: AppTextStyle.boldTextStyle!.copyWith(
-                          fontSize:
-                              forAssign ? AppDimension.b2 : AppDimension.b3,
+                          fontSize: forAssign ? AppDimension.b2 : AppDimension.b3,
                           color: AppColors.primaryColor,
                         ),
                         textAlign: TextAlign.left,
@@ -84,8 +81,7 @@ class CarItemView extends StatelessWidget {
                         item.subtitle,
                         maxLines: 1,
                         style: AppTextStyle.normalTextStyle!.copyWith(
-                          fontSize:
-                              forAssign ? AppDimension.b1 : AppDimension.b2,
+                          fontSize: forAssign ? AppDimension.b1 : AppDimension.b2,
                           color: AppColors.black,
                         ),
                         textAlign: TextAlign.left,
@@ -104,8 +100,7 @@ class CarItemView extends StatelessWidget {
                               icon: Icons.person_add_alt_1_outlined,
                               title: "ADD DRIVER",
                               onTap: () {
-                                RouteController(context)
-                                    .goToAssignDriverScreen();
+                                RouteController(context).goToAssignDriverScreen();
                               },
                             ),
                             CarListActionButton(

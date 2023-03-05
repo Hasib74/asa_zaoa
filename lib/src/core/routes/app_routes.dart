@@ -22,8 +22,7 @@ class AppRoutes {
 
   static String MAIN = "/main";
 
-  static String RENT_A_CAR_REG_SUCCESS_SCREEN =
-      "/rent_a_car_reg_success_screen";
+  static String RENT_A_CAR_REG_SUCCESS_SCREEN = "/rent_a_car_reg_success_screen";
 
   static String CREATE_BPA_PROFILE_SCREEN = "/create_bpa_profile_screen";
   static String RESET_PASSWORD_SCREEN = "/reset_password_screen";
@@ -43,10 +42,8 @@ class AppRoutes {
           ),
       BPA_DISPLAY: (BuildContext context) => BpaDisplayScreen(),
       MAIN: (BuildContext context) => MainScreen(),
-      RENT_A_CAR_REG_SUCCESS_SCREEN: (BuildContext context) =>
-          RentACarRegSuccessScreen(),
-      CREATE_BPA_PROFILE_SCREEN: (BuildContext context) =>
-          CreateBpaProfileScreen(),
+      RENT_A_CAR_REG_SUCCESS_SCREEN: (BuildContext context) => RentACarRegSuccessScreen(),
+      CREATE_BPA_PROFILE_SCREEN: (BuildContext context) => CreateBpaProfileScreen(),
       RESET_PASSWORD_SCREEN: (BuildContext context) => ResetPasswordScreen(),
     };
   }

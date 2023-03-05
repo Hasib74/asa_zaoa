@@ -6,7 +6,6 @@ class SplashScreenFunctions {
   init(BuildContext context) async {
     await Future.delayed(const Duration(seconds: 3));
 
-    Navigator.pushNamedAndRemoveUntil(
-        context, AppRoutes.WELCOME_SCREEN, (route) => false);
+    Navigator.pushNamedAndRemoveUntil(context, AppRoutes.WELCOME_SCREEN, (route) => false);
   }
 }

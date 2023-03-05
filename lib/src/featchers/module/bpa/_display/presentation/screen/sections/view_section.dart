@@ -9,8 +9,7 @@ class ViewSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BpaDisplayCubit, BpaDisplayState>(
-        builder: (context, state) {
+    return BlocBuilder<BpaDisplayCubit, BpaDisplayState>(builder: (context, state) {
       BpaBottomBarMainMenu menu = BpaBottomBarMainMenu.home;
 
       if (state is BpaDisplayChanged) {

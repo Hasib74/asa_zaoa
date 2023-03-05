@@ -13,8 +13,7 @@ class BpaBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BpaDisplayCubit, BpaDisplayState>(
-        builder: (context, state) {
+    return BlocBuilder<BpaDisplayCubit, BpaDisplayState>(builder: (context, state) {
       BpaBottomBarMainMenu menu = BpaBottomBarMainMenu.home;
 
       if (state is BpaDisplayChanged) {
@@ -47,9 +46,7 @@ class BpaBottomNavigationBar extends StatelessWidget {
                   : AppColors.primaryColor.withOpacity(0.4),
               title: "Trip",
               onPressed: () {
-                context
-                    .read<BpaDisplayCubit>()
-                    .changeTab(BpaBottomBarMainMenu.trip);
+                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.trip);
               },
             ),
             AppIconWithTextButton(
@@ -63,9 +60,7 @@ class BpaBottomNavigationBar extends StatelessWidget {
                   : AppColors.primaryColor.withOpacity(0.4),
               title: "Home",
               onPressed: () {
-                context
-                    .read<BpaDisplayCubit>()
-                    .changeTab(BpaBottomBarMainMenu.home);
+                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.home);
               },
             ),
             AppIconWithTextButton(
@@ -79,9 +74,7 @@ class BpaBottomNavigationBar extends StatelessWidget {
                   : AppColors.primaryColor.withOpacity(0.4),
               title: "History",
               onPressed: () {
-                context
-                    .read<BpaDisplayCubit>()
-                    .changeTab(BpaBottomBarMainMenu.history);
+                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.history);
               },
             ),
             AppIconWithTextButton(
@@ -95,9 +88,7 @@ class BpaBottomNavigationBar extends StatelessWidget {
                   : AppColors.primaryColor.withOpacity(0.4),
               title: "DashBoard",
               onPressed: () {
-                context
-                    .read<BpaDisplayCubit>()
-                    .changeTab(BpaBottomBarMainMenu.dashBoard);
+                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.dashBoard);
               },
             ),
           ],

@@ -128,8 +128,7 @@ class DriverDetailsDialog extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 1.4,
                   child: CustomImageWidget(
-                    imageUrl:
-                        "https://allresultbd.com/wp-content/uploads/2022/03/old-NID-card.jpg",
+                    imageUrl: "https://allresultbd.com/wp-content/uploads/2022/03/old-NID-card.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -139,8 +138,7 @@ class DriverDetailsDialog extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: 1.4,
                   child: CustomImageWidget(
-                    imageUrl:
-                        "https://www.observerbd.com/2019/10/03/observerbd.com_1570128878.jpg",
+                    imageUrl: "https://www.observerbd.com/2019/10/03/observerbd.com_1570128878.jpg",
                     fit: BoxFit.fill,
                   ),
                 ),

@@ -15,17 +15,10 @@ class AppApiResponse<T extends Model> {
   bool? isRemote;
 
   AppApiResponse(
-      {this.data,
-      this.success,
-      this.message,
-      this.body,
-      this.statusCode,
-      this.isRemote: true}) {
+      {this.data, this.success, this.message, this.body, this.statusCode, this.isRemote: true}) {
     /*print("Status code ::: ${statusCode}");
     print("Body ::: ${jsonDecode(body!)["code"]}");
     print("message ::: ${message}");*/
-
-
   }
 
   factory AppApiResponse.data({
@@ -86,8 +79,7 @@ String? _handleMessage(int? statusCode, String? body) {
       String errorMessage = "";
 
       _data.values.forEach((element) {
-        String error =
-            element.toString().replaceAll("[", "").replaceAll("]", "");
+        String error = element.toString().replaceAll("[", "").replaceAll("]", "");
         if (errorMessage.isEmpty) {
           errorMessage = error;
         } else {

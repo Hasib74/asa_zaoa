@@ -52,8 +52,7 @@ class WelcomeScreen extends StatelessWidget {
           Spacer(),
           Text(
             "Privacy Policy",
-            style: AppTextStyle.normalTextStyle!
-                .copyWith(color: AppColors.textColorTwo),
+            style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
           ),
           Spacer(),
         ],

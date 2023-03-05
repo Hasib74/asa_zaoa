@@ -1,6 +1,6 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
-import 'package:country_picker/country_picker.dart';
 
 import '../utils/app_spaces.dart';
 
@@ -12,14 +12,11 @@ class AppCountryPickerWidgets extends StatefulWidget {
   Function(String)? onSelectedCountryName;
 
   AppCountryPickerWidgets(
-      {Key? key,
-      required this.onSelectedCountryCode,
-      required this.onSelectedCountryName})
+      {Key? key, required this.onSelectedCountryCode, required this.onSelectedCountryName})
       : super(key: key);
 
   @override
-  State<AppCountryPickerWidgets> createState() =>
-      _AppCountryPickerWidgetsState();
+  State<AppCountryPickerWidgets> createState() => _AppCountryPickerWidgetsState();
 }
 
 class _AppCountryPickerWidgetsState extends State<AppCountryPickerWidgets> {

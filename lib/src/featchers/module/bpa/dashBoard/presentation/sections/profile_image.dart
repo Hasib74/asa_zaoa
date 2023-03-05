@@ -1,8 +1,5 @@
-import 'package:asa_zaoa/src/core/utils/app_assets.dart';
 import 'package:asa_zaoa/src/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../../core/widgets/app_toggle_widgets.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({Key? key}) : super(key: key);

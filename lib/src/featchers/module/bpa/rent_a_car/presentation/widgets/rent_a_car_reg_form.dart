@@ -23,20 +23,7 @@ class RentACarRegForm extends StatelessWidget {
     'Comilla',
     'Feni',
   ];
-  List<String> serialList = [
-    'ক',
-    'খ',
-    'গ',
-    'ঘ',
-    'ঙ',
-    'চ',
-    'ছ',
-    'জ',
-    'ঝ',
-    'ঞ',
-    'ট',
-    'ঠ'
-  ];
+  List<String> serialList = ['ক', 'খ', 'গ', 'ঘ', 'ঙ', 'চ', 'ছ', 'জ', 'ঝ', 'ঞ', 'ট', 'ঠ'];
 
   TextEditingController areaController = TextEditingController();
   TextEditingController serialController = TextEditingController();

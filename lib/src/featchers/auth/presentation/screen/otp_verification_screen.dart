@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/helper/app_role_enum.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/themes/app_text_style.dart';
@@ -7,7 +8,6 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_spaces.dart';
 import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/app_otp_text_filed.dart';
-import '../../../../core/widgets/app_text_fields.dart';
 import '../../../../core/widgets/asa_zaoa_title.dart';
 import '../../../../core/widgets/round_icon_button.dart';
 
@@ -30,15 +30,12 @@ class OtpVerificationScreen extends StatelessWidget {
             AppSpaces.spacesHeight15,
             AppIconWithTextButton(
               isCircle: true,
-              imageUrl: role == AppRoleEnum.BPA
-                  ? AppAssets.bpa_icon
-                  : AppAssets.driver_icon,
+              imageUrl: role == AppRoleEnum.BPA ? AppAssets.bpa_icon : AppAssets.driver_icon,
             ),
             Spacer(),
             Column(
               children: [
-                Text("We have sent a verification code to ",
-                    textAlign: TextAlign.center),
+                Text("We have sent a verification code to ", textAlign: TextAlign.center),
                 AppSpaces.spacesHeight10,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -61,9 +58,8 @@ class OtpVerificationScreen extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.normal),
                     ),
                     Text("Resend",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.textColorTwo))
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, color: AppColors.textColorTwo))
                   ],
                 ),
                 AppSpaces.spacesHeight10,
@@ -82,9 +78,7 @@ class OtpVerificationScreen extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.normal),
                 ),
                 Text("Terms & Conditions",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textColorTwo))
+                    style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textColorTwo))
               ],
             ),
             Spacer(),
@@ -117,8 +111,7 @@ class OtpVerificationScreen extends StatelessWidget {
                     },
                     child: Text(
                       "SignIn now",
-                      style: AppTextStyle.normalTextStyle!
-                          .copyWith(color: AppColors.textColorTwo),
+                      style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
                     ),
                   ),
                 ],

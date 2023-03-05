@@ -5,8 +5,6 @@ import '../../../../../../core/utils/app_assets.dart';
 import '../../../../../../core/utils/app_dimension.dart';
 import '../../../../../../core/widgets/app_image_view.dart';
 
-
-
 class RentACarTitle extends StatelessWidget {
   RentACarTitle({Key? key}) : super(key: key);
 
@@ -36,13 +34,11 @@ class RentACarTitle extends StatelessWidget {
               children: [
                 TextSpan(
                   text: 'RENT',
-                  style: AppTextStyle.boldTextStyle!
-                      .copyWith(fontSize: AppDimension.h1),
+                  style: AppTextStyle.boldTextStyle!.copyWith(fontSize: AppDimension.h1),
                 ),
                 TextSpan(
                   text: ' A CAR',
-                  style: AppTextStyle.normalTextStyle!
-                      .copyWith(fontSize: AppDimension.h1),
+                  style: AppTextStyle.normalTextStyle!.copyWith(fontSize: AppDimension.h1),
                 ),
               ],
             ),

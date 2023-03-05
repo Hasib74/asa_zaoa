@@ -17,8 +17,7 @@ class MainFunctions {
 
     // lastWidget(body);
 
-    BlocProvider.of<MainBloc>(context)
-        .add(MainScreenUpdateEvent(screenData: body));
+    BlocProvider.of<MainBloc>(context).add(MainScreenUpdateEvent(screenData: body));
   }
 
   updateScreen(MainScreenUpdateEvent event, Emitter<MainState> emit) async {
@@ -39,8 +38,7 @@ class MainFunctions {
     if (stackWidgets.isNotEmpty) {
       // lastWidget(stackWidgets.last);
 
-      BlocProvider.of<MainBloc>(context)
-          .add(MainScreenUpdateEvent(screenData: stackWidgets.last));
+      BlocProvider.of<MainBloc>(context).add(MainScreenUpdateEvent(screenData: stackWidgets.last));
 
       returnValue = false;
     } else {

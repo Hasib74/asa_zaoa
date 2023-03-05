@@ -53,5 +53,4 @@ class Assets {
   static const String imagesWelcomeAsaZaoa = 'assets/images/welcome_asa_zaoa.svg';
   static const String imagesWelcomePageCar = 'assets/images/welcome_page_car.png';
   static const String logoAppLogo = 'assets/logo/app_logo.png';
-
 }

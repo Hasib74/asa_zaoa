@@ -22,8 +22,8 @@ class AsaZaoaTitle extends StatelessWidget {
           ),
           Text(
             "AsaZaoa",
-            style: AppTextStyle.boldTextStyle!.copyWith(
-                fontSize: AppDimension.h3, fontWeight: FontWeight.w900),
+            style: AppTextStyle.boldTextStyle!
+                .copyWith(fontSize: AppDimension.h3, fontWeight: FontWeight.w900),
           ),
         ],
       ),

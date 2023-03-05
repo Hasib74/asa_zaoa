@@ -18,7 +18,7 @@ class TopSection extends StatelessWidget {
           width: double.infinity,
           child: Container(
             margin: EdgeInsets.only(
-             bottom: 20,
+              bottom: 20,
             ),
             padding: EdgeInsets.only(
               top: 50,
@@ -27,8 +27,7 @@ class TopSection extends StatelessWidget {
             ),
             height: 80,
             width: double.infinity,
-            decoration:
-                BoxDecoration(color: AppColors.secondaryColor.withOpacity(0.6)),
+            decoration: BoxDecoration(color: AppColors.secondaryColor.withOpacity(0.6)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
@@ -53,24 +52,24 @@ class TopSection extends StatelessWidget {
             children: [
               Positioned(
                 child: Container(
-                  height: MediaQuery.of(context).size.width * 0.35,
-                  width: MediaQuery.of(context).size.width * 0.35,
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    shape: BoxShape.circle,
-                  ),
-
-                  child: AppImageView(
-                    imageUrl: AppAssets.user_png,
                     height: MediaQuery.of(context).size.width * 0.35,
                     width: MediaQuery.of(context).size.width * 0.35,
-                  )
-                ),
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: AppImageView(
+                      imageUrl: AppAssets.user_png,
+                      height: MediaQuery.of(context).size.width * 0.35,
+                      width: MediaQuery.of(context).size.width * 0.35,
+                    )),
               ),
               Positioned(
                   bottom: 0.0,
                   right: 16,
-                  child: AppImageView(imageUrl: AppAssets.camera_png,))
+                  child: AppImageView(
+                    imageUrl: AppAssets.camera_png,
+                  ))
             ],
           ),
           bottom: 0,

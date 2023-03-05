@@ -7,8 +7,7 @@ class AppImageView extends StatelessWidget {
   double? height;
   Color? color;
 
-  AppImageView({Key? key, this.imageUrl, this.height, this.width, this.color})
-      : super(key: key);
+  AppImageView({Key? key, this.imageUrl, this.height, this.width, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

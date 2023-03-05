@@ -9,7 +9,7 @@ class AppListTileButton extends StatelessWidget {
 
   VoidCallback? onTap;
 
-  AppListTileButton({Key? key, this.title, this.icon , this.onTap}) : super(key: key);
+  AppListTileButton({Key? key, this.title, this.icon, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

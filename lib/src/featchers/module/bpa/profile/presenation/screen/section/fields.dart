@@ -2,8 +2,6 @@ import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
 import 'package:asa_zaoa/src/core/utils/app_spaces.dart';
 import 'package:asa_zaoa/src/core/widgets/app_button.dart';
 import 'package:asa_zaoa/src/core/widgets/app_drop_down_button.dart';
-import 'package:asa_zaoa/src/core/widgets/app_otp_text_filed.dart';
-import 'package:asa_zaoa/src/core/widgets/app_text_fields.dart';
 import 'package:asa_zaoa/src/core/widgets/date_and_time.dart';
 import 'package:flutter/material.dart';
 

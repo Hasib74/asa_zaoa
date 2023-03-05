@@ -7,7 +7,6 @@ import 'package:asa_zaoa/src/featchers/module/bpa/_display/presentation/screen/s
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../dashBoard/presentation/screen/dash_board.dart';
 import '../../domain/bpa_buttom_bar_menu.dart';
 
 class BpaDisplayScreen extends StatelessWidget {
@@ -27,8 +26,7 @@ class BpaDisplayScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            BlocBuilder<BpaDisplayCubit, BpaDisplayState>(
-                builder: (context, state) {
+            BlocBuilder<BpaDisplayCubit, BpaDisplayState>(builder: (context, state) {
               Color backgroundColor = Colors.white;
 
               if (state is BpaDisplayChanged) {

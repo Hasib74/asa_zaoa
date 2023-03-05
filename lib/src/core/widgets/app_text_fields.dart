@@ -114,17 +114,13 @@ class AppTextFiled extends StatelessWidget {
           maxLines: obscureText ? 1 : this.maxLine,
 
           style: maxLength == 1
-              ? Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: AppColors.shadowColor)
+              ? Theme.of(context).textTheme.headline6?.copyWith(color: AppColors.shadowColor)
               : null,
           textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: AppTextStyle.hintStyle,
-            contentPadding:
-                contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
+            contentPadding: contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
             counter: null,
             filled: backgroundColor != null,
             fillColor: backgroundColor,
@@ -139,21 +135,18 @@ class AppTextFiled extends StatelessWidget {
                     borderRadius: BorderRadius.circular(40)),
             focusedBorder: border ??
                 OutlineInputBorder(
-                    borderSide: BorderSide(
-                        width: 2,
-                        color: focusedBorderColor ?? AppColors.shadowColor),
+                    borderSide:
+                        BorderSide(width: 2, color: focusedBorderColor ?? AppColors.shadowColor),
                     borderRadius: BorderRadius.circular(40)),
             disabledBorder: border ??
                 OutlineInputBorder(
-                    borderSide: BorderSide(
-                        width: 2,
-                        color: disabledBorderColor ?? AppColors.shadowColor),
+                    borderSide:
+                        BorderSide(width: 2, color: disabledBorderColor ?? AppColors.shadowColor),
                     borderRadius: BorderRadius.circular(40)),
             enabledBorder: border ??
                 OutlineInputBorder(
-                    borderSide: BorderSide(
-                        width: 2,
-                        color: enabledBorderColor ?? AppColors.shadowColor),
+                    borderSide:
+                        BorderSide(width: 2, color: enabledBorderColor ?? AppColors.shadowColor),
                     borderRadius: BorderRadius.circular(40)),
             // border: UnderlineInputBorder(),
             prefixIcon: isPhoneNumberSelectAble == true

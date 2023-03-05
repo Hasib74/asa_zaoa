@@ -2,7 +2,6 @@ import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
 import 'package:asa_zaoa/src/core/utils/app_assets.dart';
 import 'package:asa_zaoa/src/core/utils/app_colors.dart';
 import 'package:asa_zaoa/src/core/widgets/app_image_view.dart';
-import 'package:asa_zaoa/src/core/widgets/app_text_fields.dart';
 import 'package:flutter/material.dart';
 
 class AppPhotoPicker extends StatelessWidget {

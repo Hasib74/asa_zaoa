@@ -29,13 +29,8 @@ class AppSpaces {
 
   static Padding spacesWidth25 = Padding(padding: EdgeInsets.only(left: 25));
 
-  static EdgeInsets customSpaces(
-          {double? left, double? right, double? bottom, double? top}) =>
-      EdgeInsets.only(
-          left: left ?? 0,
-          right: right ?? 0,
-          top: top ?? 0,
-          bottom: bottom ?? 0);
+  static EdgeInsets customSpaces({double? left, double? right, double? bottom, double? top}) =>
+      EdgeInsets.only(left: left ?? 0, right: right ?? 0, top: top ?? 0, bottom: bottom ?? 0);
 
   static EdgeInsets customAllSpaces(double space) => EdgeInsets.all(space);
 }

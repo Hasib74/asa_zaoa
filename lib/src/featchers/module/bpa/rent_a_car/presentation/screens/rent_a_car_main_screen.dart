@@ -40,8 +40,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
       subtitle: "Dhaka Metro kha 23-56789",
     ),
     CarItem(
-      image:
-          "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAY0nil.img",
+      image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAY0nil.img",
       title: "Toyota Hiace 2023",
       subtitle: "Dhaka Metro kha 23-56789",
     ),
@@ -125,13 +124,10 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                             bottom: 0,
                                             child: AppTextFiled(
                                               hint: "Search Car",
-                                              textEditingController:
-                                                  TextEditingController(),
-                                              backgroundColor:
-                                                  AppColors.lightGrey,
+                                              textEditingController: TextEditingController(),
+                                              backgroundColor: AppColors.lightGrey,
                                               isCenter: true,
-                                              contentPadding:
-                                                  EdgeInsets.only(right: 40),
+                                              contentPadding: EdgeInsets.only(right: 40),
                                             ),
                                           ),
                                           Positioned(
@@ -139,8 +135,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                             child: InkWell(
                                               onTap: () {},
                                               child: Icon(
-                                                CupertinoIcons
-                                                    .search_circle_fill,
+                                                CupertinoIcons.search_circle_fill,
                                                 size: 40,
                                                 color: AppColors.grey,
                                               ),
@@ -152,8 +147,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                     SizedBox(width: 8),
                                     InkWell(
                                       onTap: () {
-                                        RouteController(context)
-                                            .goToRentACarBrandSelectScreen();
+                                        RouteController(context).goToRentACarBrandSelectScreen();
                                       },
                                       child: Icon(
                                         CupertinoIcons.add_circled_solid,
@@ -177,8 +171,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                       height: 10,
                                     );
                                   },
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
+                                  itemBuilder: (BuildContext context, int index) {
                                     return CarItemView(item: carList[index]);
                                   },
                                 ),
@@ -212,13 +205,10 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                             bottom: 0,
                                             child: AppTextFiled(
                                               hint: "Search Driver",
-                                              textEditingController:
-                                                  TextEditingController(),
-                                              backgroundColor:
-                                                  AppColors.lightGrey,
+                                              textEditingController: TextEditingController(),
+                                              backgroundColor: AppColors.lightGrey,
                                               isCenter: true,
-                                              contentPadding:
-                                                  EdgeInsets.only(right: 40),
+                                              contentPadding: EdgeInsets.only(right: 40),
                                             ),
                                           ),
                                           Positioned(
@@ -226,8 +216,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                             child: InkWell(
                                               onTap: () {},
                                               child: Icon(
-                                                CupertinoIcons
-                                                    .search_circle_fill,
+                                                CupertinoIcons.search_circle_fill,
                                                 size: 40,
                                                 color: AppColors.grey,
                                               ),
@@ -239,8 +228,7 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                     SizedBox(width: 8),
                                     InkWell(
                                       onTap: () {
-                                        RouteController(context)
-                                            .goToRentACarDriverRegScreen();
+                                        RouteController(context).goToRentACarDriverRegScreen();
                                       },
                                       child: Icon(
                                         CupertinoIcons.add_circled_solid,
@@ -264,10 +252,8 @@ class _RentACarMainScreenState extends State<RentACarMainScreen> {
                                       height: 10,
                                     );
                                   },
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return DriverItemView(
-                                        item: driverList[index]);
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return DriverItemView(item: driverList[index]);
                                   },
                                 ),
                               ),

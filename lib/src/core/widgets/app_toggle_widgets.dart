@@ -9,12 +9,7 @@ class AppToggleSwitcher extends StatefulWidget {
   final Function(bool)? onChanged;
   final double? width;
 
-  AppToggleSwitcher(
-      {Key? key,
-      this.activeTitle,
-      this.deActiveTitle,
-      this.onChanged,
-      this.width})
+  AppToggleSwitcher({Key? key, this.activeTitle, this.deActiveTitle, this.onChanged, this.width})
       : super(key: key);
 
   @override
@@ -43,9 +38,7 @@ class _AppToggleSwitcherState extends State<AppToggleSwitcher> {
           decoration: BoxDecoration(
             border: Border.all(color: AppColors.shadowColor, width: 0.5),
             borderRadius: BorderRadius.circular(45),
-            color: isActive
-                ? AppColors.switcherActiveColor
-                : AppColors.switcherDeActiveColor,
+            color: isActive ? AppColors.switcherActiveColor : AppColors.switcherDeActiveColor,
           ),
           child: Row(
             children: [
@@ -53,15 +46,12 @@ class _AppToggleSwitcherState extends State<AppToggleSwitcher> {
               isActive
                   ? Text(
                       "  ${widget.activeTitle}  ",
-                      style: AppTextStyle.semiBoldTextStyle!
-                          .copyWith(color: Colors.white),
+                      style: AppTextStyle.semiBoldTextStyle!.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     )
                   : _toogleRoundButton(),
               Spacer(),
-              isActive
-                  ? _toogleRoundButton()
-                  : Text("  ${widget.deActiveTitle}  "),
+              isActive ? _toogleRoundButton() : Text("  ${widget.deActiveTitle}  "),
               AppSpaces.spacesWidth5,
             ],
           ),
@@ -80,10 +70,7 @@ class _AppToggleSwitcherState extends State<AppToggleSwitcher> {
           shape: BoxShape.circle,
           color: Colors.white,
           border: Border.all(
-              color: isActive
-                  ? AppColors.shadowColor
-                  : AppColors.switcherActiveColor,
-              width: 2)),
+              color: isActive ? AppColors.shadowColor : AppColors.switcherActiveColor, width: 2)),
     );
   }
 }

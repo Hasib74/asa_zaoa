@@ -9,8 +9,7 @@ class BpaAppBar extends StatelessWidget {
   Color? backgroundColor;
   GlobalKey<ScaffoldState>? scaffoldKey = GlobalKey<ScaffoldState>();
 
-  BpaAppBar({Key? key, this.backgroundColor, this.scaffoldKey})
-      : super(key: key);
+  BpaAppBar({Key? key, this.backgroundColor, this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

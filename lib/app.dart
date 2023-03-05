@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
 
         return widget;
       },
-
       routes: AppRoutes.getAppRoutes(),
       initialRoute: AppRoutes.SPLASH_SCREEN,
     );

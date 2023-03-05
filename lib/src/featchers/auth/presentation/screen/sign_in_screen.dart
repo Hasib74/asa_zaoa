@@ -34,24 +34,19 @@ class SignInScreen extends StatelessWidget {
             AppSpaces.spacesHeight15,
             AppIconWithTextButton(
               isCircle: true,
-
-              imageUrl: role == AppRoleEnum.BPA
-                  ? AppAssets.bpa_icon
-                  : AppAssets.driver_icon,
+              imageUrl: role == AppRoleEnum.BPA ? AppAssets.bpa_icon : AppAssets.driver_icon,
             ),
             Spacer(),
             AppTextFiled(
               hint: "XXX XXX XXX",
-              textEditingController:
-                  sl<SignInFunctions>().phoneNumberTextEditingController,
+              textEditingController: sl<SignInFunctions>().phoneNumberTextEditingController,
               isPhoneNumberSelectAble: true,
             ),
             AppSpaces.spacesHeight15,
             AppTextFiled(
                 isCenter: true,
                 hint: "*********",
-                textEditingController:
-                    sl<SignInFunctions>().passwordTextEditingController),
+                textEditingController: sl<SignInFunctions>().passwordTextEditingController),
             AppSpaces.spacesHeight15,
             AppButton(
               title: "LogIn",
@@ -59,15 +54,13 @@ class SignInScreen extends StatelessWidget {
                 Navigator.pushNamed(
                   context,
                   AppRoutes.BPA_DISPLAY,
-
                 );
               },
             ),
             AppSpaces.spacesHeight10,
             Text(
               "Forgot Password",
-              style: AppTextStyle.normalTextStyle!
-                  .copyWith(color: AppColors.textColorTwo),
+              style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
             ),
             AppSpaces.spacesHeight10,
             Spacer(),
@@ -90,8 +83,7 @@ class SignInScreen extends StatelessWidget {
                     },
                     child: Text(
                       "SignUp now",
-                      style: AppTextStyle.normalTextStyle!
-                          .copyWith(color: AppColors.textColorTwo),
+                      style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
                     ),
                   ),
                 ],

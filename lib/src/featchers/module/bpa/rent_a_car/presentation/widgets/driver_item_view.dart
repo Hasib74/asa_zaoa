@@ -15,8 +15,7 @@ class DriverItemView extends StatelessWidget {
   final bool forAssign;
   final DriverItem item;
 
-  const DriverItemView({Key? key, required this.item, this.forAssign = false})
-      : super(key: key);
+  const DriverItemView({Key? key, required this.item, this.forAssign = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +23,7 @@ class DriverItemView extends StatelessWidget {
       onTap: () {
         Overlayment.show(
           context: context,
-          child:
-              forAssign ? CarAssignConfirmationDialog() : DriverDetailsDialog(),
+          child: forAssign ? CarAssignConfirmationDialog() : DriverDetailsDialog(),
         );
       },
       child: Container(
@@ -42,8 +40,7 @@ class DriverItemView extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  width:
-                      MediaQuery.of(context).size.width / (forAssign ? 4 : 3.2),
+                  width: MediaQuery.of(context).size.width / (forAssign ? 4 : 3.2),
                   child: AspectRatio(
                     aspectRatio: forAssign ? 1.5 : 1.2,
                     // child: Placeholder(),
@@ -66,8 +63,7 @@ class DriverItemView extends StatelessWidget {
                         item.name,
                         maxLines: 1,
                         style: AppTextStyle.boldTextStyle!.copyWith(
-                          fontSize:
-                              forAssign ? AppDimension.b2 : AppDimension.b3,
+                          fontSize: forAssign ? AppDimension.b2 : AppDimension.b3,
                           color: AppColors.primaryColor,
                         ),
                         textAlign: TextAlign.left,
@@ -77,8 +73,7 @@ class DriverItemView extends StatelessWidget {
                         "DL: ${item.phone}",
                         maxLines: 1,
                         style: AppTextStyle.normalTextStyle!.copyWith(
-                          fontSize:
-                              forAssign ? AppDimension.b1 : AppDimension.b2,
+                          fontSize: forAssign ? AppDimension.b1 : AppDimension.b2,
                           color: AppColors.black,
                         ),
                         textAlign: TextAlign.left,

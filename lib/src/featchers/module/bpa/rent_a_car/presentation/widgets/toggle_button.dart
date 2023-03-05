@@ -32,9 +32,7 @@ class ToggleButton extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: AppColors.shadowColor, width: 0.5),
                 borderRadius: BorderRadius.circular(45),
-                color: isActive
-                    ? AppColors.switcherActiveColor
-                    : AppColors.switcherDeActiveColor,
+                color: isActive ? AppColors.switcherActiveColor : AppColors.switcherDeActiveColor,
               ),
               padding: EdgeInsets.all(2),
               child: Row(

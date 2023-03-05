@@ -9,8 +9,7 @@ class BpaProfileTextFiled extends StatelessWidget {
 
   TextEditingController? controller;
 
-  BpaProfileTextFiled({Key? key, this.name, this.controller, this.hint})
-      : super(key: key);
+  BpaProfileTextFiled({Key? key, this.name, this.controller, this.hint}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

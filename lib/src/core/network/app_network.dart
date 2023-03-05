@@ -11,8 +11,7 @@ class NetworkInfoImpl implements AppNetworkInfo {
   NetworkInfoImpl(this.connectionChecker);
 
   @override
-  Future<bool> get isConnected =>
-      connectionChecker.checkConnectivity().then((value) {
+  Future<bool> get isConnected => connectionChecker.checkConnectivity().then((value) {
         print("Current connectivity : ${value.toString()}");
         return value == ConnectivityResult.mobile ||
                 value == ConnectivityResult.wifi ||
