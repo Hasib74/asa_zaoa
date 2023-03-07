@@ -10,7 +10,7 @@ import '../../featchers/module/bpa/profile/presenation/screen/create_profile_scr
 import '../../featchers/module/bpa/rent_a_car/presentation/screens/rent_a_car_reg_success_screen.dart';
 import '../../featchers/splash/presentation/screen/splash_screen.dart';
 import '../../featchers/welcome/presentation/welcome_screen.dart';
-import '../helper/app_role_enum.dart';
+import '../helper/constantClasses/app_role_enum.dart';
 
 class AppRoutes {
   static String SPLASH_SCREEN = "/";

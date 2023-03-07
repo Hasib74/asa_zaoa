@@ -7,7 +7,11 @@ class AppImageView extends StatelessWidget {
   double? height;
   Color? color;
 
-  AppImageView({Key? key, this.imageUrl, this.height, this.width, this.color}) : super(key: key);
+  BoxFit? fit;
+
+  AppImageView(
+      {Key? key, this.imageUrl, this.height, this.width, this.color, this.fit})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class AppImageView extends StatelessWidget {
         width: width,
         height: height,
         color: color,
-        fit: BoxFit.cover,
+        fit: fit ?? BoxFit.cover,
       );
     }
     return SvgPicture.asset(
@@ -27,6 +31,7 @@ class AppImageView extends StatelessWidget {
       width: width ?? MediaQuery.of(context).size.width,
       height: height ?? MediaQuery.of(context).size.height,
       color: color,
+      fit: fit ?? BoxFit.cover,
     );
   }
 }

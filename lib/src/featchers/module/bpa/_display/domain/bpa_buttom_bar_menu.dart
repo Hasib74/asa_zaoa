@@ -2,5 +2,8 @@ enum BpaBottomBarMainMenu {
   trip,
   home,
   history,
-  dashBoard,
+  // dashBoard,
+  notification,
+
+  profile
 }

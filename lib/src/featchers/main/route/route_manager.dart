@@ -74,11 +74,11 @@ class RouteController {
     } else {
       exitTimer = DateTime.now();
 
-      AppSnackBar.showSuccessMessage(
-        title: "",
-        message: "Back again to exit application",
-        durationInSeconds: 3,
-      );
+      // AppSnackBar.showSuccessMessage(
+      //   title: "",
+      //   message: "Back again to exit application",
+      //   durationInSeconds: 3,
+      // );
 
       return false;
     }

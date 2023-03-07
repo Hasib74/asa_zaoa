@@ -10,7 +10,45 @@ class CarType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            AppIconWithTextButton(
+              size: 140,
+              inCircle: true,
+              fit: BoxFit.contain,
+              imageUrl: AppAssets.rent_a_car_png,
+              title: 'RENT A CAR',
+              textStyle: AppTextStyle.semiBoldTextStyle,
+              isCircle: true,
+              onPressed: () {
+                RouteController(context).goToRentACarIntroScreen();
+              },
+            ),
+            AppIconWithTextButton(
+              size: 140,
+              inCircle: true,
+              imageUrl: AppAssets.ambulance_png,
+              title: 'AMBULANCE',
+              textStyle: AppTextStyle.semiBoldTextStyle,
+            ),
+          ],
+        ),
+        AppIconWithTextButton(
+          size: 140,
+          inCircle: true,
+          imageUrl: AppAssets.return_car_png,
+          title: 'RETURN CAR',
+          textStyle: AppTextStyle.semiBoldTextStyle,
+        ),
+      ],
+    );
+    /* return GridView.count(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         crossAxisCount: 2,
@@ -52,6 +90,6 @@ class CarType extends StatelessWidget {
             iconColor: Colors.black,
             textStyle: AppTextStyle.semiBoldTextStyle,
           ),
-        ]);
+        ]);*/
   }
 }

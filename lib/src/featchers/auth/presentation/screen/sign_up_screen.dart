@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/dependencyInjection/app_dependency_injections.dart';
-import '../../../../core/helper/app_role_enum.dart';
+import '../../../../core/helper/constantClasses/app_role_enum.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/themes/app_text_style.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -32,25 +32,31 @@ class SignUpScreen extends StatelessWidget {
             AppSpaces.spacesHeight15,
             AppIconWithTextButton(
               isCircle: true,
-              imageUrl: role == AppRoleEnum.BPA ? AppAssets.bpa_icon : AppAssets.driver_icon,
+              imageUrl: role == AppRoleEnum.BPA
+                  ? AppAssets.bpa_icon
+                  : AppAssets.driver_icon,
             ),
             Spacer(),
             AppTextFiled(
               hint: "XXX XXX XXX",
-              textEditingController: sl<SignUpFunctions>().phoneNumberTextEditingController,
+              textEditingController:
+                  sl<SignUpFunctions>().phoneNumberTextEditingController,
               isPhoneNumberSelectAble: true,
             ),
             AppSpaces.spacesHeight15,
             AppTextFiled(
+                obscureText: true,
                 isCenter: true,
                 hint: "Set Password",
-                textEditingController: sl<SignUpFunctions>().passwordTextEditingController),
+                textEditingController:
+                    sl<SignUpFunctions>().passwordTextEditingController),
             AppSpaces.spacesHeight15,
             AppButton(
               title: "Next",
               onPressed: () {
                 //sl<SignInFunctions>().signIn(context, role!);
-                Navigator.pushNamed(context, AppRoutes.OTP_VERIFICATION_SCREEN, arguments: role);
+                Navigator.pushNamed(context, AppRoutes.OTP_VERIFICATION_SCREEN,
+                    arguments: role);
               },
             ),
             AppSpaces.spacesHeight10,
@@ -67,7 +73,8 @@ class SignUpScreen extends StatelessWidget {
                   AppSpaces.spacesHeight10,
                   Text(
                     "Sign in now",
-                    style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
+                    style: AppTextStyle.normalTextStyle!
+                        .copyWith(color: AppColors.textColorTwo),
                   ),
                 ],
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/dependencyInjection/app_dependency_injections.dart';
-import '../../../../core/helper/app_role_enum.dart';
+import '../../../../core/helper/constantClasses/app_role_enum.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/themes/app_text_style.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -34,33 +34,37 @@ class SignInScreen extends StatelessWidget {
             AppSpaces.spacesHeight15,
             AppIconWithTextButton(
               isCircle: true,
-              imageUrl: role == AppRoleEnum.BPA ? AppAssets.bpa_icon : AppAssets.driver_icon,
+              imageUrl: role == AppRoleEnum.BPA
+                  ? AppAssets.bpa_icon
+                  : AppAssets.driver_icon,
             ),
             Spacer(),
             AppTextFiled(
               hint: "XXX XXX XXX",
-              textEditingController: sl<SignInFunctions>().phoneNumberTextEditingController,
+              textEditingController:
+                  sl<SignInFunctions>().phoneNumberTextEditingController,
               isPhoneNumberSelectAble: true,
+              textInputType: TextInputType.phone,
             ),
             AppSpaces.spacesHeight15,
             AppTextFiled(
                 isCenter: true,
+                obscureText: true,
                 hint: "*********",
-                textEditingController: sl<SignInFunctions>().passwordTextEditingController),
+                textEditingController:
+                    sl<SignInFunctions>().passwordTextEditingController),
             AppSpaces.spacesHeight15,
             AppButton(
               title: "LogIn",
               onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.BPA_DISPLAY,
-                );
+                sl<SignInFunctions>().signIn(context);
               },
             ),
             AppSpaces.spacesHeight10,
             Text(
               "Forgot Password",
-              style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
+              style: AppTextStyle.normalTextStyle!
+                  .copyWith(color: AppColors.textColorTwo),
             ),
             AppSpaces.spacesHeight10,
             Spacer(),
@@ -83,7 +87,8 @@ class SignInScreen extends StatelessWidget {
                     },
                     child: Text(
                       "SignUp now",
-                      style: AppTextStyle.normalTextStyle!.copyWith(color: AppColors.textColorTwo),
+                      style: AppTextStyle.normalTextStyle!
+                          .copyWith(color: AppColors.textColorTwo),
                     ),
                   ),
                 ],

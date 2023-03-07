@@ -12,18 +12,21 @@ class AppCountryPickerWidgets extends StatefulWidget {
   Function(String)? onSelectedCountryName;
 
   AppCountryPickerWidgets(
-      {Key? key, required this.onSelectedCountryCode, required this.onSelectedCountryName})
+      {Key? key,
+      required this.onSelectedCountryCode,
+      required this.onSelectedCountryName})
       : super(key: key);
 
   @override
-  State<AppCountryPickerWidgets> createState() => _AppCountryPickerWidgetsState();
+  State<AppCountryPickerWidgets> createState() =>
+      _AppCountryPickerWidgetsState();
 }
 
 class _AppCountryPickerWidgetsState extends State<AppCountryPickerWidgets> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 110,
+      //   width: 110,
       child: InkWell(
         onTap: () {
           showCountryPicker(
@@ -39,16 +42,25 @@ class _AppCountryPickerWidgetsState extends State<AppCountryPickerWidgets> {
             },
           );
         },
-        child: Row(
+        child: Stack(
           children: [
-            AppSpaces.spacesWidth10,
-            Flag.fromString(
-              widget.selectedCountryName?.substring(0, 2) ?? 'BD',
-              height: 20,
-              width: 30,
-              fit: BoxFit.fill,
+            // AppSpaces.spacesWidth10,
+            Positioned(
+              top: 10,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Flag.fromString(
+                    widget.selectedCountryName?.substring(0, 2) ?? 'BD',
+                    height: 30,
+                    width: 30,
+                    fit: BoxFit.fill,
+                  )),
             ),
-            Text("  + ${widget.selectedCountryPhoneCode ?? '880'}"),
+            Positioned(
+              top: 15,
+                left: 25,
+                child: Text("  +${widget.selectedCountryPhoneCode ?? '880'}")),
           ],
         ),
       ),

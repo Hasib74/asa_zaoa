@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/helper/app_role_enum.dart';
+import '../../../../core/helper/constantClasses/app_role_enum.dart';
 import '../../../../core/routes/app_routes.dart';
 import '../../../../core/themes/app_text_style.dart';
 import '../../../../core/utils/app_assets.dart';

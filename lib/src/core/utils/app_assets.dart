@@ -32,9 +32,11 @@ class AppAssets {
   static String office_car = _images + "office_car.svg";
   static String office_car_png = _images + "office_car.png";
   static String return_car = _images + "return_car.svg";
-  static String return_car_png = _images + "return_car.png";
+
+  // static String return_car_png = _images + "return_car.png";
   static String ambulance = _images + "ambulance.svg";
-  static String ambulance_png = _images + "ambulance.png";
+
+  // static String ambulance_png = _images + "ambulance.png";
   static String camera_png = _icons + "camera.png";
   static String camera_svg = _icons + "camera.svg";
   static String camera_icon_png = _icons + "camera_icon.png";
@@ -59,4 +61,14 @@ class AppAssets {
   static String rentACarDriverIcon = _icons + "rent_a_car_driver_add_icon.png";
   static String assignDriverIcon = _icons + "assign_driver_icon.png";
   static String gallery_png = _icons + "gallery.png";
+
+  static String notification_png = _icons + "notification.png";
+  static String notification_svg = _icons + "notification.svg";
+
+  static String ambulance_svg = _images + "ambulance.svg";
+  static String ambulance_png = _images + "ambulance.png";
+  static String rent_a_car = _images + "rent_a_car.svg";
+  static String rent_a_car_png = _images + "rent_a_car.png";
+  static String return_car_svg = _images + "return_car.svg";
+  static String return_car_png = _images + "return_car.png";
 }

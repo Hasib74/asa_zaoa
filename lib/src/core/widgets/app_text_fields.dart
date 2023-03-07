@@ -1,11 +1,12 @@
 import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utils/app_colors.dart';
 import 'app_country_picker_widgets.dart';
 
-class AppTextFiled extends StatelessWidget {
+class AppTextFiled extends StatefulWidget {
   String? hint;
 
   TextEditingController textEditingController;
@@ -91,72 +92,92 @@ class AppTextFiled extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<AppTextFiled> createState() => _AppTextFiledState();
+}
+
+class _AppTextFiledState extends State<AppTextFiled> {
+  bool? _isMusk = true;
+
+  @override
   Widget build(BuildContext context) {
-    if (obscureText == true) {
-      suffixIcon = _maskIcon();
+    if (widget.obscureText == true) {
+      widget.suffixIcon = _maskIcon();
     }
     return SizedBox(
-      width: width ?? MediaQuery.of(context).size.width * 0.9,
-      height: height ?? 50,
+      width: widget.width ?? MediaQuery.of(context).size.width * 0.9,
+      height: widget.height ?? 50,
       child: GestureDetector(
-        onTap: onTap,
+        onTap: widget.onTap,
         child: TextField(
-          onEditingComplete: onEditingComplete,
-          textInputAction: textInputAction,
-          onChanged: (v) => onValue!(v),
-          obscureText: obscureText,
-          keyboardType: textInputType ?? TextInputType.text,
-          enabled: isEnable,
-          focusNode: focusNode,
+          maxLengthEnforcement: MaxLengthEnforcement.none,
+          onEditingComplete: widget.onEditingComplete,
+          textInputAction: widget.textInputAction,
+          onChanged: (v) => widget.onValue!(v),
+          obscureText: _isMusk! ? widget.obscureText : false,
+          keyboardType: widget.textInputType ?? TextInputType.text,
+          enabled: widget.isEnable,
+          focusNode: widget.focusNode,
           //enabled: this.isEnable,
-          controller: textEditingController,
-          maxLength: this.maxLength,
-          maxLines: obscureText ? 1 : this.maxLine,
+          controller: widget.textEditingController,
+          maxLength: this.widget.maxLength,
+          maxLines: widget.obscureText ? 1 : this.widget.maxLine,
 
-          style: maxLength == 1
-              ? Theme.of(context).textTheme.headline6?.copyWith(color: AppColors.shadowColor)
+          style: widget.maxLength == 1
+              ? Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: AppColors.shadowColor)
               : null,
-          textAlign: isCenter == true ? TextAlign.center : TextAlign.start,
+          textAlign:
+              widget.isCenter == true ? TextAlign.center : TextAlign.start,
           decoration: InputDecoration(
-            hintText: hint,
+            counterText: "",
+            hintText: widget.hint,
             hintStyle: AppTextStyle.hintStyle,
-            contentPadding: contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
+            contentPadding:
+                widget.contentPadding ?? EdgeInsets.only(top: 20, left: 16 * 2),
             counter: null,
-            filled: backgroundColor != null,
-            fillColor: backgroundColor,
+            filled: widget.backgroundColor != null,
+            fillColor: widget.backgroundColor,
 
-            labelText: label,
+            labelText: widget.label,
             labelStyle: TextStyle(color: AppColors.shadowColor),
-            errorBorder: border ??
+            errorBorder: widget.border ??
                 OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: errorBorderColor ?? AppColors.errorColor,
+                      color: widget.errorBorderColor ?? AppColors.errorColor,
                     ),
                     borderRadius: BorderRadius.circular(40)),
-            focusedBorder: border ??
+            focusedBorder: widget.border ??
                 OutlineInputBorder(
-                    borderSide:
-                        BorderSide(width: 2, color: focusedBorderColor ?? AppColors.shadowColor),
+                    borderSide: BorderSide(
+                        width: 2,
+                        color:
+                            widget.focusedBorderColor ?? AppColors.shadowColor),
                     borderRadius: BorderRadius.circular(40)),
-            disabledBorder: border ??
+            disabledBorder: widget.border ??
                 OutlineInputBorder(
-                    borderSide:
-                        BorderSide(width: 2, color: disabledBorderColor ?? AppColors.shadowColor),
+                    borderSide: BorderSide(
+                        width: 2,
+                        color: widget.disabledBorderColor ??
+                            AppColors.shadowColor),
                     borderRadius: BorderRadius.circular(40)),
-            enabledBorder: border ??
+            enabledBorder: widget.border ??
                 OutlineInputBorder(
-                    borderSide:
-                        BorderSide(width: 2, color: enabledBorderColor ?? AppColors.shadowColor),
+                    borderSide: BorderSide(
+                        width: 2,
+                        color:
+                            widget.enabledBorderColor ?? AppColors.shadowColor),
                     borderRadius: BorderRadius.circular(40)),
             // border: UnderlineInputBorder(),
-            prefixIcon: isPhoneNumberSelectAble == true
+            prefixIcon: widget.isPhoneNumberSelectAble == true
                 ? _selectPhoneNumber()
-                : prefixIcon != null
+                : widget.prefixIcon != null
                     ? Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: SvgPicture.asset(prefixIcon!),
+                        child: SvgPicture.asset(widget.prefixIcon!),
                       )
-                    : prefixEnable
+                    : widget.prefixEnable
                         ? SizedBox(
                             width: 90,
                             child: Row(
@@ -167,7 +188,7 @@ class AppTextFiled extends StatelessWidget {
                             ),
                           )
                         : null,
-            suffixIcon: suffixIcon,
+            suffixIcon: widget.suffixIcon,
           ),
         ),
       ),
@@ -175,13 +196,20 @@ class AppTextFiled extends StatelessWidget {
   }
 
   _maskIcon() {
-    bool isMusk;
-    return Icon(Icons.visibility_off);
+    return InkWell(
+        onTap: () {
+          setState(() {
+            _isMusk = !_isMusk!;
+          });
+          print(_isMusk);
+        },
+        child: _isMusk! ? Icon(Icons.visibility) : Icon(Icons.visibility_off));
   }
 
   _selectPhoneNumber() {
     return Container(
-      padding: const EdgeInsets.only(left: 16, right: 16),
+      width: 110,
+      padding: const EdgeInsets.only(left: 16, right: 0),
       decoration: BoxDecoration(
         border: Border(
           right: BorderSide(

@@ -63,7 +63,7 @@ class MainScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    state.screen.canShowBottomBar ? BpaBottomNavigationBar() : SizedBox(),
+                  //  state.screen.canShowBottomBar ? BpaBottomNavigationBar() : SizedBox(),
                   ],
                 );
               } else {

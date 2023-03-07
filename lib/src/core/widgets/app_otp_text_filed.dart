@@ -22,6 +22,8 @@ class AppOtpTextFiled extends StatelessWidget {
         children: [
           Expanded(
               child: AppTextFiled(
+            // maxLine: 1,
+            maxLength: 1,
             disabledBorderColor: AppColors.transparent,
             enabledBorderColor: AppColors.transparent,
             focusedBorderColor: AppColors.transparent,
@@ -34,6 +36,7 @@ class AppOtpTextFiled extends StatelessWidget {
           ),
           Expanded(
               child: AppTextFiled(
+            maxLength: 1,
             disabledBorderColor: AppColors.transparent,
             enabledBorderColor: AppColors.transparent,
             focusedBorderColor: AppColors.transparent,
@@ -46,6 +49,7 @@ class AppOtpTextFiled extends StatelessWidget {
           ),
           Expanded(
               child: AppTextFiled(
+            maxLength: 1,
             disabledBorderColor: AppColors.transparent,
             enabledBorderColor: AppColors.transparent,
             focusedBorderColor: AppColors.transparent,
@@ -58,6 +62,7 @@ class AppOtpTextFiled extends StatelessWidget {
           ),
           Expanded(
               child: AppTextFiled(
+            maxLength: 1,
             disabledBorderColor: AppColors.transparent,
             enabledBorderColor: AppColors.transparent,
             focusedBorderColor: AppColors.transparent,

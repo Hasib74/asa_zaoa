@@ -14,7 +14,10 @@ class CarBanner extends StatelessWidget {
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: AppImageView(imageUrl: AppAssets.car_banner_png),
+      child: AppImageView(
+        imageUrl: AppAssets.car_banner_png,
+        fit: BoxFit.fitWidth,
+      ),
     );
   }
 }

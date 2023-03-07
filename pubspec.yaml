@@ -50,6 +50,7 @@ dependencies:
   flutter_svg:
   country_picker:
   flag: ^6.0.0
+  animated_snack_bar:
 
 dev_dependencies:
   flutter_test:

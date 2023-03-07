@@ -13,7 +13,8 @@ class BpaBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BpaDisplayCubit, BpaDisplayState>(builder: (context, state) {
+    return BlocBuilder<BpaDisplayCubit, BpaDisplayState>(
+        builder: (context, state) {
       BpaBottomBarMainMenu menu = BpaBottomBarMainMenu.home;
 
       if (state is BpaDisplayChanged) {
@@ -32,65 +33,95 @@ class BpaBottomNavigationBar extends StatelessWidget {
           ),
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            AppIconWithTextButton(
-              size: AppDimension.bottomBarIconSize,
-              imageUrl: AppAssets.trip,
-              textColor: menu == BpaBottomBarMainMenu.trip
-                  ? AppColors.textColorTwo
-                  : AppColors.textColorTwo.withOpacity(0.4),
-              iconColor: menu == BpaBottomBarMainMenu.trip
-                  ? AppColors.primaryColor
-                  : AppColors.primaryColor.withOpacity(0.4),
-              title: "Trip",
-              onPressed: () {
-                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.trip);
-              },
-            ),
-            AppIconWithTextButton(
-              size: AppDimension.bottomBarIconSize,
-              imageUrl: AppAssets.home,
-              textColor: menu == BpaBottomBarMainMenu.home
-                  ? AppColors.textColorTwo
-                  : AppColors.textColorTwo.withOpacity(0.4),
-              iconColor: menu == BpaBottomBarMainMenu.home
-                  ? AppColors.primaryColor
-                  : AppColors.primaryColor.withOpacity(0.4),
-              title: "Home",
-              onPressed: () {
-                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.home);
-              },
-            ),
-            AppIconWithTextButton(
+            Expanded(
+                child: AppIconWithTextButton(
               size: AppDimension.bottomBarIconSize,
               imageUrl: AppAssets.history,
               textColor: menu == BpaBottomBarMainMenu.history
-                  ? AppColors.textColorTwo
-                  : AppColors.textColorTwo.withOpacity(0.4),
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
               iconColor: menu == BpaBottomBarMainMenu.history
-                  ? AppColors.primaryColor
-                  : AppColors.primaryColor.withOpacity(0.4),
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
               title: "History",
               onPressed: () {
-                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.history);
+                context
+                    .read<BpaDisplayCubit>()
+                    .changeTab(BpaBottomBarMainMenu.history);
               },
+            )),
+            Expanded(
+              child: AppIconWithTextButton(
+                size: AppDimension.bottomBarIconSize,
+                imageUrl: AppAssets.trip,
+                textColor: menu == BpaBottomBarMainMenu.trip
+                    ? AppColors.secondaryColor
+                    : AppColors.primaryColor.withOpacity(1),
+                iconColor: menu == BpaBottomBarMainMenu.trip
+                    ? AppColors.secondaryColor
+                    : AppColors.primaryColor.withOpacity(1),
+                title: "Trip",
+                onPressed: () {
+                  context
+                      .read<BpaDisplayCubit>()
+                      .changeTab(BpaBottomBarMainMenu.trip);
+                },
+              ),
             ),
-            AppIconWithTextButton(
+            Expanded(
+                child: AppIconWithTextButton(
               size: AppDimension.bottomBarIconSize,
-              imageUrl: AppAssets.dash_board,
-              textColor: menu == BpaBottomBarMainMenu.dashBoard
-                  ? AppColors.textColorTwo
-                  : AppColors.textColorTwo.withOpacity(0.4),
-              iconColor: menu == BpaBottomBarMainMenu.dashBoard
-                  ? AppColors.primaryColor
-                  : AppColors.primaryColor.withOpacity(0.4),
-              title: "DashBoard",
+              imageUrl: AppAssets.home,
+              textColor: menu == BpaBottomBarMainMenu.home
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
+              iconColor: menu == BpaBottomBarMainMenu.home
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
+              title: "Home",
               onPressed: () {
-                context.read<BpaDisplayCubit>().changeTab(BpaBottomBarMainMenu.dashBoard);
+                context
+                    .read<BpaDisplayCubit>()
+                    .changeTab(BpaBottomBarMainMenu.home);
               },
-            ),
+            )),
+            Expanded(
+                child: AppIconWithTextButton(
+              size: AppDimension.bottomBarIconSize,
+              imageUrl: AppAssets.notification,
+              textColor: menu == BpaBottomBarMainMenu.notification
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
+              iconColor: menu == BpaBottomBarMainMenu.notification
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
+              title: "Notification",
+              onPressed: () {
+                context
+                    .read<BpaDisplayCubit>()
+                    .changeTab(BpaBottomBarMainMenu.notification);
+              },
+            )),
+            Expanded(
+                child: AppIconWithTextButton(
+              size: AppDimension.bottomBarIconSize,
+              imageUrl: AppAssets.profile,
+              textColor: menu == BpaBottomBarMainMenu.profile
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
+              iconColor: menu == BpaBottomBarMainMenu.profile
+                  ? AppColors.secondaryColor
+                  : AppColors.primaryColor.withOpacity(1),
+              title: "Profile",
+              onPressed: () {
+                context
+                    .read<BpaDisplayCubit>()
+                    .changeTab(BpaBottomBarMainMenu.profile);
+              },
+            )),
           ],
         ),
       );

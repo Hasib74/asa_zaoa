@@ -23,7 +23,20 @@ class RentACarRegForm extends StatelessWidget {
     'Comilla',
     'Feni',
   ];
-  List<String> serialList = ['ক', 'খ', 'গ', 'ঘ', 'ঙ', 'চ', 'ছ', 'জ', 'ঝ', 'ঞ', 'ট', 'ঠ'];
+  List<String> serialList = [
+    'ক',
+    'খ',
+    'গ',
+    'ঘ',
+    'ঙ',
+    'চ',
+    'ছ',
+    'জ',
+    'ঝ',
+    'ঞ',
+    'ট',
+    'ঠ'
+  ];
 
   TextEditingController areaController = TextEditingController();
   TextEditingController serialController = TextEditingController();
@@ -280,9 +293,9 @@ class RentACarRegForm extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Radio(
-            value: value,
-            groupValue: groupValue,
+          Checkbox(
+            value: true,
+            // groupValue: groupValue,
             onChanged: (value) {
               onTap();
             },

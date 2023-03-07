@@ -1,13 +1,18 @@
 import 'package:asa_zaoa/src/core/themes/app_text_style.dart';
+import 'package:asa_zaoa/src/core/utils/app_overlay_dialog.dart';
 import 'package:asa_zaoa/src/core/utils/app_spaces.dart';
 import 'package:asa_zaoa/src/core/widgets/app_button.dart';
 import 'package:asa_zaoa/src/core/widgets/app_drop_down_button.dart';
+import 'package:asa_zaoa/src/core/widgets/app_drop_down_list_dialog.dart';
 import 'package:asa_zaoa/src/core/widgets/date_and_time.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../../core/data/constant_data.dart';
 import '../../../../../../../core/utils/app_colors.dart';
 import '../../../../../../../core/widgets/app_reactanle_border_with_icon_for_select.dart';
 import '../../widegts/bpa_profile_text_fileds.dart';
+
+List<String> gender = ["Male", "Female"];
 
 class BpaProfileFields extends StatelessWidget {
   const BpaProfileFields({Key? key}) : super(key: key);
@@ -69,6 +74,11 @@ class BpaProfileFields extends StatelessWidget {
                     flex: 3,
                     child: AppDropDownButton(
                       title: "Select Gender",
+                      onPressed: () {
+                        Overlayment.show(
+                            context: context,
+                            child: AppDropDownList(data: gender));
+                      },
                     )),
               ],
             ),
@@ -92,6 +102,12 @@ class BpaProfileFields extends StatelessWidget {
                 Expanded(
                     flex: 3,
                     child: AppDropDownButton(
+                      onPressed: () {
+                        Overlayment.show(
+                            context: context,
+                            child: AppDropDownList(
+                                data: AppConstantData.divisionList));
+                      },
                       title: "Select Division",
                     )),
               ],
@@ -112,6 +128,12 @@ class BpaProfileFields extends StatelessWidget {
                 Expanded(
                     flex: 3,
                     child: AppDropDownButton(
+                      onPressed: () {
+                        Overlayment.show(
+                            context: context,
+                            child: AppDropDownList(
+                                data: AppConstantData.districtList));
+                      },
                       title: "Select District",
                     )),
               ],
@@ -132,6 +154,12 @@ class BpaProfileFields extends StatelessWidget {
                 Expanded(
                     flex: 3,
                     child: AppDropDownButton(
+                      onPressed: () {
+                        Overlayment.show(
+                            context: context,
+                            child: AppDropDownList(
+                                data: AppConstantData.unionList));
+                      },
                       title: "Select Union/Village:",
                     )),
               ],

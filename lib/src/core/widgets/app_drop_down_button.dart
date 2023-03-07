@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 
 class AppDropDownButton extends StatelessWidget {
   final String? title;
+  VoidCallback? onPressed;
 
-  AppDropDownButton({Key? key, this.title}) : super(key: key);
+  AppDropDownButton({Key? key, this.title ,this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AppTextFiled(
-      textEditingController: new TextEditingController(),
-      isEnable: false,
-      isCenter: true,
-      hint: title,
-      suffixIcon: Icon(Icons.arrow_drop_down),
+    return InkWell(
+      onTap: onPressed,
+      child: AppTextFiled(
+        textEditingController: new TextEditingController(),
+        isEnable: false,
+        isCenter: true,
+        hint: title,
+        suffixIcon: Icon(Icons.arrow_drop_down),
+      ),
     );
   }
 }

@@ -26,18 +26,19 @@ class BpaDisplayScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            BlocBuilder<BpaDisplayCubit, BpaDisplayState>(builder: (context, state) {
+            BlocBuilder<BpaDisplayCubit, BpaDisplayState>(
+                builder: (context, state) {
               Color backgroundColor = Colors.white;
 
               if (state is BpaDisplayChanged) {
-                if (state.menu == BpaBottomBarMainMenu.dashBoard) {
+                if (state.menu == BpaBottomBarMainMenu.notification) {
                   backgroundColor = AppColors.secondaryColor.withOpacity(0.5);
                 } else if (state.menu == BpaBottomBarMainMenu.trip) {
                   backgroundColor = Colors.red;
                 } else if (state.menu == BpaBottomBarMainMenu.history) {
                   backgroundColor = Colors.blue;
                 } else if (state.menu == BpaBottomBarMainMenu.home) {
-                  backgroundColor = Colors.green;
+                  backgroundColor = AppColors.secondaryColor.withOpacity(0.5);
                 }
               }
 
