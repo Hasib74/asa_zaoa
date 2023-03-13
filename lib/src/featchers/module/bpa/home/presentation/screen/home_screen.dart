@@ -11,15 +11,31 @@ import '../sections/car_type.dart';
 import '../sections/profile_image.dart';
 import '../widgets/your_earning.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _isProfileUpdateView = false;
 
   bool isProfileUpdated = false;
 
   @override
-  Widget build(BuildContext context) {
-    _isUpdatedProfile(context);
+  void initState() {
+    super.initState();
 
+    if (_isProfileUpdateView == false) {
+      _isProfileUpdateView = true;
+      _isUpdatedProfile(context);
+    }
+    _isUpdatedProfile(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
       children: [
@@ -45,6 +61,7 @@ class HomeScreen extends StatelessWidget {
   void _isUpdatedProfile(BuildContext context) {
     Future.delayed(Duration.zero).then((value) {
       if (isProfileUpdated == false) {
+        isProfileUpdated = true;
         Overlayment.show(
           context: context,
           child: Container(
@@ -61,8 +78,11 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("Profile Not Updated",
-                        style: AppTextStyle.extraLargeTextStyle),
+                    Text(
+                      "Profile Not Updated",
+                      style: AppTextStyle.extraLargeTextStyle,
+                      textAlign: TextAlign.center,
+                    ),
                     Text(
                       "Your Personal Profile is incomplete. You must have to upload your personal Profile before using the app. This is important for your safe Travel, thank you.",
                       style: AppTextStyle.normalTextStyle,

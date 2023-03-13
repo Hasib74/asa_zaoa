@@ -112,7 +112,7 @@ class _AppTextFiledState extends State<AppTextFiled> {
           maxLengthEnforcement: MaxLengthEnforcement.none,
           onEditingComplete: widget.onEditingComplete,
           textInputAction: widget.textInputAction,
-          onChanged: (v) => widget.onValue!(v),
+          onChanged: (v) => widget.onValue ==null ? null : widget.onValue!(v),
           obscureText: _isMusk! ? widget.obscureText : false,
           keyboardType: widget.textInputType ?? TextInputType.text,
           enabled: widget.isEnable,
